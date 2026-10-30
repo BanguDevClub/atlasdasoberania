@@ -54,7 +54,7 @@ export function ModalSplitPieChart() {
             verticalAlign="bottom"
             height={36}
             formatter={(value) => (
-              <span className="text-xs font-semibold text-foreground sm:text-sm">
+              <span className="text-foreground text-xs font-semibold sm:text-sm">
                 {value}
               </span>
             )}

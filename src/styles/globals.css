@@ -1,8 +1,9 @@
 @import 'katex/dist/katex.min.css';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@config '../../tailwind.config.mjs';
+
+@custom-variant dark (&:is(.dark, [data-theme="dark"], [data-theme="frappe"], [data-theme="macchiato"], [data-theme="mocha"], .dark *, [data-theme="dark"] *, [data-theme="frappe"] *, [data-theme="macchiato"] *, [data-theme="mocha"] *));
 
 @layer base {
   /* 1. CLARO (Standard High-Contrast Light) */
@@ -282,7 +283,7 @@
   }
 
   body {
-    @apply min-h-screen bg-background text-base leading-relaxed text-foreground antialiased selection:bg-primary/20 selection:text-primary;
+    @apply bg-background text-foreground selection:bg-primary/20 selection:text-primary min-h-screen text-base leading-relaxed antialiased;
     font-feature-settings:
       'rlig' 1,
       'calt' 1;

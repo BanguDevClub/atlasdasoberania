@@ -115,11 +115,11 @@ export function ThemeSelector() {
         <Button
           variant="outline"
           size="sm"
-          className="gap-2 border-border bg-card text-xs font-semibold transition-all hover:bg-accent"
+          className="border-border bg-card hover:bg-accent gap-2 text-xs font-semibold transition-all"
           title="Alterar tema visual do Atlas"
         >
           <span
-            className="shadow-xs size-3.5 rounded-full border"
+            className="size-3.5 rounded-full border shadow-xs"
             style={{
               backgroundColor: activeThemeObj.previewBg,
               borderColor: activeThemeObj.previewBorder,
@@ -128,25 +128,25 @@ export function ThemeSelector() {
           <span className="hidden md:inline">
             {activeThemeObj.name.split(' ')[0]}
           </span>
-          <Palette className="size-3.5 text-muted-foreground" />
+          <Palette className="text-muted-foreground size-3.5" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
         align="end"
-        className="animate-in fade-in-80 zoom-in-95 z-50 min-w-[210px] rounded-xl border border-border bg-card p-1.5 text-card-foreground shadow-xl"
+        className="animate-in fade-in-80 zoom-in-95 border-border bg-card text-card-foreground z-50 min-w-[210px] rounded-xl border p-1.5 shadow-xl"
       >
-        <DropdownMenuLabel className="px-2 py-1.5 text-xs font-bold uppercase tracking-wider text-muted-foreground">
+        <DropdownMenuLabel className="text-muted-foreground px-2 py-1.5 text-xs font-bold tracking-wider uppercase">
           Temas Padrão
         </DropdownMenuLabel>
         {THEMES.filter((t) => t.category === 'Standard').map((theme) => (
           <DropdownMenuItem
             key={theme.id}
             onClick={() => setTheme(theme.id)}
-            className="flex cursor-pointer items-center justify-between rounded-lg px-2.5 py-2 text-sm font-medium outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+            className="hover:bg-accent hover:text-accent-foreground flex cursor-pointer items-center justify-between rounded-lg px-2.5 py-2 text-sm font-medium transition-colors outline-none"
           >
             <div className="flex items-center gap-2.5">
               <span
-                className="shadow-xs size-3.5 rounded-full border"
+                className="size-3.5 rounded-full border shadow-xs"
                 style={{
                   backgroundColor: theme.previewBg,
                   borderColor: theme.previewBorder,
@@ -162,14 +162,14 @@ export function ThemeSelector() {
               </span>
             </div>
             {currentTheme === theme.id && (
-              <Check className="size-4 text-primary" />
+              <Check className="text-primary size-4" />
             )}
           </DropdownMenuItem>
         ))}
 
-        <DropdownMenuSeparator className="my-1.5 h-px bg-border" />
+        <DropdownMenuSeparator className="bg-border my-1.5 h-px" />
 
-        <DropdownMenuLabel className="flex items-center gap-1.5 px-2 py-1.5 text-xs font-bold uppercase tracking-wider text-muted-foreground">
+        <DropdownMenuLabel className="text-muted-foreground flex items-center gap-1.5 px-2 py-1.5 text-xs font-bold tracking-wider uppercase">
           <Coffee className="size-3 text-orange-400" />
           Variantes Catppuccin
         </DropdownMenuLabel>
@@ -177,11 +177,11 @@ export function ThemeSelector() {
           <DropdownMenuItem
             key={theme.id}
             onClick={() => setTheme(theme.id)}
-            className="flex cursor-pointer items-center justify-between rounded-lg px-2.5 py-2 text-sm font-medium outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+            className="hover:bg-accent hover:text-accent-foreground flex cursor-pointer items-center justify-between rounded-lg px-2.5 py-2 text-sm font-medium transition-colors outline-none"
           >
             <div className="flex items-center gap-2.5">
               <span
-                className="shadow-xs size-3.5 rounded-full border"
+                className="size-3.5 rounded-full border shadow-xs"
                 style={{
                   backgroundColor: theme.previewBg,
                   borderColor: theme.previewBorder,
@@ -190,7 +190,7 @@ export function ThemeSelector() {
               <span>{theme.name}</span>
             </div>
             {currentTheme === theme.id && (
-              <Check className="size-4 text-primary" />
+              <Check className="text-primary size-4" />
             )}
           </DropdownMenuItem>
         ))}

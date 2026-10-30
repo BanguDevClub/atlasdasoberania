@@ -52,7 +52,7 @@ export function MethodologyCalculator() {
       <CardHeader>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Calculator className="size-5 text-primary" />
+            <Calculator className="text-primary size-5" />
             <CardTitle className="text-xl font-bold sm:text-2xl">
               Simulador Interativo do ICVS
             </CardTitle>
@@ -74,16 +74,16 @@ export function MethodologyCalculator() {
       </CardHeader>
       <CardContent className="space-y-6">
         {/* Result banner */}
-        <div className="flex flex-col items-center justify-between gap-4 rounded-2xl border border-border bg-muted/40 p-6 sm:flex-row">
+        <div className="border-border bg-muted/40 flex flex-col items-center justify-between gap-4 rounded-2xl border p-6 sm:flex-row">
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground sm:text-sm">
+            <span className="text-muted-foreground text-xs font-bold tracking-wider uppercase sm:text-sm">
               Índice de Criticidade e Vulnerabilidade da Soberania (ICVS)
             </span>
             <div className="mt-1 flex items-baseline gap-3">
-              <span className="font-mono text-5xl font-black tracking-tight text-foreground sm:text-6xl">
+              <span className="text-foreground font-mono text-5xl font-black tracking-tight sm:text-6xl">
                 {calculatedScore.toFixed(1)}
               </span>
-              <span className="text-base font-bold text-muted-foreground sm:text-lg">
+              <span className="text-muted-foreground text-base font-bold sm:text-lg">
                 / 100
               </span>
               <Badge
@@ -94,25 +94,25 @@ export function MethodologyCalculator() {
               </Badge>
             </div>
           </div>
-          <div className="max-w-xs text-right text-xs font-medium text-muted-foreground sm:text-sm">
+          <div className="text-muted-foreground max-w-xs text-right text-xs font-medium sm:text-sm">
             Fórmula: ICVS = {w1}·D + {w2}·C + {w3}·T + {w4}·I + {w5}·V
           </div>
         </div>
 
         {/* Dimension sliders */}
         <div className="space-y-4">
-          <h4 className="text-base font-bold text-foreground sm:text-lg">
+          <h4 className="text-foreground text-base font-bold sm:text-lg">
             1. Pontuação das Dimensões (0 a 100)
           </h4>
 
           {/* D_ext */}
-          <div className="space-y-2 rounded-xl border border-border bg-card p-4">
+          <div className="border-border bg-card space-y-2 rounded-xl border p-4">
             <div className="flex items-center justify-between text-sm">
-              <label className="font-semibold text-foreground">
+              <label className="text-foreground font-semibold">
                 D_ext: Dependência Externa e Coeficiente de Importação (Peso{' '}
                 {w1 * 100}%)
               </label>
-              <span className="font-mono text-base font-bold text-primary">
+              <span className="text-primary font-mono text-base font-bold">
                 {extDependence}
               </span>
             </div>
@@ -122,18 +122,18 @@ export function MethodologyCalculator() {
               max="100"
               value={extDependence}
               onChange={(e) => setExtDependence(Number(e.target.value))}
-              className="w-full cursor-pointer accent-primary"
+              className="accent-primary w-full cursor-pointer"
             />
-            <div className="flex justify-between text-xs text-muted-foreground">
+            <div className="text-muted-foreground flex justify-between text-xs">
               <span>0 (Autossuficiência soberana)</span>
               <span>100 (100% importado sem produção local)</span>
             </div>
           </div>
 
           {/* C_geo */}
-          <div className="space-y-2 rounded-xl border border-border bg-card p-4">
+          <div className="border-border bg-card space-y-2 rounded-xl border p-4">
             <div className="flex items-center justify-between text-sm">
-              <label className="font-semibold text-foreground">
+              <label className="text-foreground font-semibold">
                 C_geo: Concentração Geopolítica e Risco de Fornecedor (Peso{' '}
                 {w2 * 100}%)
               </label>
@@ -149,16 +149,16 @@ export function MethodologyCalculator() {
               onChange={(e) => setGeoConcentration(Number(e.target.value))}
               className="w-full cursor-pointer accent-amber-500"
             />
-            <div className="flex justify-between text-xs text-muted-foreground">
+            <div className="text-muted-foreground flex justify-between text-xs">
               <span>0 (Mercado global pulverizado)</span>
               <span>100 (Monopólio/Oligopólio em zona de guerra)</span>
             </div>
           </div>
 
           {/* T_sub */}
-          <div className="space-y-2 rounded-xl border border-border bg-card p-4">
+          <div className="border-border bg-card space-y-2 rounded-xl border p-4">
             <div className="flex items-center justify-between text-sm">
-              <label className="font-semibold text-foreground">
+              <label className="text-foreground font-semibold">
                 T_sub: Barreira Tecnológica e Tempo de Substituição (Peso{' '}
                 {w3 * 100}%)
               </label>
@@ -174,16 +174,16 @@ export function MethodologyCalculator() {
               onChange={(e) => setSubstitutabilityTime(Number(e.target.value))}
               className="w-full cursor-pointer accent-orange-500"
             />
-            <div className="flex justify-between text-xs text-muted-foreground">
+            <div className="text-muted-foreground flex justify-between text-xs">
               <span>0 (Substituível em menos de 6 meses)</span>
               <span>100 (&gt; 10 anos e bilhões de dólares)</span>
             </div>
           </div>
 
           {/* I_sis */}
-          <div className="space-y-2 rounded-xl border border-border bg-card p-4">
+          <div className="border-border bg-card space-y-2 rounded-xl border p-4">
             <div className="flex items-center justify-between text-sm">
-              <label className="font-semibold text-foreground">
+              <label className="text-foreground font-semibold">
                 I_sis: Impacto Sistêmico e Efeito Cascata (Peso {w4 * 100}%)
               </label>
               <span className="font-mono text-base font-bold text-rose-500">
@@ -198,16 +198,16 @@ export function MethodologyCalculator() {
               onChange={(e) => setSystemicImpact(Number(e.target.value))}
               className="w-full cursor-pointer accent-rose-500"
             />
-            <div className="flex justify-between text-xs text-muted-foreground">
+            <div className="text-muted-foreground flex justify-between text-xs">
               <span>0 (Impacto isolado e secundário)</span>
               <span>100 (Paralisia imediata de água, alimentos ou defesa)</span>
             </div>
           </div>
 
           {/* V_log */}
-          <div className="space-y-2 rounded-xl border border-border bg-card p-4">
+          <div className="border-border bg-card space-y-2 rounded-xl border p-4">
             <div className="flex items-center justify-between text-sm">
-              <label className="font-semibold text-foreground">
+              <label className="text-foreground font-semibold">
                 V_log: Vulnerabilidade Logística e ao Diesel S10 (Peso{' '}
                 {w5 * 100}%)
               </label>
@@ -225,7 +225,7 @@ export function MethodologyCalculator() {
               }
               className="w-full cursor-pointer accent-red-500"
             />
-            <div className="flex justify-between text-xs text-muted-foreground">
+            <div className="text-muted-foreground flex justify-between text-xs">
               <span>0 (Dutos e ferrovias eletrificadas)</span>
               <span>100 (100% carretas rodoviárias a diesel importado)</span>
             </div>

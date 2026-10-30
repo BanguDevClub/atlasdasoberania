@@ -200,7 +200,7 @@ export function InteractiveExplorer() {
   return (
     <div className="space-y-6">
       {/* Search and Filters Header */}
-      <div className="space-y-4 rounded-2xl border border-border bg-card p-4 shadow-sm sm:p-6">
+      <div className="border-border bg-card space-y-4 rounded-2xl border p-4 shadow-sm sm:p-6">
         {/* Top Search bar & View mode switch */}
         <div className="flex flex-col items-stretch justify-between gap-3 sm:flex-row sm:items-center">
           <div className="max-w-2xl flex-1">
@@ -220,20 +220,20 @@ export function InteractiveExplorer() {
                 variant="ghost"
                 size="sm"
                 onClick={resetFilters}
-                className="gap-1 text-xs text-muted-foreground hover:text-foreground"
+                className="text-muted-foreground hover:text-foreground gap-1 text-xs"
               >
                 <X className="size-3.5" />
                 Limpar Filtros
               </Button>
             )}
 
-            <div className="flex items-center rounded-lg border border-border bg-muted/40 p-0.5">
+            <div className="border-border bg-muted/40 flex items-center rounded-lg border p-0.5">
               <button
                 type="button"
                 onClick={() => setViewMode('cards')}
                 className={`rounded-md p-1.5 text-xs font-medium transition-colors ${
                   viewMode === 'cards'
-                    ? 'shadow-xs bg-card text-foreground'
+                    ? 'bg-card text-foreground shadow-xs'
                     : 'text-muted-foreground hover:text-foreground'
                 }`}
                 title="Visualização em Grade de Cards"
@@ -245,7 +245,7 @@ export function InteractiveExplorer() {
                 onClick={() => setViewMode('table')}
                 className={`rounded-md p-1.5 text-xs font-medium transition-colors ${
                   viewMode === 'table'
-                    ? 'shadow-xs bg-card text-foreground'
+                    ? 'bg-card text-foreground shadow-xs'
                     : 'text-muted-foreground hover:text-foreground'
                 }`}
                 title="Visualização em Tabela Comparativa"
@@ -257,7 +257,7 @@ export function InteractiveExplorer() {
         </div>
 
         {/* Filter dropdowns row */}
-        <div className="grid grid-cols-1 gap-3 border-t border-border/60 pt-2 sm:grid-cols-2 md:grid-cols-5">
+        <div className="border-border/60 grid grid-cols-1 gap-3 border-t pt-2 sm:grid-cols-2 md:grid-cols-5">
           {/* Pillar Filter */}
           <SelectCustom
             label="Pilar da Soberania"
@@ -331,38 +331,38 @@ export function InteractiveExplorer() {
 
       {/* Aggregate Stats Summary Bar */}
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <div className="flex flex-col rounded-xl border border-border bg-card/70 p-3.5">
-          <span className="text-xs font-medium text-muted-foreground">
+        <div className="border-border bg-card/70 flex flex-col rounded-xl border p-3.5">
+          <span className="text-muted-foreground text-xs font-medium">
             Etapas Analisadas
           </span>
-          <span className="mt-0.5 font-mono text-2xl font-bold text-foreground">
+          <span className="text-foreground mt-0.5 font-mono text-2xl font-bold">
             {stats.total}
           </span>
         </div>
-        <div className="flex flex-col rounded-xl border border-border bg-card/70 p-3.5">
-          <span className="text-xs font-medium text-muted-foreground">
+        <div className="border-border bg-card/70 flex flex-col rounded-xl border p-3.5">
+          <span className="text-muted-foreground text-xs font-medium">
             ICVS Médio
           </span>
-          <span className="mt-0.5 font-mono text-2xl font-bold text-foreground">
+          <span className="text-foreground mt-0.5 font-mono text-2xl font-bold">
             {stats.avgIcvs.toFixed(1)}{' '}
-            <span className="text-xs font-normal text-muted-foreground">
+            <span className="text-muted-foreground text-xs font-normal">
               / 100
             </span>
           </span>
         </div>
-        <div className="flex flex-col rounded-xl border border-border bg-card/70 p-3.5">
-          <span className="text-xs font-medium text-muted-foreground">
+        <div className="border-border bg-card/70 flex flex-col rounded-xl border p-3.5">
+          <span className="text-muted-foreground text-xs font-medium">
             Em Alerta Vermelho
           </span>
           <span className="mt-0.5 font-mono text-2xl font-bold text-red-500">
             {stats.criticalCount}{' '}
-            <span className="text-xs font-normal text-muted-foreground">
+            <span className="text-muted-foreground text-xs font-normal">
               etapas
             </span>
           </span>
         </div>
-        <div className="flex flex-col rounded-xl border border-border bg-card/70 p-3.5">
-          <span className="text-xs font-medium text-muted-foreground">
+        <div className="border-border bg-card/70 flex flex-col rounded-xl border p-3.5">
+          <span className="text-muted-foreground text-xs font-medium">
             Média Modal Rodoviário
           </span>
           <span className="mt-0.5 font-mono text-2xl font-bold text-amber-500">
@@ -379,11 +379,11 @@ export function InteractiveExplorer() {
             return (
               <Card
                 key={stage.id}
-                className="group flex flex-col justify-between border-border transition-all hover:border-primary/50 hover:shadow-md"
+                className="group border-border hover:border-primary/50 flex flex-col justify-between transition-all hover:shadow-md"
               >
                 <CardHeader className="p-5 pb-3">
                   <div className="mb-2 flex items-center justify-between gap-2">
-                    <span className="flex items-center gap-1.5 rounded-md bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">
+                    <span className="bg-primary/10 text-primary flex items-center gap-1.5 rounded-md px-2 py-0.5 text-xs font-semibold">
                       <DynamicIcon
                         name={stage.pillarIcon}
                         className="size-3.5"
@@ -394,7 +394,7 @@ export function InteractiveExplorer() {
                       ICVS: {stage.scores.finalScore.toFixed(1)}
                     </Badge>
                   </div>
-                  <CardTitle className="line-clamp-1 text-lg font-bold transition-colors group-hover:text-primary">
+                  <CardTitle className="group-hover:text-primary line-clamp-1 text-lg font-bold transition-colors">
                     {stage.name}
                   </CardTitle>
                   <CardDescription className="mt-1 line-clamp-2 text-sm leading-relaxed">
@@ -404,9 +404,9 @@ export function InteractiveExplorer() {
 
                 <CardContent className="space-y-4 p-5 pt-0">
                   {/* Scores miniature */}
-                  <div className="grid grid-cols-3 gap-2 rounded-lg border border-border/50 bg-muted/40 p-2.5 text-center text-xs">
+                  <div className="border-border/50 bg-muted/40 grid grid-cols-3 gap-2 rounded-lg border p-2.5 text-center text-xs">
                     <div>
-                      <div className="text-xs text-muted-foreground">
+                      <div className="text-muted-foreground text-xs">
                         Dep. Externa
                       </div>
                       <div className="font-mono text-sm font-bold text-red-500">
@@ -414,7 +414,7 @@ export function InteractiveExplorer() {
                       </div>
                     </div>
                     <div>
-                      <div className="text-xs text-muted-foreground">
+                      <div className="text-muted-foreground text-xs">
                         Imp. Sistêmico
                       </div>
                       <div className="font-mono text-sm font-bold text-amber-500">
@@ -422,7 +422,7 @@ export function InteractiveExplorer() {
                       </div>
                     </div>
                     <div>
-                      <div className="text-xs text-muted-foreground">
+                      <div className="text-muted-foreground text-xs">
                         Vuln. Logística
                       </div>
                       <div className="font-mono text-sm font-bold text-orange-500">
@@ -433,25 +433,25 @@ export function InteractiveExplorer() {
 
                   {/* Top Partners */}
                   <div>
-                    <span className="mb-1.5 block text-xs font-semibold text-muted-foreground">
+                    <span className="text-muted-foreground mb-1.5 block text-xs font-semibold">
                       Principais Origens de Importação:
                     </span>
                     <div className="flex flex-wrap gap-1.5">
                       {stage.importPartners.slice(0, 3).map((partner, pIdx) => (
                         <span
                           key={pIdx}
-                          className="inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-2.5 py-1 text-xs font-medium"
+                          className="border-border bg-card inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-medium"
                           title={`${partner.country}: ${partner.sharePercentage}%`}
                         >
                           <span className="text-sm">{partner.flag}</span>
                           <span>{partner.country}</span>
-                          <span className="font-mono text-xs font-semibold text-muted-foreground">
+                          <span className="text-muted-foreground font-mono text-xs font-semibold">
                             {partner.sharePercentage.toFixed(0)}%
                           </span>
                         </span>
                       ))}
                       {stage.importPartners.length === 0 && (
-                        <span className="text-xs italic text-muted-foreground">
+                        <span className="text-muted-foreground text-xs italic">
                           Abastecimento majoritário local
                         </span>
                       )}
@@ -459,15 +459,15 @@ export function InteractiveExplorer() {
                   </div>
 
                   {/* Logistics indicator */}
-                  <div className="flex items-center justify-between border-t border-border/50 pt-1 text-xs">
-                    <span className="flex items-center gap-1 text-muted-foreground">
+                  <div className="border-border/50 flex items-center justify-between border-t pt-1 text-xs">
+                    <span className="text-muted-foreground flex items-center gap-1">
                       <Truck className="size-3.5 text-amber-500" />
                       Rodovia:{' '}
                       <b className="text-foreground">
                         {stage.logistics.roadShare}%
                       </b>
                     </span>
-                    <span className="flex items-center gap-1 text-muted-foreground">
+                    <span className="text-muted-foreground flex items-center gap-1">
                       <Flame className="size-3.5 text-rose-500" />
                       Diesel:{' '}
                       <b className="text-foreground">
@@ -480,7 +480,7 @@ export function InteractiveExplorer() {
                     variant="outline"
                     size="sm"
                     onClick={() => setSelectedStage(stage)}
-                    className="w-full gap-1.5 text-xs font-semibold transition-all group-hover:bg-primary group-hover:text-primary-foreground"
+                    className="group-hover:bg-primary group-hover:text-primary-foreground w-full gap-1.5 text-xs font-semibold transition-all"
                   >
                     <span>Relatório Detalhado</span>
                     <ChevronRight className="size-3.5" />
@@ -494,11 +494,11 @@ export function InteractiveExplorer() {
 
       {/* Results Rendering: Table View */}
       {viewMode === 'table' && (
-        <div className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
+        <div className="border-border bg-card overflow-hidden rounded-xl border shadow-sm">
           <div className="custom-scrollbar overflow-x-auto">
             <table className="w-full border-collapse text-left text-sm sm:text-base">
               <thead>
-                <tr className="border-b border-border bg-muted/60 text-xs font-bold uppercase tracking-wider text-muted-foreground sm:text-sm">
+                <tr className="border-border bg-muted/60 text-muted-foreground border-b text-xs font-bold tracking-wider uppercase sm:text-sm">
                   <th className="px-4 py-3.5">Pilar & Etapa</th>
                   <th className="px-3 py-3.5">Categoria</th>
                   <th className="px-3 py-3.5 text-center">ICVS</th>
@@ -510,28 +510,28 @@ export function InteractiveExplorer() {
                   <th className="px-4 py-3.5 text-right">Ação</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-border">
+              <tbody className="divide-border divide-y">
                 {filteredStages.map((stage) => {
                   const badge = getCriticalityBadge(stage.scores.finalScore);
                   return (
                     <tr
                       key={stage.id}
-                      className="cursor-pointer transition-colors hover:bg-muted/40"
+                      className="hover:bg-muted/40 cursor-pointer transition-colors"
                       onClick={() => setSelectedStage(stage)}
                     >
                       <td className="px-4 py-3.5">
-                        <div className="flex items-center gap-2 text-sm font-semibold text-foreground sm:text-base">
+                        <div className="text-foreground flex items-center gap-2 text-sm font-semibold sm:text-base">
                           <DynamicIcon
                             name={stage.pillarIcon}
-                            className="size-4 shrink-0 text-primary"
+                            className="text-primary size-4 shrink-0"
                           />
                           <span>{stage.name}</span>
                         </div>
-                        <div className="mt-0.5 max-w-sm truncate text-xs text-muted-foreground">
+                        <div className="text-muted-foreground mt-0.5 max-w-sm truncate text-xs">
                           {stage.pillarName} • {stage.summary}
                         </div>
                       </td>
-                      <td className="px-3 py-3.5 text-xs text-muted-foreground sm:text-sm">
+                      <td className="text-muted-foreground px-3 py-3.5 text-xs sm:text-sm">
                         {stage.category}
                       </td>
                       <td className="px-3 py-3.5 text-center">
@@ -570,7 +570,7 @@ export function InteractiveExplorer() {
                           <span className="font-mono font-semibold">
                             {stage.logistics.roadShare}%
                           </span>
-                          <span className="text-[10px] text-muted-foreground">
+                          <span className="text-muted-foreground text-[10px]">
                             ({stage.logistics.dieselExposureLevel})
                           </span>
                         </div>
@@ -599,12 +599,12 @@ export function InteractiveExplorer() {
 
       {/* Empty State */}
       {filteredStages.length === 0 && (
-        <div className="rounded-2xl border border-dashed border-border bg-card px-4 py-16 text-center">
-          <Search className="mx-auto mb-3 size-10 text-muted-foreground opacity-60" />
-          <h3 className="text-lg font-bold text-foreground">
+        <div className="border-border bg-card rounded-2xl border border-dashed px-4 py-16 text-center">
+          <Search className="text-muted-foreground mx-auto mb-3 size-10 opacity-60" />
+          <h3 className="text-foreground text-lg font-bold">
             Nenhuma etapa encontrada
           </h3>
-          <p className="mx-auto mb-4 mt-1 max-w-md text-sm text-muted-foreground">
+          <p className="text-muted-foreground mx-auto mt-1 mb-4 max-w-md text-sm">
             Não encontramos etapas industriais correspondentes aos filtros
             selecionados.
           </p>
