@@ -1,0 +1,339 @@
+---
+import '@/styles/globals.css';
+import { ThemeSelector } from '@/components/ThemeSelector';
+import { Github, Flame, Shield, ExternalLink } from 'lucide-react';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = 'Atlas da Soberania Industrial Brasileira',
+  description = 'Painel interativo e didático sobre a criticidade, dependência externa e gargalos logísticos da cadeia industrial e produtiva do Brasil.',
+  image = '/atlasdasoberania/og-image.svg',
+} = Astro.props;
+
+const canonicalURL = new URL(
+  Astro.url.pathname,
+  Astro.site || 'https://bangudevclub.github.io'
+);
+const repoUrl = 'https://github.com/BanguDevClub/atlasdasoberania';
+const baseUrl = '/atlasdasoberania';
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href={`${baseUrl}/favicon.svg`} />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="soberania nacional, industria brasileira, diesel s10, fertilizantes npk, semicondutores, cadeias de suprimento, logística rodoviária, agronegócio, defesa nacional"
+    />
+    <meta name="author" content="BanguDevClub" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta
+      property="og:image"
+      content={new URL(image, Astro.site || 'https://bangudevclub.github.io')}
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta
+      property="twitter:image"
+      content={new URL(image, Astro.site || 'https://bangudevclub.github.io')}
+    />
+
+    <!-- JSON-LD Structured Data -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebApplication',
+        name: 'Atlas da Soberania Industrial Brasileira',
+        description: description,
+        url: 'https://bangudevclub.github.io/atlasdasoberania',
+        applicationCategory: 'EducationalApplication',
+        creator: {
+          '@type': 'Organization',
+          name: 'BanguDevClub',
+          url: 'https://github.com/BanguDevClub',
+        },
+      })}
+    />
+
+    <!-- Prevent Theme FOUC -->
+    <script is:inline>
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme') || 'mocha';
+          document.documentElement.setAttribute('data-theme', saved);
+          if (
+            saved === 'dark' ||
+            saved === 'frappe' ||
+            saved === 'macchiato' ||
+            saved === 'mocha'
+          ) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch {
+          // ignore localStorage access error
+        }
+      })();
+    </script>
+  </head>
+  <body
+    class="flex min-h-screen flex-col bg-background text-foreground antialiased"
+  >
+    <!-- Skip to content for accessibility -->
+    <a
+      href="#main-content"
+      class="sr-only z-50 rounded-lg bg-primary px-4 py-2 font-bold text-primary-foreground shadow-lg focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+    >
+      Pular para o conteúdo principal
+    </a>
+
+    <!-- Navigation Header -->
+    <header
+      class="sticky top-0 z-40 w-full border-b border-border bg-background/85 backdrop-blur-md transition-colors"
+    >
+      <div
+        class="container mx-auto flex h-16 items-center justify-between gap-4 px-4 sm:px-6"
+      >
+        <!-- Logo and Title -->
+        <a href={`${baseUrl}/`} class="group flex items-center gap-2.5">
+          <div
+            class="flex size-9 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 text-primary transition-transform group-hover:scale-105"
+          >
+            <Shield className="size-5" />
+          </div>
+          <div class="flex flex-col">
+            <span
+              class="flex items-center gap-1.5 text-base font-bold leading-none tracking-tight text-foreground"
+            >
+              Atlas da Soberania
+              <span
+                class="rounded-sm bg-primary/20 px-1.5 py-0.5 font-mono text-[10px] font-bold uppercase text-primary"
+              >
+                Brasil
+              </span>
+            </span>
+            <span class="hidden text-[11px] text-muted-foreground sm:inline">
+              Vulnerabilidade & Cadeias Produtivas
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden items-center gap-1 md:flex">
+          <a
+            href={`${baseUrl}/`}
+            class="rounded-md px-3 py-1.5 text-xs font-semibold text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+          >
+            Painel Geral
+          </a>
+          <a
+            href={`${baseUrl}/pilares`}
+            class="rounded-md px-3 py-1.5 text-xs font-semibold text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+          >
+            Os 8 Pilares
+          </a>
+          <a
+            href={`${baseUrl}/logistica`}
+            class="flex items-center gap-1 rounded-md px-3 py-1.5 text-xs font-semibold text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+          >
+            <Flame className="size-3 text-amber-500" />
+            O Nó do Diesel
+          </a>
+          <a
+            href={`${baseUrl}/metodologia`}
+            class="rounded-md px-3 py-1.5 text-xs font-semibold text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+          >
+            Metodologia & Fontes
+          </a>
+        </nav>
+
+        <!-- Right Side: Theme Selector & GitHub -->
+        <div class="flex items-center gap-2">
+          <ThemeSelector client:load />
+
+          <a
+            href={repoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex size-9 items-center justify-center rounded-md border border-border bg-card text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+            title="Ver código fonte no GitHub"
+          >
+            <Github className="size-4" />
+            <span class="sr-only">Repositório no GitHub</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Mobile navigation sub-bar -->
+      <div
+        class="custom-scrollbar flex items-center gap-2 overflow-x-auto border-t border-border/60 bg-muted/30 px-4 py-2 md:hidden"
+      >
+        <a
+          href={`${baseUrl}/`}
+          class="whitespace-nowrap rounded-md border border-border bg-card px-2.5 py-1 text-xs font-medium text-foreground"
+        >
+          Painel Geral
+        </a>
+        <a
+          href={`${baseUrl}/pilares`}
+          class="whitespace-nowrap rounded-md px-2.5 py-1 text-xs font-medium text-muted-foreground hover:text-foreground"
+        >
+          8 Pilares
+        </a>
+        <a
+          href={`${baseUrl}/logistica`}
+          class="flex items-center gap-1 whitespace-nowrap rounded-md px-2.5 py-1 text-xs font-medium font-semibold text-amber-500 hover:text-amber-400"
+        >
+          <Flame className="size-3" />
+          Nó do Diesel
+        </a>
+        <a
+          href={`${baseUrl}/metodologia`}
+          class="whitespace-nowrap rounded-md px-2.5 py-1 text-xs font-medium text-muted-foreground hover:text-foreground"
+        >
+          Metodologia & Fontes
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Content Slot -->
+    <main id="main-content" class="flex-1">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="mt-16 border-t border-border bg-card text-card-foreground transition-colors"
+    >
+      <div class="container mx-auto px-4 py-12 sm:px-6">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
+          <!-- Col 1: About Atlas -->
+          <div class="space-y-3 md:col-span-2">
+            <div class="flex items-center gap-2">
+              <div
+                class="flex size-7 items-center justify-center rounded-lg border border-primary/30 bg-primary/10 text-primary"
+              >
+                <Shield className="size-4" />
+              </div>
+              <span class="text-base font-bold text-foreground">
+                Atlas da Soberania Industrial
+              </span>
+            </div>
+            <p class="max-w-md text-xs leading-relaxed text-muted-foreground">
+              Uma ferramenta educacional e analítica de código aberto destinada
+              a expor as vulnerabilidades estruturais, a dependência externa e
+              os nós de transporte da cadeia produtiva brasileira.
+            </p>
+            <div class="flex items-center gap-3 pt-2 text-xs">
+              <a
+                href={repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 font-semibold text-primary hover:underline"
+              >
+                <Github className="size-3.5" />
+                <span>github.com/BanguDevClub/atlasdasoberania</span>
+                <ExternalLink className="size-3" />
+              </a>
+            </div>
+          </div>
+
+          <!-- Col 2: Navigation Links -->
+          <div class="space-y-2">
+            <h4
+              class="text-xs font-bold uppercase tracking-wider text-muted-foreground"
+            >
+              Navegação
+            </h4>
+            <ul class="space-y-1.5 text-xs">
+              <li>
+                <a
+                  href={`${baseUrl}/`}
+                  class="text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  Painel Geral Interativo
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`${baseUrl}/pilares`}
+                  class="text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  Os 8 Pilares Industriais
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`${baseUrl}/logistica`}
+                  class="text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  O Círculo Vicioso do Diesel
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`${baseUrl}/metodologia`}
+                  class="text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  Cálculo do ICVS e Fontes
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Data & Organization -->
+          <div class="space-y-2">
+            <h4
+              class="text-xs font-bold uppercase tracking-wider text-muted-foreground"
+            >
+              Fontes & Licença
+            </h4>
+            <p class="text-xs leading-relaxed text-muted-foreground">
+              Dados baseados em registros públicos oficiais: MDIC (ComexStat),
+              ANP, EPE, Conab, Abiquim, ABIMAQ, CNT e SIPRI.
+            </p>
+            <p class="text-[11px] text-muted-foreground">
+              Projeto mantido pelo <strong>BanguDevClub</strong> sob licença de código
+              aberto MIT.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="mt-8 flex flex-col items-center justify-between gap-2 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row"
+        >
+          <p>
+            © {new Date().getFullYear()} Atlas da Soberania Industrial Brasileira.
+          </p>
+          <p>Construído com Astro, React, Tailwind CSS, KaTeX e Recharts.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

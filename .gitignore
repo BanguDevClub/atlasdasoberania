@@ -1,0 +1,24 @@
+# Build outputs
+dist/
+.astro/
+
+# Dependencies
+node_modules/
+package-lock.json.backup
+
+# Environment and editor
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+.DS_Store
+Thumbs.db
+

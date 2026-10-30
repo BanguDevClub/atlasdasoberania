@@ -1,0 +1,346 @@
+@import 'katex/dist/katex.min.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* 1. CLARO (Standard High-Contrast Light) */
+  :root,
+  [data-theme='light'] {
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 215 90% 45%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 215 25% 92%;
+    --secondary-foreground: 222 47% 15%;
+
+    --muted: 215 20% 93%;
+    --muted-foreground: 215 20% 38%;
+
+    --accent: 215 30% 90%;
+    --accent-foreground: 222 47% 15%;
+
+    --destructive: 0 84% 45%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 28% 85%;
+    --input: 214 28% 82%;
+    --ring: 215 90% 45%;
+
+    --critical: 0 84% 50%;
+    --critical-foreground: 0 0% 100%;
+    --high: 28 95% 48%;
+    --high-foreground: 0 0% 100%;
+    --moderate: 45 93% 40%;
+    --moderate-foreground: 0 0% 100%;
+    --low: 142 70% 35%;
+    --low-foreground: 0 0% 100%;
+
+    --radius: 0.5rem;
+    --scrollbar-track: 210 20% 95%;
+    --scrollbar-thumb: 215 20% 75%;
+    --scrollbar-thumb-hover: 215 25% 60%;
+  }
+
+  /* 2. ESCURO (Standard High-Contrast Dark) */
+  [data-theme='dark'],
+  .dark {
+    --background: 222 47% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 200 95% 55%;
+    --primary-foreground: 222 47% 8%;
+
+    --secondary: 217 33% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 16%;
+    --muted-foreground: 215 20% 70%;
+
+    --accent: 217 33% 20%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 75% 58%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 22%;
+    --input: 217 33% 24%;
+    --ring: 200 95% 55%;
+
+    --critical: 0 80% 60%;
+    --critical-foreground: 0 0% 100%;
+    --high: 28 95% 55%;
+    --high-foreground: 0 0% 100%;
+    --moderate: 45 95% 50%;
+    --moderate-foreground: 222 47% 8%;
+    --low: 142 65% 50%;
+    --low-foreground: 222 47% 8%;
+
+    --scrollbar-track: 222 47% 9%;
+    --scrollbar-thumb: 217 30% 28%;
+    --scrollbar-thumb-hover: 217 35% 38%;
+  }
+
+  /* 3. CATPPUCCIN LATTE (Warm Crisp Light) */
+  [data-theme='latte'] {
+    --background: 220 23% 95%; /* #eff1f5 base */
+    --foreground: 234 26% 20%; /* #2c3042 enhanced contrast from #4c4f69 */
+
+    --card: 0 0% 100%;
+    --card-foreground: 234 26% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 234 26% 20%;
+
+    --primary: 220 91% 54%; /* #1e66f5 blue */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 223 16% 88%; /* #ccd0da surface0 */
+    --secondary-foreground: 234 26% 20%;
+
+    --muted: 220 17% 91%; /* #e6e9ef mantle */
+    --muted-foreground: 233 13% 40%;
+
+    --accent: 220 91% 94%;
+    --accent-foreground: 220 91% 40%;
+
+    --destructive: 347 87% 44%; /* #d20f39 red */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 223 16% 80%;
+    --input: 223 16% 80%;
+    --ring: 220 91% 54%;
+
+    --critical: 347 87% 44%;
+    --critical-foreground: 0 0% 100%;
+    --high: 23 98% 52%; /* #fe640b peach */
+    --high-foreground: 0 0% 100%;
+    --moderate: 35 77% 45%; /* #df8e1d yellow */
+    --moderate-foreground: 0 0% 100%;
+    --low: 109 58% 40%; /* #40a02b green */
+    --low-foreground: 0 0% 100%;
+
+    --scrollbar-track: 220 23% 92%;
+    --scrollbar-thumb: 223 16% 75%;
+    --scrollbar-thumb-hover: 223 16% 60%;
+  }
+
+  /* 4. CATPPUCCIN FRAPPÉ */
+  [data-theme='frappe'] {
+    --background: 228 19% 23%; /* #303446 base */
+    --foreground: 228 69% 87%; /* #c6d0f5 text */
+
+    --card: 230 19% 20%; /* #292c3c mantle */
+    --card-foreground: 228 69% 87%;
+
+    --popover: 230 19% 20%;
+    --popover-foreground: 228 69% 87%;
+
+    --primary: 222 74% 74%; /* #8caaee blue */
+    --primary-foreground: 228 19% 15%;
+
+    --secondary: 228 13% 31%; /* #414559 surface0 */
+    --secondary-foreground: 228 69% 87%;
+
+    --muted: 230 16% 25%;
+    --muted-foreground: 228 20% 70%;
+
+    --accent: 228 15% 35%;
+    --accent-foreground: 228 69% 95%;
+
+    --destructive: 351 74% 68%; /* #e78284 red */
+    --destructive-foreground: 228 19% 15%;
+
+    --border: 228 13% 36%;
+    --input: 228 13% 36%;
+    --ring: 222 74% 74%;
+
+    --critical: 351 74% 68%;
+    --critical-foreground: 228 19% 15%;
+    --high: 21 86% 73%; /* #ef9f76 peach */
+    --high-foreground: 228 19% 15%;
+    --moderate: 40 62% 73%; /* #e5c890 yellow */
+    --moderate-foreground: 228 19% 15%;
+    --low: 115 54% 76%; /* #a6d189 green */
+    --low-foreground: 228 19% 15%;
+
+    --scrollbar-track: 230 19% 18%;
+    --scrollbar-thumb: 228 13% 35%;
+    --scrollbar-thumb-hover: 228 13% 45%;
+  }
+
+  /* 5. CATPPUCCIN MACCHIATO */
+  [data-theme='macchiato'] {
+    --background: 234 23% 19%; /* #24273a base */
+    --foreground: 227 70% 88%; /* #cad3f5 text */
+
+    --card: 235 24% 15%; /* #1e2030 mantle */
+    --card-foreground: 227 70% 88%;
+
+    --popover: 235 24% 15%;
+    --popover-foreground: 227 70% 88%;
+
+    --primary: 220 83% 75%; /* #8aadf4 blue */
+    --primary-foreground: 234 23% 12%;
+
+    --secondary: 232 17% 26%; /* #363a4f surface0 */
+    --secondary-foreground: 227 70% 88%;
+
+    --muted: 234 20% 22%;
+    --muted-foreground: 227 20% 70%;
+
+    --accent: 232 17% 32%;
+    --accent-foreground: 227 70% 95%;
+
+    --destructive: 353 79% 71%; /* #ed8796 red */
+    --destructive-foreground: 234 23% 12%;
+
+    --border: 232 16% 32%;
+    --input: 232 16% 32%;
+    --ring: 220 83% 75%;
+
+    --critical: 353 79% 71%;
+    --critical-foreground: 234 23% 12%;
+    --high: 21 92% 76%; /* #f5a97f peach */
+    --high-foreground: 234 23% 12%;
+    --moderate: 41 71% 76%; /* #eed49f yellow */
+    --moderate-foreground: 234 23% 12%;
+    --low: 114 60% 77%; /* #a6da95 green */
+    --low-foreground: 234 23% 12%;
+
+    --scrollbar-track: 235 24% 13%;
+    --scrollbar-thumb: 232 17% 30%;
+    --scrollbar-thumb-hover: 232 17% 42%;
+  }
+
+  /* 6. CATPPUCCIN MOCHA */
+  [data-theme='mocha'] {
+    --background: 240 21% 15%; /* #1e1e2e base */
+    --foreground: 226 64% 88%; /* #cdd6f4 text */
+
+    --card: 240 21% 12%; /* #181825 mantle */
+    --card-foreground: 226 64% 88%;
+
+    --popover: 240 21% 12%;
+    --popover-foreground: 226 64% 88%;
+
+    --primary: 217 92% 76%; /* #89b4fa blue */
+    --primary-foreground: 240 21% 10%;
+
+    --secondary: 237 16% 23%; /* #313244 surface0 */
+    --secondary-foreground: 226 64% 88%;
+
+    --muted: 240 18% 18%;
+    --muted-foreground: 226 18% 70%;
+
+    --accent: 237 16% 28%;
+    --accent-foreground: 226 64% 95%;
+
+    --destructive: 357 84% 75%; /* #f38ba8 red */
+    --destructive-foreground: 240 21% 10%;
+
+    --border: 237 16% 30%;
+    --input: 237 16% 30%;
+    --ring: 217 92% 76%;
+
+    --critical: 357 84% 75%;
+    --critical-foreground: 240 21% 10%;
+    --high: 22 99% 79%; /* #fab387 peach */
+    --high-foreground: 240 21% 10%;
+    --moderate: 46 87% 78%; /* #f9e2af yellow */
+    --moderate-foreground: 240 21% 10%;
+    --low: 115 54% 76%; /* #a6e3a1 green */
+    --low-foreground: 240 21% 10%;
+
+    --scrollbar-track: 240 21% 10%;
+    --scrollbar-thumb: 237 16% 26%;
+    --scrollbar-thumb-hover: 237 16% 36%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+  }
+}
+
+/* Custom Overflow & Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--scrollbar-track));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--scrollbar-thumb));
+  border-radius: 4px;
+  border: 1px solid hsl(var(--border) / 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--scrollbar-thumb-hover));
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--scrollbar-thumb)) hsl(var(--scrollbar-track));
+}
+
+/* Custom utilities */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--scrollbar-thumb));
+  border-radius: 9999px;
+}
+
+/* High contrast glassmorphism with solid fallback */
+.glass-panel {
+  background-color: hsl(var(--card) / 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid hsl(var(--border));
+}
+
+/* KaTeX custom styles for contrast */
+.katex-display {
+  padding: 1rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.katex {
+  font-size: 1.1em;
+  color: hsl(var(--foreground));
+}
