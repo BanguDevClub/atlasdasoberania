@@ -45,14 +45,14 @@ export function PillarsRadarChart() {
             dataKey="pillar"
             tick={{
               fill: 'hsl(var(--foreground))',
-              fontSize: 12,
+              fontSize: 13,
               fontWeight: 600,
             }}
           />
           <PolarRadiusAxis
             angle={30}
             domain={[0, 100]}
-            tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 10 }}
+            tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 11 }}
           />
           <Radar
             name="ICVS Médio (0-100)"
@@ -74,7 +74,7 @@ export function PillarsRadarChart() {
               borderColor: 'hsl(var(--border))',
               borderRadius: '0.75rem',
               color: 'hsl(var(--card-foreground))',
-              fontSize: '12px',
+              fontSize: '13px',
               boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.2)',
             }}
           />

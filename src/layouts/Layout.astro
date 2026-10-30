@@ -1,7 +1,7 @@
 ---
 import '@/styles/globals.css';
 import { ThemeSelector } from '@/components/ThemeSelector';
-import { Github, Flame, Shield, ExternalLink } from 'lucide-react';
+import { Flame, Shield, ExternalLink } from 'lucide-react';
 
 interface Props {
   title?: string;
@@ -79,7 +79,6 @@ const baseUrl = '/atlasdasoberania';
         },
       })}
     />
-
     <!-- Prevent Theme FOUC -->
     <script is:inline>
       (function () {
@@ -102,9 +101,7 @@ const baseUrl = '/atlasdasoberania';
       })();
     </script>
   </head>
-  <body
-    class="flex min-h-screen flex-col bg-background text-foreground antialiased"
-  >
+  <body class="flex min-h-screen flex-col bg-background text-foreground antialiased">
     <!-- Skip to content for accessibility -->
     <a
       href="#main-content"
@@ -114,27 +111,17 @@ const baseUrl = '/atlasdasoberania';
     </a>
 
     <!-- Navigation Header -->
-    <header
-      class="sticky top-0 z-40 w-full border-b border-border bg-background/85 backdrop-blur-md transition-colors"
-    >
-      <div
-        class="container mx-auto flex h-16 items-center justify-between gap-4 px-4 sm:px-6"
-      >
+    <header class="sticky top-0 z-40 w-full border-b border-border bg-background/85 backdrop-blur-md transition-colors">
+      <div class="container mx-auto flex h-16 items-center justify-between gap-4 px-4 sm:px-6">
         <!-- Logo and Title -->
         <a href={`${baseUrl}/`} class="group flex items-center gap-2.5">
-          <div
-            class="flex size-9 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 text-primary transition-transform group-hover:scale-105"
-          >
+          <div class="flex size-9 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 text-primary transition-transform group-hover:scale-105">
             <Shield className="size-5" />
           </div>
           <div class="flex flex-col">
-            <span
-              class="flex items-center gap-1.5 text-base font-bold leading-none tracking-tight text-foreground"
-            >
+            <span class="flex items-center gap-1.5 text-base font-bold leading-none tracking-tight text-foreground">
               Atlas da Soberania
-              <span
-                class="rounded-sm bg-primary/20 px-1.5 py-0.5 font-mono text-[10px] font-bold uppercase text-primary"
-              >
+              <span class="rounded-sm bg-primary/20 px-1.5 py-0.5 font-mono text-[10px] font-bold uppercase text-primary">
                 Brasil
               </span>
             </span>
@@ -145,29 +132,28 @@ const baseUrl = '/atlasdasoberania';
         </a>
 
         <!-- Desktop Navigation Links -->
-        <nav class="hidden items-center gap-1 md:flex">
+        <nav class="hidden items-center gap-1.5 md:flex">
           <a
             href={`${baseUrl}/`}
-            class="rounded-md px-3 py-1.5 text-xs font-semibold text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+            class="rounded-md px-3 py-1.5 text-sm font-semibold text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
           >
             Painel Geral
           </a>
           <a
             href={`${baseUrl}/pilares`}
-            class="rounded-md px-3 py-1.5 text-xs font-semibold text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+            class="rounded-md px-3 py-1.5 text-sm font-semibold text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
           >
             Os 8 Pilares
           </a>
           <a
             href={`${baseUrl}/logistica`}
-            class="flex items-center gap-1 rounded-md px-3 py-1.5 text-xs font-semibold text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+            class="flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-semibold text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
           >
-            <Flame className="size-3 text-amber-500" />
-            O Nó do Diesel
+            <Flame className="size-3.5 text-amber-500" />O Nó do Diesel
           </a>
           <a
             href={`${baseUrl}/metodologia`}
-            class="rounded-md px-3 py-1.5 text-xs font-semibold text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+            class="rounded-md px-3 py-1.5 text-sm font-semibold text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
           >
             Metodologia & Fontes
           </a>
@@ -184,38 +170,46 @@ const baseUrl = '/atlasdasoberania';
             class="inline-flex size-9 items-center justify-center rounded-md border border-border bg-card text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
             title="Ver código fonte no GitHub"
           >
-            <Github className="size-4" />
+            <svg
+              class="size-4 fill-current"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+              />
+            </svg>
             <span class="sr-only">Repositório no GitHub</span>
           </a>
         </div>
       </div>
 
       <!-- Mobile navigation sub-bar -->
-      <div
-        class="custom-scrollbar flex items-center gap-2 overflow-x-auto border-t border-border/60 bg-muted/30 px-4 py-2 md:hidden"
-      >
+      <div class="custom-scrollbar flex items-center gap-2 overflow-x-auto border-t border-border/60 bg-muted/30 px-4 py-2.5 md:hidden">
         <a
           href={`${baseUrl}/`}
-          class="whitespace-nowrap rounded-md border border-border bg-card px-2.5 py-1 text-xs font-medium text-foreground"
+          class="whitespace-nowrap rounded-md border border-border bg-card px-3 py-1.5 text-sm font-medium text-foreground"
         >
           Painel Geral
         </a>
         <a
           href={`${baseUrl}/pilares`}
-          class="whitespace-nowrap rounded-md px-2.5 py-1 text-xs font-medium text-muted-foreground hover:text-foreground"
+          class="whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground"
         >
           8 Pilares
         </a>
         <a
           href={`${baseUrl}/logistica`}
-          class="flex items-center gap-1 whitespace-nowrap rounded-md px-2.5 py-1 text-xs font-medium font-semibold text-amber-500 hover:text-amber-400"
+          class="flex items-center gap-1.5 whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-semibold text-amber-500 hover:text-amber-400"
         >
-          <Flame className="size-3" />
+          <Flame className="size-3.5" />
           Nó do Diesel
         </a>
         <a
           href={`${baseUrl}/metodologia`}
-          class="whitespace-nowrap rounded-md px-2.5 py-1 text-xs font-medium text-muted-foreground hover:text-foreground"
+          class="whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground"
         >
           Metodologia & Fontes
         </a>
@@ -228,50 +222,54 @@ const baseUrl = '/atlasdasoberania';
     </main>
 
     <!-- Footer -->
-    <footer
-      class="mt-16 border-t border-border bg-card text-card-foreground transition-colors"
-    >
+    <footer class="mt-16 border-t border-border bg-card text-card-foreground transition-colors">
       <div class="container mx-auto px-4 py-12 sm:px-6">
         <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
           <!-- Col 1: About Atlas -->
           <div class="space-y-3 md:col-span-2">
             <div class="flex items-center gap-2">
-              <div
-                class="flex size-7 items-center justify-center rounded-lg border border-primary/30 bg-primary/10 text-primary"
-              >
+              <div class="flex size-7 items-center justify-center rounded-lg border border-primary/30 bg-primary/10 text-primary">
                 <Shield className="size-4" />
               </div>
               <span class="text-base font-bold text-foreground">
                 Atlas da Soberania Industrial
               </span>
             </div>
-            <p class="max-w-md text-xs leading-relaxed text-muted-foreground">
+            <p class="max-w-md text-sm leading-relaxed text-muted-foreground">
               Uma ferramenta educacional e analítica de código aberto destinada
               a expor as vulnerabilidades estruturais, a dependência externa e
               os nós de transporte da cadeia produtiva brasileira.
             </p>
-            <div class="flex items-center gap-3 pt-2 text-xs">
+            <div class="flex items-center gap-3 pt-2 text-sm">
               <a
                 href={repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center gap-1 font-semibold text-primary hover:underline"
+                class="inline-flex items-center gap-1.5 font-semibold text-primary hover:underline"
               >
-                <Github className="size-3.5" />
+                <svg
+                  class="size-4 fill-current"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                  />
+                </svg>
                 <span>github.com/BanguDevClub/atlasdasoberania</span>
-                <ExternalLink className="size-3" />
+                <ExternalLink className="size-3.5" />
               </a>
             </div>
           </div>
 
           <!-- Col 2: Navigation Links -->
           <div class="space-y-2">
-            <h4
-              class="text-xs font-bold uppercase tracking-wider text-muted-foreground"
-            >
+            <h4 class="text-xs font-bold uppercase tracking-wider text-muted-foreground">
               Navegação
             </h4>
-            <ul class="space-y-1.5 text-xs">
+            <ul class="space-y-2 text-sm">
               <li>
                 <a
                   href={`${baseUrl}/`}
@@ -309,27 +307,24 @@ const baseUrl = '/atlasdasoberania';
 
           <!-- Col 3: Data & Organization -->
           <div class="space-y-2">
-            <h4
-              class="text-xs font-bold uppercase tracking-wider text-muted-foreground"
-            >
+            <h4 class="text-xs font-bold uppercase tracking-wider text-muted-foreground">
               Fontes & Licença
             </h4>
-            <p class="text-xs leading-relaxed text-muted-foreground">
+            <p class="text-sm leading-relaxed text-muted-foreground">
               Dados baseados em registros públicos oficiais: MDIC (ComexStat),
               ANP, EPE, Conab, Abiquim, ABIMAQ, CNT e SIPRI.
             </p>
-            <p class="text-[11px] text-muted-foreground">
-              Projeto mantido pelo <strong>BanguDevClub</strong> sob licença de código
-              aberto MIT.
+            <p class="text-xs text-muted-foreground">
+              Projeto mantido pelo <strong>BanguDevClub</strong> sob licença de
+              código aberto MIT.
             </p>
           </div>
         </div>
 
-        <div
-          class="mt-8 flex flex-col items-center justify-between gap-2 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row"
-        >
+        <div class="mt-8 flex flex-col items-center justify-between gap-2 border-t border-border pt-6 text-sm text-muted-foreground sm:flex-row">
           <p>
-            © {new Date().getFullYear()} Atlas da Soberania Industrial Brasileira.
+            © {new Date().getFullYear()} Atlas da Soberania Industrial
+            Brasileira.
           </p>
           <p>Construído com Astro, React, Tailwind CSS, KaTeX e Recharts.</p>
         </div>

@@ -20,34 +20,23 @@ const avgOverallScore = (
   description="Exposição crítica e objetiva dos 8 pilares da cadeia industrial brasileira: dependência externa, nós logísticos e vulnerabilidade geopolítica."
 >
   <!-- Hero Section -->
-  <section
-    class="relative overflow-hidden border-b border-border bg-gradient-to-b from-card to-background py-12 sm:py-16"
-  >
-    <div class="bg-grid-pattern pointer-events-none absolute inset-0 opacity-5">
-    </div>
+  <section class="relative overflow-hidden border-b border-border bg-gradient-to-b from-card to-background py-12 sm:py-16">
+    <div class="bg-grid-pattern pointer-events-none absolute inset-0 opacity-5"></div>
     <div class="container relative z-10 mx-auto px-4 sm:px-6">
       <div class="max-w-4xl space-y-4">
-        <div
-          class="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-3 py-1 text-xs font-bold text-red-600 dark:text-red-400"
-        >
+        <div class="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-3 py-1 text-xs font-bold text-red-600 dark:text-red-400">
           <ShieldAlert className="size-3.5" />
           <span>Diagnóstico Estratégico da Indústria Nacional</span>
         </div>
 
-        <h1
-          class="text-3xl font-black leading-[1.15] tracking-tight text-foreground sm:text-5xl"
-        >
+        <h1 class="text-3xl font-black leading-[1.15] tracking-tight text-foreground sm:text-5xl">
           A Fragilidade Oculta da <br class="hidden sm:inline" />
-          <span
-            class="bg-gradient-to-r from-primary via-sky-500 to-emerald-500 bg-clip-text text-transparent"
-          >
+          <span class="bg-gradient-to-r from-primary via-sky-500 to-emerald-500 bg-clip-text text-transparent">
             Soberania Industrial Brasileira
           </span>
         </h1>
 
-        <p
-          class="max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg"
-        >
+        <p class="max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
           O Brasil é uma potência alimentar e energética com pés de barro:
           exporta commodities brutas sem refino e importa insumos vitais — de
           95% do potássio agrícola a 100% dos microprocessadores modernos.
@@ -58,63 +47,52 @@ const avgOverallScore = (
         <!-- KPI Summary row -->
         <div class="grid grid-cols-2 gap-3 pt-4 sm:grid-cols-4">
           <div class="shadow-xs rounded-xl border border-border bg-card p-3.5">
-            <span class="text-xs font-semibold uppercase text-muted-foreground"
-              >Pilares Avaliados</span
-            >
-            <div
-              class="mt-0.5 font-mono text-2xl font-black text-foreground sm:text-3xl"
-            >
+            <span class="text-xs font-semibold uppercase text-muted-foreground sm:text-sm">
+              Pilares Avaliados
+            </span>
+            <div class="mt-0.5 font-mono text-2xl font-black text-foreground sm:text-3xl">
               8 Pilares
             </div>
-            <span class="text-[11px] text-muted-foreground"
-              >Agricultura à Tecnologia</span
-            >
+            <span class="text-xs text-muted-foreground sm:text-sm">
+              Agricultura à Tecnologia
+            </span>
           </div>
 
-          <div
-            class="shadow-xs rounded-xl border border-red-500/30 bg-red-500/5 p-3.5"
-          >
-            <span
-              class="text-xs font-semibold uppercase text-red-600 dark:text-red-400"
-              >ICVS Médio</span
-            >
-            <div
-              class="mt-0.5 font-mono text-2xl font-black text-red-600 dark:text-red-400 sm:text-3xl"
-            >
+          <div class="shadow-xs rounded-xl border border-red-500/30 bg-red-500/5 p-3.5">
+            <span class="text-xs font-semibold uppercase text-red-600 dark:text-red-400 sm:text-sm">
+              ICVS Médio
+            </span>
+            <div class="mt-0.5 font-mono text-2xl font-black text-red-600 dark:text-red-400 sm:text-3xl">
               {avgOverallScore}
               <span class="text-sm font-normal">/ 100</span>
             </div>
-            <span class="text-[11px] text-muted-foreground"
-              >Alta Vulnerabilidade Geral</span
-            >
+            <span class="text-xs text-muted-foreground sm:text-sm">
+              Alta Vulnerabilidade Geral
+            </span>
           </div>
 
           <div class="shadow-xs rounded-xl border border-border bg-card p-3.5">
-            <span class="text-xs font-semibold uppercase text-muted-foreground"
-              >Déficit de Diesel S10</span
-            >
-            <div
-              class="mt-0.5 font-mono text-2xl font-black text-amber-500 sm:text-3xl"
-            >
+            <span class="text-xs font-semibold uppercase text-muted-foreground sm:text-sm">
+              Déficit de Diesel S10
+            </span>
+            <div class="mt-0.5 font-mono text-2xl font-black text-amber-500 sm:text-3xl">
               ~26.5%
             </div>
-            <span class="text-[11px] text-muted-foreground"
-              >Importado da Rússia e EUA</span
-            >
+            <span class="text-xs text-muted-foreground sm:text-sm">
+              Importado da Rússia e EUA
+            </span>
           </div>
 
           <div class="shadow-xs rounded-xl border border-border bg-card p-3.5">
-            <span class="text-xs font-semibold uppercase text-muted-foreground"
-              >Carga em Rodovias</span
-            >
-            <div
-              class="mt-0.5 font-mono text-2xl font-black text-orange-500 sm:text-3xl"
-            >
+            <span class="text-xs font-semibold uppercase text-muted-foreground sm:text-sm">
+              Carga em Rodovias
+            </span>
+            <div class="mt-0.5 font-mono text-2xl font-black text-orange-500 sm:text-3xl">
               65.4%
             </div>
-            <span class="text-[11px] text-muted-foreground"
-              >Subordinação ao frete rodoviário</span
-            >
+            <span class="text-xs text-muted-foreground sm:text-sm">
+              Subordinação ao frete rodoviário
+            </span>
           </div>
         </div>
       </div>
@@ -124,72 +102,66 @@ const avgOverallScore = (
   <!-- 8 Pillars Quick Overview Grid -->
   <section class="border-b border-border bg-muted/20 py-10">
     <div class="container mx-auto px-4 sm:px-6">
-      <div
-        class="mb-6 flex flex-col justify-between gap-2 sm:flex-row sm:items-end"
-      >
+      <div class="mb-6 flex flex-col justify-between gap-2 sm:flex-row sm:items-end">
         <div>
-          <h2
-            class="text-xl font-bold tracking-tight text-foreground sm:text-2xl"
-          >
+          <h2 class="text-2xl font-black tracking-tight text-foreground sm:text-3xl">
             Os 8 Pilares da Soberania Nacional
           </h2>
-          <p class="text-xs text-muted-foreground sm:text-sm">
+          <p class="text-sm text-muted-foreground sm:text-base">
             Clique em qualquer pilar para visualizar suas cadeias produtivas ou
             filtrar na tabela abaixo
           </p>
         </div>
         <a
           href={`${baseUrl}/pilares`}
-          class="flex items-center gap-1 self-start text-xs font-bold text-primary hover:underline sm:self-auto"
+          class="flex items-center gap-1.5 self-start text-sm font-bold text-primary hover:underline sm:self-auto"
         >
           <span>Ver todos os pilares em detalhe</span>
-          <ArrowRight className="size-3.5" />
+          <ArrowRight className="size-4" />
         </a>
       </div>
 
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
-        {
-          atlasData.pillars.map((pillar) => (
-            <a
-              href={`${baseUrl}/pilares/${pillar.id}`}
-              class="group flex flex-col justify-between rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/50 hover:shadow-md"
-            >
-              <div>
-                <div class="mb-2 flex items-center justify-between gap-2">
-                  <div class="flex size-9 items-center justify-center rounded-lg border border-primary/20 bg-primary/10 text-primary transition-transform group-hover:scale-105">
-                    <DynamicIcon name={pillar.icon} className="size-5" />
-                  </div>
-                  <Badge
-                    variant={
-                      pillar.overallScore >= 80
-                        ? 'critical'
-                        : pillar.overallScore >= 60
-                          ? 'high'
-                          : 'moderate'
-                    }
-                    className="font-mono text-xs"
-                  >
-                    ICVS {pillar.overallScore.toFixed(1)}
-                  </Badge>
+        {atlasData.pillars.map((pillar) => (
+          <a
+            href={`${baseUrl}/pilares/${pillar.id}`}
+            class="group flex flex-col justify-between rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/50 hover:shadow-md"
+          >
+            <div>
+              <div class="mb-2 flex items-center justify-between gap-2">
+                <div class="flex size-9 items-center justify-center rounded-lg border border-primary/20 bg-primary/10 text-primary transition-transform group-hover:scale-105">
+                  <DynamicIcon name={pillar.icon} className="size-5" />
                 </div>
-
-                <h3 class="text-base font-bold text-foreground transition-colors group-hover:text-primary">
-                  {pillar.name}
-                </h3>
-                <p class="mt-1 line-clamp-2 text-xs text-muted-foreground">
-                  {pillar.tagline}
-                </p>
+                <Badge
+                  variant={
+                    pillar.overallScore >= 80
+                      ? 'critical'
+                      : pillar.overallScore >= 60
+                        ? 'high'
+                        : 'moderate'
+                  }
+                  className="font-mono text-xs font-semibold"
+                >
+                  ICVS {pillar.overallScore.toFixed(1)}
+                </Badge>
               </div>
 
-              <div class="mt-4 flex items-center justify-between border-t border-border/50 pt-3 text-[11px] text-muted-foreground">
-                <span>{pillar.chains.length} cadeia(s) mapeada(s)</span>
-                <span class="flex items-center gap-0.5 font-semibold text-primary transition-transform group-hover:translate-x-0.5">
-                  Explorar <ArrowRight className="size-3" />
-                </span>
-              </div>
-            </a>
-          ))
-        }
+              <h3 class="text-base font-bold text-foreground transition-colors group-hover:text-primary sm:text-lg">
+                {pillar.name}
+              </h3>
+              <p class="mt-1 line-clamp-2 text-xs text-muted-foreground sm:text-sm">
+                {pillar.tagline}
+              </p>
+            </div>
+
+            <div class="mt-4 flex items-center justify-between border-t border-border/50 pt-3 text-xs text-muted-foreground sm:text-sm">
+              <span>{pillar.chains.length} cadeia(s) mapeada(s)</span>
+              <span class="flex items-center gap-0.5 font-semibold text-primary transition-transform group-hover:translate-x-0.5">
+                Explorar <ArrowRight className="size-3.5" />
+              </span>
+            </div>
+          </a>
+        ))}
       </div>
     </div>
   </section>
@@ -201,15 +173,13 @@ const avgOverallScore = (
         <!-- Radar Chart -->
         <div class="shadow-xs rounded-2xl border border-border bg-card p-6">
           <div class="mb-3">
-            <span
-              class="text-xs font-bold uppercase tracking-wider text-primary"
-            >
+            <span class="text-xs font-bold uppercase tracking-wider text-primary sm:text-sm">
               Comparativo Multidimensional
             </span>
-            <h3 class="text-lg font-bold text-foreground">
+            <h3 class="text-xl font-bold text-foreground">
               Índice de Vulnerabilidade nos 8 Pilares
             </h3>
-            <p class="mt-0.5 text-xs text-muted-foreground">
+            <p class="mt-0.5 text-xs text-muted-foreground sm:text-sm">
               Comparação simultânea entre o ICVS final e a vulnerabilidade ao
               modal rodoviário
             </p>
@@ -220,15 +190,13 @@ const avgOverallScore = (
         <!-- Criticality Distribution -->
         <div class="shadow-xs rounded-2xl border border-border bg-card p-6">
           <div class="mb-3">
-            <span
-              class="text-xs font-bold uppercase tracking-wider text-red-500"
-            >
+            <span class="text-xs font-bold uppercase tracking-wider text-red-500 sm:text-sm">
               Distribuição por Nível de Alerta
             </span>
-            <h3 class="text-lg font-bold text-foreground">
+            <h3 class="text-xl font-bold text-foreground">
               Gravidade das Etapas Industriais Avaliadas
             </h3>
-            <p class="mt-0.5 text-xs text-muted-foreground">
+            <p class="mt-0.5 text-xs text-muted-foreground sm:text-sm">
               Quantitativo de elos produtivos categorizados nas 4 faixas de
               risco do ICVS
             </p>
@@ -240,24 +208,18 @@ const avgOverallScore = (
   </section>
 
   <!-- Logistics & Diesel Vulnerability Callout Banner -->
-  <section
-    class="border-b border-border bg-gradient-to-r from-amber-500/10 via-red-500/10 to-transparent py-8"
-  >
+  <section class="border-b border-border bg-gradient-to-r from-amber-500/10 via-red-500/10 to-transparent py-8">
     <div class="container mx-auto px-4 sm:px-6">
-      <div
-        class="flex flex-col items-center justify-between gap-6 rounded-2xl border border-amber-500/30 bg-card/90 p-6 shadow-md md:flex-row"
-      >
+      <div class="flex flex-col items-center justify-between gap-6 rounded-2xl border border-amber-500/30 bg-card/90 p-6 shadow-md md:flex-row">
         <div class="max-w-2xl space-y-2">
-          <div
-            class="inline-flex items-center gap-1.5 rounded-full bg-amber-500/20 px-2.5 py-0.5 text-xs font-bold text-amber-700 dark:text-amber-300"
-          >
+          <div class="inline-flex items-center gap-1.5 rounded-full bg-amber-500/20 px-2.5 py-0.5 text-xs font-bold text-amber-700 dark:text-amber-300 sm:text-sm">
             <Flame className="size-3.5" />
             <span>Vulnerabilidade Estrutural Crítica</span>
           </div>
           <h3 class="text-xl font-bold text-foreground sm:text-2xl">
             O Círculo Vicioso do Rodoviarismo e o Déficit de Diesel S10
           </h3>
-          <p class="text-xs leading-relaxed text-muted-foreground sm:text-sm">
+          <p class="text-sm leading-relaxed text-muted-foreground sm:text-base">
             Mais de 65% de toda carga brasileira anda sobre rodas, queimando
             diesel que precisamos importar da Rússia e dos EUA. Uma paralisação
             de combustível paralisa a colheita, os frigoríficos, a água tratada
@@ -266,7 +228,7 @@ const avgOverallScore = (
         </div>
         <a
           href={`${baseUrl}/logistica`}
-          class="inline-flex h-11 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-amber-600 px-6 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-amber-700"
+          class="inline-flex h-11 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-amber-600 px-6 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-amber-700 sm:text-base"
         >
           <span>Análise do Nó Logístico</span>
           <ArrowRight className="size-4" />
@@ -279,15 +241,13 @@ const avgOverallScore = (
   <section class="bg-background py-12">
     <div class="container mx-auto px-4 sm:px-6">
       <div class="mb-6">
-        <span class="text-xs font-bold uppercase tracking-wider text-primary">
+        <span class="text-xs font-bold uppercase tracking-wider text-primary sm:text-sm">
           Explorador Interativo
         </span>
-        <h2
-          class="text-2xl font-black tracking-tight text-foreground sm:text-3xl"
-        >
+        <h2 class="text-2xl font-black tracking-tight text-foreground sm:text-3xl">
           Painel de Filtragem e Análise por Etapa Produtiva
         </h2>
-        <p class="mt-1 max-w-2xl text-xs text-muted-foreground sm:text-sm">
+        <p class="mt-1 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
           Filtre por pilar, nível de criticidade, parceiro comercial
           internacional (importação/exportação) e risco de abastecimento de
           diesel. Clique em qualquer etapa para abrir o relatório analítico

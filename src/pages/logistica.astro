@@ -30,18 +30,14 @@ const baseUrl = '/atlasdasoberania';
   <div class="container mx-auto space-y-12 px-4 py-10 sm:px-6">
     <!-- Header -->
     <div class="max-w-3xl space-y-3">
-      <div
-        class="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-xs font-bold text-amber-700 dark:text-amber-400"
-      >
+      <div class="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-xs font-bold text-amber-700 dark:text-amber-400 sm:text-sm">
         <Flame className="size-3.5" />
         <span>Gargalo Sistêmico Transversal</span>
       </div>
-      <h1
-        class="text-3xl font-black leading-tight tracking-tight text-foreground sm:text-5xl"
-      >
+      <h1 class="text-3xl font-black leading-tight tracking-tight text-foreground sm:text-5xl">
         O Círculo Vicioso do Rodoviarismo e a Dependência de Diesel
       </h1>
-      <p class="text-sm leading-relaxed text-muted-foreground sm:text-base">
+      <p class="text-base leading-relaxed text-muted-foreground sm:text-lg">
         O maior paradoxo logístico do Brasil: transportamos mais de dois terços
         de toda a riqueza nacional sobre carretas rodoviárias, enquanto nosso
         parque de refino é incapaz de fornecer o óleo Diesel S10 necessário para
@@ -51,68 +47,50 @@ const baseUrl = '/atlasdasoberania';
 
     <!-- Key Statistics Grid -->
     <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
-      <div
-        class="shadow-xs space-y-1 rounded-2xl border border-amber-500/30 bg-amber-500/5 p-4 sm:p-5"
-      >
-        <span
-          class="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400"
-        >
+      <div class="shadow-xs space-y-1.5 rounded-2xl border border-amber-500/30 bg-amber-500/5 p-4 sm:p-5">
+        <span class="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 sm:text-sm">
           <Truck className="size-4" /> Modal Rodoviário
         </span>
         <div class="font-mono text-3xl font-black text-foreground sm:text-4xl">
           {stats.roadShareTonKm}%
         </div>
-        <p class="text-xs text-muted-foreground">
+        <p class="text-xs text-muted-foreground sm:text-sm">
           Da matriz de transporte de cargas (tonelada-quilômetro)
         </p>
       </div>
 
-      <div
-        class="shadow-xs space-y-1 rounded-2xl border border-blue-500/30 bg-blue-500/5 p-4 sm:p-5"
-      >
-        <span
-          class="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400"
-        >
+      <div class="shadow-xs space-y-1.5 rounded-2xl border border-blue-500/30 bg-blue-500/5 p-4 sm:p-5">
+        <span class="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 sm:text-sm">
           <Train className="size-4" /> Modal Ferroviário
         </span>
         <div class="font-mono text-3xl font-black text-foreground sm:text-4xl">
           {stats.railShareTonKm}%
         </div>
-        <p class="text-xs text-muted-foreground">
+        <p class="text-xs text-muted-foreground sm:text-sm">
           Subutilizado e concentrado quase só em minério de ferro
         </p>
       </div>
 
-      <div
-        class="shadow-xs space-y-1 rounded-2xl border border-red-500/30 bg-red-500/5 p-4 sm:p-5"
-      >
-        <span
-          class="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-red-600 dark:text-red-400"
-        >
+      <div class="shadow-xs space-y-1.5 rounded-2xl border border-red-500/30 bg-red-500/5 p-4 sm:p-5">
+        <span class="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-red-600 dark:text-red-400 sm:text-sm">
           <Fuel className="size-4" /> Déficit de Diesel S10
         </span>
-        <div
-          class="font-mono text-3xl font-black text-red-600 dark:text-red-400 sm:text-4xl"
-        >
+        <div class="font-mono text-3xl font-black text-red-600 dark:text-red-400 sm:text-4xl">
           ~{stats.dieselS10ImportDependencePercent}%
         </div>
-        <p class="text-xs text-muted-foreground">
+        <p class="text-xs text-muted-foreground sm:text-sm">
           Do consumo interno importado de refinarias do exterior
         </p>
       </div>
 
-      <div
-        class="shadow-xs space-y-1 rounded-2xl border border-border bg-card p-4 sm:p-5"
-      >
-        <span
-          class="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-muted-foreground"
-        >
+      <div class="shadow-xs space-y-1.5 rounded-2xl border border-border bg-card p-4 sm:p-5">
+        <span class="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-muted-foreground sm:text-sm">
           <TrendingUp className="size-4 text-primary" /> Custo do Frete
         </span>
         <div class="font-mono text-3xl font-black text-foreground sm:text-4xl">
           {stats.freightCostMultiplierRoadVsRail}x
         </div>
-        <p class="text-xs text-muted-foreground">
+        <p class="text-xs text-muted-foreground sm:text-sm">
           Mais caro por tonelada-quilômetro que o transporte sobre trilhos
         </p>
       </div>
@@ -121,17 +99,15 @@ const baseUrl = '/atlasdasoberania';
     <!-- Charts Row -->
     <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
       <!-- Modal Split Pie Chart -->
-      <div
-        class="shadow-xs flex flex-col justify-between rounded-2xl border border-border bg-card p-6"
-      >
+      <div class="shadow-xs flex flex-col justify-between rounded-2xl border border-border bg-card p-6">
         <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-primary">
+          <span class="text-xs font-bold uppercase tracking-wider text-primary sm:text-sm">
             Divisão Modal
           </span>
-          <h3 class="text-base font-bold text-foreground">
+          <h3 class="text-lg font-bold text-foreground">
             Matriz de Transporte de Cargas no Brasil
           </h3>
-          <p class="mt-0.5 text-xs text-muted-foreground">
+          <p class="mt-0.5 text-xs text-muted-foreground sm:text-sm">
             Participação percentual por tonelada útil transportada (TKU)
           </p>
         </div>
@@ -139,44 +115,36 @@ const baseUrl = '/atlasdasoberania';
       </div>
 
       <!-- Diesel S10 Domestic vs Import -->
-      <div
-        class="shadow-xs flex flex-col justify-between rounded-2xl border border-border bg-card p-6"
-      >
+      <div class="shadow-xs flex flex-col justify-between rounded-2xl border border-border bg-card p-6">
         <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-red-500">
+          <span class="text-xs font-bold uppercase tracking-wider text-red-500 sm:text-sm">
             Balanço de Combustíveis (65 bi L/ano)
           </span>
-          <h3 class="text-base font-bold text-foreground">
+          <h3 class="text-lg font-bold text-foreground">
             Produção Nacional vs Importação de Diesel S10
           </h3>
-          <p class="mt-0.5 text-xs text-muted-foreground">
+          <p class="mt-0.5 text-xs text-muted-foreground sm:text-sm">
             Déficit que obriga o Brasil a comprar diesel refinado da Rússia e
             EUA
           </p>
         </div>
         <DieselImportBalanceChart client:visible />
-        <div
-          class="rounded-lg border border-border/50 bg-muted/30 p-2.5 text-xs text-muted-foreground"
-        >
-          <strong>Risco Geopolítico:</strong> 68% do diesel importado vem da Rússia
-          sob risco de sanções secundárias e embargos navais.
+        <div class="rounded-lg border border-border/50 bg-muted/30 p-3 text-xs text-muted-foreground sm:text-sm">
+          <strong>Risco Geopolítico:</strong> 68% do diesel importado vem da
+          Rússia sob risco de sanções secundárias e embargos navais.
         </div>
       </div>
 
       <!-- Freight Cost & Carbon Multiplier -->
-      <div
-        class="shadow-xs flex flex-col justify-between rounded-2xl border border-border bg-card p-6"
-      >
+      <div class="shadow-xs flex flex-col justify-between rounded-2xl border border-border bg-card p-6">
         <div>
-          <span
-            class="text-xs font-bold uppercase tracking-wider text-amber-500"
-          >
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-500 sm:text-sm">
             Eficiência Comparativa
           </span>
-          <h3 class="text-base font-bold text-foreground">
+          <h3 class="text-lg font-bold text-foreground">
             Custo e Emissões: Rodovia vs Ferrovia
           </h3>
-          <p class="mt-0.5 text-xs text-muted-foreground">
+          <p class="mt-0.5 text-xs text-muted-foreground sm:text-sm">
             O peso do "Custo Brasil" por insistir no asfalto em longas
             distâncias
           </p>
@@ -188,120 +156,111 @@ const baseUrl = '/atlasdasoberania';
     <!-- The 4 Stages of the Trap -->
     <div class="space-y-4">
       <div class="border-b border-border pb-3">
-        <h2 class="text-2xl font-bold text-foreground">
+        <h2 class="text-2xl font-bold text-foreground sm:text-3xl">
           A Anatomia da Armadilha: Como Chegamos Aqui?
         </h2>
-        <p class="text-xs text-muted-foreground">
+        <p class="text-sm text-muted-foreground sm:text-base">
           Compreenda a sequência histórica e de política pública que consolidou
           o nó rodoviário
         </p>
       </div>
 
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-        {
-          diagnosticStages.map((stageText, idx) => {
-            const [title, ...descParts] = stageText.split(': ');
-            const desc = descParts.join(': ');
-            return (
-              <div class="space-y-2 rounded-2xl border border-border bg-card p-5 transition-colors hover:border-primary/40">
-                <span class="font-mono text-xs font-bold uppercase text-primary">
-                  Fase #{idx + 1}
-                </span>
-                <h3 class="text-base font-bold text-foreground">{title}</h3>
-                <p class="text-xs leading-relaxed text-muted-foreground">
-                  {desc}
-                </p>
-              </div>
-            );
-          })
-        }
+        {diagnosticStages.map((stageText, idx) => {
+          const [title, ...descParts] = stageText.split(': ');
+          const desc = descParts.join(': ');
+          return (
+            <div class="space-y-2 rounded-2xl border border-border bg-card p-5 transition-colors hover:border-primary/40">
+              <span class="font-mono text-xs font-bold uppercase text-primary sm:text-sm">
+                Fase #{idx + 1}
+              </span>
+              <h3 class="text-lg font-bold text-foreground">{title}</h3>
+              <p class="text-sm leading-relaxed text-muted-foreground">
+                {desc}
+              </p>
+            </div>
+          );
+        })}
       </div>
     </div>
 
     <!-- Domino Effect Across the 8 Pillars -->
     <div class="space-y-4">
       <div class="border-b border-border pb-3">
-        <span
-          class="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-red-500"
-        >
+        <span class="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-red-500 sm:text-sm">
           <AlertTriangle className="size-4" /> Efeito Cascata
         </span>
-        <h2 class="text-2xl font-bold text-foreground">
+        <h2 class="text-2xl font-bold text-foreground sm:text-3xl">
           O Que Acontece se o Diesel Importado Faltar?
         </h2>
-        <p class="text-xs text-muted-foreground">
+        <p class="text-sm text-muted-foreground sm:text-base">
           O impacto imediato de uma crise de combustíveis em cada um dos 8
           pilares da República
         </p>
       </div>
 
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-        {
-          analysisPillarsImpact.map((item) => (
-            <div class="flex flex-col justify-between space-y-2 rounded-xl border border-border bg-card p-4">
-              <div>
-                <div class="mb-1.5 flex items-center justify-between">
-                  <span class="text-xs font-bold text-foreground">
-                    {item.pillarName}
-                  </span>
-                  <Badge variant="critical" className="text-[10px]">
-                    Risco Vital
-                  </Badge>
-                </div>
-                <p class="text-xs leading-relaxed text-muted-foreground">
-                  {item.riskDiagnosis}
-                </p>
+        {analysisPillarsImpact.map((item) => (
+          <div class="flex flex-col justify-between space-y-2 rounded-xl border border-border bg-card p-4">
+            <div>
+              <div class="mb-1.5 flex items-center justify-between">
+                <span class="text-sm font-bold text-foreground">
+                  {item.pillarName}
+                </span>
+                <Badge variant="critical" className="text-xs font-semibold">
+                  Risco Vital
+                </Badge>
               </div>
-              <a
-                href={`${baseUrl}/pilares/${item.pillarId}`}
-                class="flex items-center gap-1 border-t border-border/50 pt-2 text-[11px] font-semibold text-primary hover:underline"
-              >
-                Ver cadeia de {item.pillarName}{' '}
-                <ArrowRight className="size-3" />
-              </a>
+              <p class="text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                {item.riskDiagnosis}
+              </p>
             </div>
-          ))
-        }
+            <a
+              href={`${baseUrl}/pilares/${item.pillarId}`}
+              class="flex items-center gap-1 border-t border-border/50 pt-2 text-xs font-semibold text-primary hover:underline sm:text-sm"
+            >
+              Ver cadeia de {item.pillarName}{' '}
+              <ArrowRight className="size-3.5" />
+            </a>
+          </div>
+        ))}
       </div>
     </div>
 
     <!-- Solutions Roadmap -->
-    <div
-      class="space-y-4 rounded-2xl border border-primary/30 bg-primary/5 p-6 sm:p-8"
-    >
-      <h3 class="text-xl font-bold text-foreground">
+    <div class="space-y-4 rounded-2xl border border-primary/30 bg-primary/5 p-6 sm:p-8">
+      <h3 class="text-2xl font-bold text-foreground">
         Caminhos Estratégicos para a Superação do Nó do Diesel
       </h3>
-      <div
-        class="grid grid-cols-1 gap-4 text-xs text-foreground/90 md:grid-cols-3"
-      >
-        <div class="space-y-1.5 rounded-xl border border-border bg-card p-4">
-          <div class="flex items-center gap-1.5 font-bold text-primary">
+      <div class="grid grid-cols-1 gap-4 text-xs text-foreground/90 md:grid-cols-3">
+        <div class="space-y-2 rounded-xl border border-border bg-card p-4">
+          <div class="flex items-center gap-1.5 text-base font-bold text-primary">
             <Train className="size-4" /> 1. Ferrogrão, FIOL e FICO
           </div>
-          <p class="text-muted-foreground">
+          <p class="text-sm leading-relaxed text-muted-foreground">
             Conclusão das ferrovias de integração continental para transferir a
             safra de grãos e fertilizantes do Centro-Oeste para os trilhos,
             economizando bilhões de litros de diesel por ano.
           </p>
         </div>
 
-        <div class="space-y-1.5 rounded-xl border border-border bg-card p-4">
-          <div class="flex items-center gap-1.5 font-bold text-primary">
-            <Fuel className="size-4" /> 2. Autossuficiência em Refino (Rnest e HVO)
+        <div class="space-y-2 rounded-xl border border-border bg-card p-4">
+          <div class="flex items-center gap-1.5 text-base font-bold text-primary">
+            <Fuel className="size-4" /> 2. Autossuficiência em Refino (Rnest e
+            HVO)
           </div>
-          <p class="text-muted-foreground">
+          <p class="text-sm leading-relaxed text-muted-foreground">
             Conclusão do Trem 2 da Refinaria Abreu e Lima (Rnest) e
             investimentos em unidades de Diesel Verde (HVO) a partir de soja e
             gorduras, eliminando a dependência de diesel russo e americano.
           </p>
         </div>
 
-        <div class="space-y-1.5 rounded-xl border border-border bg-card p-4">
-          <div class="flex items-center gap-1.5 font-bold text-primary">
+        <div class="space-y-2 rounded-xl border border-border bg-card p-4">
+          <div class="flex items-center gap-1.5 text-base font-bold text-primary">
             <Ship className="size-4" /> 3. Cabotagem e Biometano
           </div>
-          <p class="text-muted-foreground">
+          <p class="text-sm leading-relaxed text-muted-foreground">
             Aproveitamento da costa navegável de mais de 7.000 km com incentivo
             à cabotagem marítima e conversão de frotas agrícolas para biometano
             produzido da vinhaça de usinas de cana.

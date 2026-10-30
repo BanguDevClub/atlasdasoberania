@@ -66,7 +66,7 @@ export function CriticalityDistributionChart() {
           />
           <XAxis
             type="number"
-            tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 12 }}
+            tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 13 }}
             domain={[0, 'dataMax + 2']}
           />
           <YAxis
@@ -74,10 +74,10 @@ export function CriticalityDistributionChart() {
             dataKey="name"
             tick={{
               fill: 'hsl(var(--foreground))',
-              fontSize: 11,
+              fontSize: 12,
               fontWeight: 500,
             }}
-            width={160}
+            width={170}
           />
           <Tooltip
             cursor={{ fill: 'hsl(var(--muted)/0.3)' }}
@@ -86,7 +86,7 @@ export function CriticalityDistributionChart() {
               borderColor: 'hsl(var(--border))',
               borderRadius: '0.75rem',
               color: 'hsl(var(--card-foreground))',
-              fontSize: '12px',
+              fontSize: '13px',
             }}
             formatter={(value: any) => [`${value} etapas avaliadas`, 'Total']}
           />

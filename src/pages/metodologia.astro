@@ -16,18 +16,14 @@ const { methodology, sources } = atlasData;
   <div class="container mx-auto space-y-12 px-4 py-10 sm:px-6">
     <!-- Header -->
     <div class="max-w-3xl space-y-3">
-      <div
-        class="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-bold text-primary"
-      >
+      <div class="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-bold text-primary sm:text-sm">
         <Scale className="size-3.5" />
         <span>Rigor Analítico e Quantitativo</span>
       </div>
-      <h1
-        class="text-3xl font-black leading-tight tracking-tight text-foreground sm:text-5xl"
-      >
+      <h1 class="text-3xl font-black leading-tight tracking-tight text-foreground sm:text-5xl">
         Metodologia de Cálculo do ICVS & Fontes Oficiais
       </h1>
-      <p class="text-sm leading-relaxed text-muted-foreground sm:text-base">
+      <p class="text-base leading-relaxed text-muted-foreground sm:text-lg">
         O Índice Composto de Criticidade e Vulnerabilidade da Soberania (ICVS) é
         uma metodologia analítica padronizada (0 a 100) que quantifica a
         exposição estratégica de cada elo produtivo das cadeias industriais
@@ -37,27 +33,23 @@ const { methodology, sources } = atlasData;
     </div>
 
     <!-- Mathematical Formula Section with KaTeX -->
-    <div
-      class="space-y-6 rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8"
-    >
+    <div class="space-y-6 rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
       <div class="border-b border-border/60 pb-4">
-        <span class="text-xs font-bold uppercase tracking-wider text-primary">
+        <span class="text-xs font-bold uppercase tracking-wider text-primary sm:text-sm">
           Formulação Matemática
         </span>
-        <h2 class="text-xl font-bold text-foreground sm:text-2xl">
+        <h2 class="text-2xl font-bold text-foreground sm:text-3xl">
           Equação Geral Ponderada do ICVS
         </h2>
-        <p class="mt-0.5 text-xs text-muted-foreground">
+        <p class="mt-0.5 text-xs text-muted-foreground sm:text-sm">
           O índice composto é obtido pela média linearmente ponderada das 5
           dimensões normalizadas no intervalo [0, 100].
         </p>
       </div>
 
       <!-- KaTeX Display Formula -->
-      <div
-        class="flex flex-col items-center justify-center rounded-xl border border-border bg-muted/40 p-6 text-center"
-      >
-        <div class="mb-2 font-mono text-xs text-muted-foreground">
+      <div class="flex flex-col items-center justify-center rounded-xl border border-border bg-muted/40 p-6 text-center">
+        <div class="mb-2 font-mono text-xs font-medium text-muted-foreground sm:text-sm">
           Definição Algébrica
         </div>
         <KatexFormula
@@ -67,23 +59,27 @@ const { methodology, sources } = atlasData;
 
         <div class="my-4 w-full max-w-md border-t border-border/60"></div>
 
-        <div class="mb-2 font-mono text-xs text-muted-foreground">
+        <div class="mb-2 font-mono text-xs font-medium text-muted-foreground sm:text-sm">
           Coeficientes e Pesos Normalizados
         </div>
         <KatexFormula
           client:load
           formula="\\mathrm{ICVS} = 0.25 \\cdot D_{ext} + 0.20 \\cdot C_{geo} + 0.20 \\cdot T_{sub} + 0.20 \\cdot I_{sis} + 0.15 \\cdot V_{log}"
         />
-        <div class="mt-2 text-[11px] text-muted-foreground">
-          Onde <KatexFormula
+        <div class="mt-2 text-xs text-muted-foreground sm:text-sm">
+          Onde{' '}
+          <KatexFormula
             client:load
             displayMode={false}
             formula="\\sum_{i=1}^5 w_i = 1.00"
-          /> e <KatexFormula
+          />{' '}
+          e{' '}
+          <KatexFormula
             client:load
             displayMode={false}
             formula="\\forall D_i \\in [0, 100]"
-          />.
+          />
+          .
         </div>
       </div>
     </div>
@@ -91,96 +87,94 @@ const { methodology, sources } = atlasData;
     <!-- 5 Dimensions Detailed Breakdown -->
     <div class="space-y-4">
       <div class="border-b border-border pb-3">
-        <h2 class="text-xl font-bold text-foreground sm:text-2xl">
+        <h2 class="text-2xl font-bold text-foreground sm:text-3xl">
           As 5 Dimensões Estratégicas Avaliadas
         </h2>
-        <p class="text-xs text-muted-foreground">
+        <p class="text-sm text-muted-foreground sm:text-base">
           Critérios objetivos de pontuação de 0 a 100 para cada componente da
           fórmula
         </p>
       </div>
 
       <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {
-          methodology.dimensions.map((dim, idx) => (
-            <div class="flex flex-col justify-between space-y-3 rounded-2xl border border-border bg-card p-5">
-              <div class="space-y-2">
-                <div class="flex items-center justify-between">
-                  <span class="rounded-md bg-primary/10 px-2 py-0.5 font-mono text-xs font-bold text-primary">
-                    {dim.symbol} (Peso {dim.weight * 100}%)
-                  </span>
-                  <span class="font-mono text-xs text-muted-foreground">
-                    Dimensão #{idx + 1}
-                  </span>
-                </div>
-                <h3 class="text-base font-bold text-foreground">{dim.name}</h3>
-                <p class="text-xs leading-relaxed text-muted-foreground">
-                  {dim.description}
-                </p>
+        {methodology.dimensions.map((dim, idx) => (
+          <div class="flex flex-col justify-between space-y-3 rounded-2xl border border-border bg-card p-5">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="rounded-md bg-primary/10 px-2 py-0.5 font-mono text-xs font-bold text-primary sm:text-sm">
+                  {dim.symbol} (Peso {dim.weight * 100}%)
+                </span>
+                <span class="font-mono text-xs text-muted-foreground sm:text-sm">
+                  Dimensão #{idx + 1}
+                </span>
               </div>
-
-              <div class="rounded-lg border-t border-border/60 bg-muted/20 p-2.5 pt-3 text-xs text-foreground/80">
-                <strong class="mb-1 block text-[11px] uppercase tracking-wider text-primary">
-                  Critério de Graduação:
-                </strong>
-                {dim.guidelines}
-              </div>
+              <h3 class="text-base font-bold text-foreground sm:text-lg">
+                {dim.name}
+              </h3>
+              <p class="text-sm leading-relaxed text-muted-foreground">
+                {dim.description}
+              </p>
             </div>
-          ))
-        }
+
+            <div class="rounded-lg border-t border-border/60 bg-muted/20 p-3 text-xs leading-relaxed text-foreground/80 sm:text-sm">
+              <strong class="mb-1 block text-xs font-bold uppercase tracking-wider text-primary">
+                Critério de Graduação:
+              </strong>
+              {dim.guidelines}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
 
     <!-- 4 Tiers of Criticality Explained -->
     <div class="space-y-4">
       <div class="border-b border-border pb-3">
-        <h2 class="text-xl font-bold text-foreground sm:text-2xl">
+        <h2 class="text-2xl font-bold text-foreground sm:text-3xl">
           Faixas de Criticidade e Alertas Estratégicos
         </h2>
-        <p class="text-xs text-muted-foreground">
+        <p class="text-sm text-muted-foreground sm:text-base">
           Classificação dos resultados do ICVS e respostas recomendadas para a
           soberania nacional
         </p>
       </div>
 
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {
-          methodology.tiers.map((tier) => (
-            <div class="flex flex-col justify-between space-y-3 rounded-2xl border border-border bg-card p-5">
-              <div>
-                <div class="mb-2 flex items-center justify-between">
-                  <span class="rounded-md bg-muted px-2 py-0.5 font-mono text-xs font-bold text-foreground">
-                    {tier.range[0]} - {tier.range[1]}
-                  </span>
-                  <Badge variant={tier.badge} className="text-[10px]">
-                    {tier.name.split('/')[0]}
-                  </Badge>
-                </div>
-                <h3 class="text-sm font-bold text-foreground">{tier.name}</h3>
-                <p class="mt-1 text-xs leading-relaxed text-muted-foreground">
-                  {tier.description}
-                </p>
+        {methodology.tiers.map((tier) => (
+          <div class="flex flex-col justify-between space-y-3 rounded-2xl border border-border bg-card p-5">
+            <div>
+              <div class="mb-2 flex items-center justify-between">
+                <span class="rounded-md bg-muted px-2 py-0.5 font-mono text-xs font-bold text-foreground sm:text-sm">
+                  {tier.range[0]} - {tier.range[1]}
+                </span>
+                <Badge variant={tier.badge} className="text-xs font-semibold">
+                  {tier.name.split('/')[0]}
+                </Badge>
               </div>
-
-              <div class="rounded-lg border-t border-border/60 bg-muted/20 p-2.5 pt-2 text-[11px] text-foreground/90">
-                <strong class="mb-0.5 block text-[10px] uppercase tracking-wider text-muted-foreground">
-                  Diretriz de Estado:
-                </strong>
-                {tier.implication}
-              </div>
+              <h3 class="text-base font-bold text-foreground">{tier.name}</h3>
+              <p class="mt-1 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                {tier.description}
+              </p>
             </div>
-          ))
-        }
+
+            <div class="rounded-lg border-t border-border/60 bg-muted/20 p-2.5 pt-2 text-xs leading-relaxed text-foreground/90 sm:text-sm">
+              <strong class="mb-0.5 block text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                Diretriz de Estado:
+              </strong>
+              {tier.implication}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
 
     <!-- Interactive Calculator -->
     <div class="space-y-4">
       <div class="border-b border-border pb-3">
-        <h2 class="text-xl font-bold text-foreground sm:text-2xl">
+        <h2 class="text-2xl font-bold text-foreground sm:text-3xl">
           Simulador Interativo do ICVS
         </h2>
-        <p class="text-xs text-muted-foreground">
+        <p class="text-sm text-muted-foreground sm:text-base">
           Altere as variáveis em tempo real para testar cenários hipotéticos de
           dependência ou calcular a pontuação de novas cadeias
         </p>
@@ -194,11 +188,11 @@ const { methodology, sources } = atlasData;
       <div class="border-b border-border pb-3">
         <div class="flex items-center gap-2">
           <Database className="size-5 text-primary" />
-          <h2 class="text-xl font-bold text-foreground sm:text-2xl">
+          <h2 class="text-2xl font-bold text-foreground sm:text-3xl">
             Bases de Dados e Fontes Oficiais Referenciadas
           </h2>
         </div>
-        <p class="text-xs text-muted-foreground">
+        <p class="text-sm text-muted-foreground sm:text-base">
           Todos os dados de importação, balança comercial, refino e logística
           utilizados no Atlas têm rastreabilidade em órgãos públicos nacionais e
           internacionais
@@ -206,40 +200,38 @@ const { methodology, sources } = atlasData;
       </div>
 
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-        {
-          sources.map((source) => (
-            <div class="flex flex-col justify-between space-y-2 rounded-2xl border border-border bg-card p-5 transition-colors hover:border-primary/40">
-              <div>
-                <div class="flex items-start justify-between gap-2">
-                  <span class="font-mono text-xs font-bold text-primary">
-                    {source.id.toUpperCase()} • {source.year}
-                  </span>
-                  {source.url && (
-                    <a
-                      href={source.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground"
-                      title="Acessar base oficial"
-                    >
-                      <span>Link Oficial</span>
-                      <ExternalLink className="size-3" />
-                    </a>
-                  )}
-                </div>
-                <h3 class="mt-1 text-sm font-bold text-foreground">
-                  {source.name}
-                </h3>
-                <p class="mt-0.5 text-xs font-medium text-primary">
-                  {source.organization}
-                </p>
-                <p class="mt-2 text-xs leading-relaxed text-muted-foreground">
-                  {source.description}
-                </p>
+        {sources.map((source) => (
+          <div class="flex flex-col justify-between space-y-2 rounded-2xl border border-border bg-card p-5 transition-colors hover:border-primary/40">
+            <div>
+              <div class="flex items-start justify-between gap-2">
+                <span class="font-mono text-xs font-bold text-primary sm:text-sm">
+                  {source.id.toUpperCase()} • {source.year}
+                </span>
+                {source.url && (
+                  <a
+                    href={source.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex items-center gap-1 text-xs font-medium text-muted-foreground hover:text-foreground sm:text-sm"
+                    title="Acessar base oficial"
+                  >
+                    <span>Link Oficial</span>
+                    <ExternalLink className="size-3.5" />
+                  </a>
+                )}
               </div>
+              <h3 class="mt-1 text-base font-bold text-foreground">
+                {source.name}
+              </h3>
+              <p class="mt-0.5 text-xs font-semibold text-primary sm:text-sm">
+                {source.organization}
+              </p>
+              <p class="mt-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                {source.description}
+              </p>
             </div>
-          ))
-        }
+          </div>
+        ))}
       </div>
     </div>
   </div>

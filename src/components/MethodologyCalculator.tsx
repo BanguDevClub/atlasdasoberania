@@ -53,19 +53,21 @@ export function MethodologyCalculator() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Calculator className="size-5 text-primary" />
-            <CardTitle>Simulador Interativo do ICVS</CardTitle>
+            <CardTitle className="text-xl font-bold sm:text-2xl">
+              Simulador Interativo do ICVS
+            </CardTitle>
           </div>
           <Button
             variant="outline"
             size="sm"
             onClick={resetDefaults}
-            className="gap-1.5 text-xs"
+            className="gap-1.5 text-xs font-semibold sm:text-sm"
           >
             <RefreshCw className="size-3.5" />
             Redefinir Padrões
           </Button>
         </div>
-        <CardDescription>
+        <CardDescription className="text-sm sm:text-base">
           Ajuste as 5 dimensões e pondere os coeficientes para avaliar a
           criticidade de qualquer cadeia industrial ou insumo
         </CardDescription>
@@ -74,40 +76,43 @@ export function MethodologyCalculator() {
         {/* Result banner */}
         <div className="flex flex-col items-center justify-between gap-4 rounded-2xl border border-border bg-muted/40 p-6 sm:flex-row">
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
+            <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground sm:text-sm">
               Índice de Criticidade e Vulnerabilidade da Soberania (ICVS)
             </span>
             <div className="mt-1 flex items-baseline gap-3">
-              <span className="font-mono text-4xl font-black tracking-tight text-foreground sm:text-5xl">
+              <span className="font-mono text-5xl font-black tracking-tight text-foreground sm:text-6xl">
                 {calculatedScore.toFixed(1)}
               </span>
-              <span className="text-sm font-semibold text-muted-foreground">
+              <span className="text-base font-bold text-muted-foreground sm:text-lg">
                 / 100
               </span>
-              <Badge variant={badgeInfo.variant} className="px-3 py-1 text-sm">
+              <Badge
+                variant={badgeInfo.variant}
+                className="px-3.5 py-1 text-sm font-bold sm:text-base"
+              >
                 {badgeInfo.label}
               </Badge>
             </div>
           </div>
-          <div className="max-w-xs text-right text-xs text-muted-foreground">
+          <div className="max-w-xs text-right text-xs font-medium text-muted-foreground sm:text-sm">
             Fórmula: ICVS = {w1}·D + {w2}·C + {w3}·T + {w4}·I + {w5}·V
           </div>
         </div>
 
         {/* Dimension sliders */}
         <div className="space-y-4">
-          <h4 className="text-sm font-bold text-foreground">
+          <h4 className="text-base font-bold text-foreground sm:text-lg">
             1. Pontuação das Dimensões (0 a 100)
           </h4>
 
           {/* D_ext */}
-          <div className="space-y-1.5 rounded-xl border border-border bg-card p-3">
-            <div className="flex items-center justify-between text-xs">
+          <div className="space-y-2 rounded-xl border border-border bg-card p-4">
+            <div className="flex items-center justify-between text-sm">
               <label className="font-semibold text-foreground">
                 D_ext: Dependência Externa e Coeficiente de Importação (Peso{' '}
                 {w1 * 100}%)
               </label>
-              <span className="font-mono font-bold text-primary">
+              <span className="font-mono text-base font-bold text-primary">
                 {extDependence}
               </span>
             </div>
@@ -119,20 +124,20 @@ export function MethodologyCalculator() {
               onChange={(e) => setExtDependence(Number(e.target.value))}
               className="w-full cursor-pointer accent-primary"
             />
-            <div className="flex justify-between text-[10px] text-muted-foreground">
+            <div className="flex justify-between text-xs text-muted-foreground">
               <span>0 (Autossuficiência soberana)</span>
               <span>100 (100% importado sem produção local)</span>
             </div>
           </div>
 
           {/* C_geo */}
-          <div className="space-y-1.5 rounded-xl border border-border bg-card p-3">
-            <div className="flex items-center justify-between text-xs">
+          <div className="space-y-2 rounded-xl border border-border bg-card p-4">
+            <div className="flex items-center justify-between text-sm">
               <label className="font-semibold text-foreground">
                 C_geo: Concentração Geopolítica e Risco de Fornecedor (Peso{' '}
                 {w2 * 100}%)
               </label>
-              <span className="font-mono font-bold text-amber-500">
+              <span className="font-mono text-base font-bold text-amber-500">
                 {geoConcentration}
               </span>
             </div>
@@ -144,20 +149,20 @@ export function MethodologyCalculator() {
               onChange={(e) => setGeoConcentration(Number(e.target.value))}
               className="w-full cursor-pointer accent-amber-500"
             />
-            <div className="flex justify-between text-[10px] text-muted-foreground">
+            <div className="flex justify-between text-xs text-muted-foreground">
               <span>0 (Mercado global pulverizado)</span>
               <span>100 (Monopólio/Oligopólio em zona de guerra)</span>
             </div>
           </div>
 
           {/* T_sub */}
-          <div className="space-y-1.5 rounded-xl border border-border bg-card p-3">
-            <div className="flex items-center justify-between text-xs">
+          <div className="space-y-2 rounded-xl border border-border bg-card p-4">
+            <div className="flex items-center justify-between text-sm">
               <label className="font-semibold text-foreground">
                 T_sub: Barreira Tecnológica e Tempo de Substituição (Peso{' '}
                 {w3 * 100}%)
               </label>
-              <span className="font-mono font-bold text-orange-500">
+              <span className="font-mono text-base font-bold text-orange-500">
                 {substitutabilityTime}
               </span>
             </div>
@@ -169,19 +174,19 @@ export function MethodologyCalculator() {
               onChange={(e) => setSubstitutabilityTime(Number(e.target.value))}
               className="w-full cursor-pointer accent-orange-500"
             />
-            <div className="flex justify-between text-[10px] text-muted-foreground">
+            <div className="flex justify-between text-xs text-muted-foreground">
               <span>0 (Substituível em menos de 6 meses)</span>
               <span>100 (&gt; 10 anos e bilhões de dólares)</span>
             </div>
           </div>
 
           {/* I_sis */}
-          <div className="space-y-1.5 rounded-xl border border-border bg-card p-3">
-            <div className="flex items-center justify-between text-xs">
+          <div className="space-y-2 rounded-xl border border-border bg-card p-4">
+            <div className="flex items-center justify-between text-sm">
               <label className="font-semibold text-foreground">
                 I_sis: Impacto Sistêmico e Efeito Cascata (Peso {w4 * 100}%)
               </label>
-              <span className="font-mono font-bold text-rose-500">
+              <span className="font-mono text-base font-bold text-rose-500">
                 {systemicImpact}
               </span>
             </div>
@@ -193,20 +198,20 @@ export function MethodologyCalculator() {
               onChange={(e) => setSystemicImpact(Number(e.target.value))}
               className="w-full cursor-pointer accent-rose-500"
             />
-            <div className="flex justify-between text-[10px] text-muted-foreground">
+            <div className="flex justify-between text-xs text-muted-foreground">
               <span>0 (Impacto isolado e secundário)</span>
               <span>100 (Paralisia imediata de água, alimentos ou defesa)</span>
             </div>
           </div>
 
           {/* V_log */}
-          <div className="space-y-1.5 rounded-xl border border-border bg-card p-3">
-            <div className="flex items-center justify-between text-xs">
+          <div className="space-y-2 rounded-xl border border-border bg-card p-4">
+            <div className="flex items-center justify-between text-sm">
               <label className="font-semibold text-foreground">
                 V_log: Vulnerabilidade Logística e ao Diesel S10 (Peso{' '}
                 {w5 * 100}%)
               </label>
-              <span className="font-mono font-bold text-red-500">
+              <span className="font-mono text-base font-bold text-red-500">
                 {logisticsVulnerability}
               </span>
             </div>
@@ -220,7 +225,7 @@ export function MethodologyCalculator() {
               }
               className="w-full cursor-pointer accent-red-500"
             />
-            <div className="flex justify-between text-[10px] text-muted-foreground">
+            <div className="flex justify-between text-xs text-muted-foreground">
               <span>0 (Dutos e ferrovias eletrificadas)</span>
               <span>100 (100% carretas rodoviárias a diesel importado)</span>
             </div>

@@ -394,38 +394,38 @@ export function InteractiveExplorer() {
                       ICVS: {stage.scores.finalScore.toFixed(1)}
                     </Badge>
                   </div>
-                  <CardTitle className="line-clamp-1 text-base font-bold transition-colors group-hover:text-primary">
+                  <CardTitle className="line-clamp-1 text-lg font-bold transition-colors group-hover:text-primary">
                     {stage.name}
                   </CardTitle>
-                  <CardDescription className="mt-1 line-clamp-2 text-xs">
+                  <CardDescription className="mt-1 line-clamp-2 text-sm leading-relaxed">
                     {stage.summary}
                   </CardDescription>
                 </CardHeader>
 
-                <CardContent className="space-y-3.5 p-5 pt-0">
+                <CardContent className="space-y-4 p-5 pt-0">
                   {/* Scores miniature */}
                   <div className="grid grid-cols-3 gap-2 rounded-lg border border-border/50 bg-muted/40 p-2.5 text-center text-xs">
                     <div>
-                      <div className="text-[10px] text-muted-foreground">
+                      <div className="text-xs text-muted-foreground">
                         Dep. Externa
                       </div>
-                      <div className="font-mono font-bold text-red-500">
+                      <div className="font-mono text-sm font-bold text-red-500">
                         {stage.scores.extDependence.toFixed(0)}
                       </div>
                     </div>
                     <div>
-                      <div className="text-[10px] text-muted-foreground">
+                      <div className="text-xs text-muted-foreground">
                         Imp. Sistêmico
                       </div>
-                      <div className="font-mono font-bold text-amber-500">
+                      <div className="font-mono text-sm font-bold text-amber-500">
                         {stage.scores.systemicImpact.toFixed(0)}
                       </div>
                     </div>
                     <div>
-                      <div className="text-[10px] text-muted-foreground">
+                      <div className="text-xs text-muted-foreground">
                         Vuln. Logística
                       </div>
-                      <div className="font-mono font-bold text-orange-500">
+                      <div className="font-mono text-sm font-bold text-orange-500">
                         {stage.scores.logisticsVulnerability.toFixed(0)}
                       </div>
                     </div>
@@ -433,19 +433,19 @@ export function InteractiveExplorer() {
 
                   {/* Top Partners */}
                   <div>
-                    <span className="mb-1 block text-[11px] font-semibold text-muted-foreground">
+                    <span className="mb-1.5 block text-xs font-semibold text-muted-foreground">
                       Principais Origens de Importação:
                     </span>
                     <div className="flex flex-wrap gap-1.5">
                       {stage.importPartners.slice(0, 3).map((partner, pIdx) => (
                         <span
                           key={pIdx}
-                          className="inline-flex items-center gap-1 rounded-md border border-border bg-card px-2 py-0.5 text-xs font-medium"
+                          className="inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-2.5 py-1 text-xs font-medium"
                           title={`${partner.country}: ${partner.sharePercentage}%`}
                         >
-                          <span>{partner.flag}</span>
+                          <span className="text-sm">{partner.flag}</span>
                           <span>{partner.country}</span>
-                          <span className="font-mono text-[10px] text-muted-foreground">
+                          <span className="font-mono text-xs font-semibold text-muted-foreground">
                             {partner.sharePercentage.toFixed(0)}%
                           </span>
                         </span>
@@ -496,18 +496,18 @@ export function InteractiveExplorer() {
       {viewMode === 'table' && (
         <div className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
           <div className="custom-scrollbar overflow-x-auto">
-            <table className="w-full border-collapse text-left text-sm">
+            <table className="w-full border-collapse text-left text-sm sm:text-base">
               <thead>
-                <tr className="border-b border-border bg-muted/60 text-xs font-bold uppercase tracking-wider text-muted-foreground">
-                  <th className="px-4 py-3">Pilar & Etapa</th>
-                  <th className="px-3 py-3">Categoria</th>
-                  <th className="px-3 py-3 text-center">ICVS</th>
-                  <th className="px-3 py-3 text-center">D. Ext</th>
-                  <th className="px-3 py-3 text-center">C. Geo</th>
-                  <th className="px-3 py-3 text-center">Imp. Sist</th>
-                  <th className="px-3 py-3">Parceiros Chave</th>
-                  <th className="px-3 py-3">Modal Rodoviário</th>
-                  <th className="px-4 py-3 text-right">Ação</th>
+                <tr className="border-b border-border bg-muted/60 text-xs font-bold uppercase tracking-wider text-muted-foreground sm:text-sm">
+                  <th className="px-4 py-3.5">Pilar & Etapa</th>
+                  <th className="px-3 py-3.5">Categoria</th>
+                  <th className="px-3 py-3.5 text-center">ICVS</th>
+                  <th className="px-3 py-3.5 text-center">D. Ext</th>
+                  <th className="px-3 py-3.5 text-center">C. Geo</th>
+                  <th className="px-3 py-3.5 text-center">Imp. Sist</th>
+                  <th className="px-3 py-3.5">Parceiros Chave</th>
+                  <th className="px-3 py-3.5">Modal Rodoviário</th>
+                  <th className="px-4 py-3.5 text-right">Ação</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
@@ -519,25 +519,25 @@ export function InteractiveExplorer() {
                       className="cursor-pointer transition-colors hover:bg-muted/40"
                       onClick={() => setSelectedStage(stage)}
                     >
-                      <td className="px-4 py-3">
-                        <div className="flex items-center gap-1.5 font-semibold text-foreground">
+                      <td className="px-4 py-3.5">
+                        <div className="flex items-center gap-2 text-sm font-semibold text-foreground sm:text-base">
                           <DynamicIcon
                             name={stage.pillarIcon}
                             className="size-4 shrink-0 text-primary"
                           />
                           <span>{stage.name}</span>
                         </div>
-                        <div className="mt-0.5 max-w-xs truncate text-xs text-muted-foreground">
+                        <div className="mt-0.5 max-w-sm truncate text-xs text-muted-foreground">
                           {stage.pillarName} • {stage.summary}
                         </div>
                       </td>
-                      <td className="px-3 py-3 text-xs text-muted-foreground">
+                      <td className="px-3 py-3.5 text-xs text-muted-foreground sm:text-sm">
                         {stage.category}
                       </td>
-                      <td className="px-3 py-3 text-center">
+                      <td className="px-3 py-3.5 text-center">
                         <Badge
                           variant={badge.variant}
-                          className="font-mono text-xs font-bold"
+                          className="font-mono text-sm font-bold"
                         >
                           {stage.scores.finalScore.toFixed(1)}
                         </Badge>

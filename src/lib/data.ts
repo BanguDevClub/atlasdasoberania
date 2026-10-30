@@ -62,4 +62,3 @@ export function getStageById(stageId: string):
 export function getSourceById(sourceId: string): SourceReference | undefined {
   return atlasData.sources.find((s) => s.id === sourceId);
 }
-

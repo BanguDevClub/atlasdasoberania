@@ -43,7 +43,7 @@ export function ModalSplitPieChart() {
               borderColor: 'hsl(var(--border))',
               borderRadius: '0.75rem',
               color: 'hsl(var(--card-foreground))',
-              fontSize: '12px',
+              fontSize: '13px',
             }}
             formatter={(value: any) => [
               `${value}% da matriz de carga (TKU)`,
@@ -54,7 +54,7 @@ export function ModalSplitPieChart() {
             verticalAlign="bottom"
             height={36}
             formatter={(value) => (
-              <span className="text-xs font-medium text-foreground">
+              <span className="text-xs font-semibold text-foreground sm:text-sm">
                 {value}
               </span>
             )}
@@ -90,7 +90,7 @@ export function DieselImportBalanceChart() {
           <XAxis
             type="number"
             unit=" bi L"
-            tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 12 }}
+            tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 13 }}
           />
           <YAxis type="category" dataKey="category" hide />
           <Tooltip
@@ -100,7 +100,7 @@ export function DieselImportBalanceChart() {
               borderColor: 'hsl(var(--border))',
               borderRadius: '0.75rem',
               color: 'hsl(var(--card-foreground))',
-              fontSize: '12px',
+              fontSize: '13px',
             }}
           />
           <Bar
@@ -146,13 +146,13 @@ export function FreightEfficiencyComparisonChart() {
             dataKey="modal"
             tick={{
               fill: 'hsl(var(--foreground))',
-              fontSize: 11,
-              fontWeight: 500,
+              fontSize: 12,
+              fontWeight: 600,
             }}
           />
           <YAxis
             unit="x"
-            tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 11 }}
+            tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 12 }}
           />
           <Tooltip
             contentStyle={{
@@ -160,7 +160,7 @@ export function FreightEfficiencyComparisonChart() {
               borderColor: 'hsl(var(--border))',
               borderRadius: '0.75rem',
               color: 'hsl(var(--card-foreground))',
-              fontSize: '12px',
+              fontSize: '13px',
             }}
           />
           <Bar
