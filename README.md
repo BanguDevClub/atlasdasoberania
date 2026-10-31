@@ -17,16 +17,16 @@
 
 O **Atlas da Soberania** expõe um paradoxo central do desenvolvimento nacional: o Brasil é uma das maiores potências agroalimentares e minerais do planeta e ostenta matriz elétrica majoritariamente limpa, mas possui **vulnerabilidades estruturais críticas** em insumos básicos, refino de combustíveis nobres e bens de alta tecnologia.
 
-O projeto diagnostica os **8 pilares vitais** da economia e da segurança nacional:
+O projeto diagnostica os **8 pilares vitais** da economia e da segurança nacional. A versão **1.1.0** do dataset (atualizada em 30/10/2026) revisa os ICVS, as participações de fornecedores e os indicadores de conjuntura com base em ComexStat, ANP, Conab, ANDA, ABSOLAR, IFR, SINISA, ABIEC e TCU.
 
-1. **🌾 Agricultura:** Nutrição vegetal (NPK com 95% de importação de Potássio e 85% de Nitrogenados), defensivos agrícolas (IFAs importados da China/Índia), déficit crônico de silos e escoamento rodoviário.
-2. **🥩 Pecuária:** Dependência de aminoácidos sintéticos industriais (lisina, metionina da China e Europa), insumos farmacêuticos veterinários (IFAs) e cadeia de frio 100% sobre carretas a diesel.
-3. **⚡ Energia:** Inversores solares (99% China) e células fotovoltaicas, automação SCADA e linhas de transmissão UHVDC 800kV operadas por tecnologia estrangeira (State Grid).
-4. **💧 Água e Saneamento:** Produtos químicos essenciais para ETAs (cloro gasoso, hipoclorito e coagulantes PAC) com estoques médios para apenas 3 a 7 dias, além de membranas de filtração importadas e perdas de ~40% na rede física.
-5. **🔥 Combustível e Petróleo:** O paradoxo do Pré-sal — autossuficiência volumétrica em óleo cru aliada a um déficit crônico no refino de **Diesel S10** (20% a 30% importado de Rússia e EUA) e GLP.
+1. **🌾 Agricultura:** Nutrição vegetal (NPK com cerca de 95% de importação de potássio e 88% de nitrogenados), defensivos agrícolas (IFAs importados da China, EUA e Índia), déficit crônico de silos e escoamento rodoviário.
+2. **🥩 Pecuária:** Dependência de aminoácidos sintéticos industriais (lisina, metionina da China, Índia e Europa), insumos farmacêuticos veterinários (IFAs) e cadeia de frio 92% sobre carretas a diesel.
+3. **⚡ Energia:** Cerca de 98% dos módulos fotovoltaicos importados vêm da China (86% no conjunto módulos+inversores), automação SCADA e linhas de transmissão UHVDC 800kV operadas por tecnologia estrangeira (State Grid).
+4. **💧 Água e Saneamento:** Produtos químicos essenciais para ETAs (cloro gasoso, hipoclorito e coagulantes PAC) com estoques médios para apenas 3 a 7 dias, além de membranas de filtração importadas e perdas de 39,5% na rede física.
+5. **🔥 Combustível e Petróleo:** O paradoxo do Pré-sal — autossuficiência volumétrica em óleo cru aliada a um déficit crônico no refino de **Diesel S10** (cerca de 25% importado, sobretudo de Rússia, EUA e Índia) e GLP.
 6. **🏭 Indústria Civil & Bens de Capital:** Encolhimento fabril com importação massiva de centros de usinagem CNC de múltiplos eixos, robôs industriais de 6 eixos (zero fabricantes locais), CLPs e ferramentas de corte.
-7. **🎖️ Indústria Militar & Defesa:** Domínio de armas leves (Taurus/CBC) e montagem de caças Gripen F-39 e cargueiros KC-390, porém com motores/turbinas (GE/Pratt & Whitney) e aviônica sob veto externo (ITAR), além de grave lacuna em mísseis antiaéreos de média/grande altitude.
-8. **💻 Tecnologia & Semicondutores:** Ausência de fundições comerciais de silício sub-micron (dependência de Taiwan/TSMC), processadores x86/ARM e memórias 100% importados, além de mais de 92% dos dados públicos hospedados em hiperscalers norte-americanos (AWS, Azure, GCP).
+7. **🎖️ Indústria Militar & Defesa:** Domínio de armas leves (Taurus/CBC) e montagem de caças Gripen F-39 e cargueiros KC-390, porém com motores/turbinas (GE/Pratt & Whitney) e aviônica sob veto externo (ITAR), além de lacuna operacional em defesa antiaérea de média/grande altitude — o Exército selecionou o EMADS/CAMM-ER em 2025, com entrega prevista para o fim da década.
+8. **💻 Tecnologia & Semicondutores:** Ausência de fundições comerciais de lógica avançada (abaixo de 28 nm) — dependência de Taiwan/TSMC, Coreia do Sul e China —, processadores x86/ARM e memórias praticamente 100% importados, além da concentração de dados e sistemas críticos em hiperscalers norte-americanos (AWS, Azure, GCP).
 
 ---
 
@@ -34,15 +34,15 @@ O projeto diagnostica os **8 pilares vitais** da economia e da segurança nacion
 
 Um dos pontos mais críticos evidenciados pelo Atlas é o **efeito cascata do frete rodoviário**:
 
-- **65,4%** das cargas nacionais trafegam em rodovias (contra 18,2% em ferrovias e 12,8% em hidrovias/cabotagem).
-- Para manter a frota rodoviária circulando, o país consome cerca de **65 bilhões de litros de Diesel por ano**, dos quais até **17 bilhões de litros** precisam ser importados refinados.
+- **65,4%** das cargas nacionais trafegam em rodovias (contra 18,2% em ferrovias, 12,8% em hidrovias/cabotagem e 3,6% em dutovias).
+- Para manter a frota rodoviária circulando, o país consumiu cerca de **69,5 bilhões de litros de Diesel B em 2025**, dos quais **17,1 bilhões de litros** foram importados refinados (cerca de 25% do consumo).
 - Um choque externo ou embargo no fornecimento marítimo de diesel paralisa, em questão de 72 horas, o envio de fertilizantes às lavouras, a circulação de carretas frigoríficas de carnes, o abastecimento de cloro nas estações de tratamento de água e a alimentação de usinas termelétricas.
 
 ---
 
 ## 📐 Metodologia do ICVS (0 a 100)
 
-O **Índice Composto de Criticidade e Vulnerabilidade da Soberania (ICVS)** é calculado para cada etapa através de uma média ponderada linear de 5 dimensões normalizadas:
+O **Índice Composto de Criticidade e Vulnerabilidade da Soberania (ICVS)** é calculado para cada etapa através de uma média ponderada linear de 5 dimensões normalizadas. O ICVS de cada pilar é a média aritmética simples dos ICVS de suas etapas; o indicador geral do Atlas é a média dos oito pilares.
 
 $$\mathrm{ICVS} = \sum_{i=1}^5 w_i \cdot D_i = 0.25 \cdot D_{ext} + 0.20 \cdot C_{geo} + 0.20 \cdot T_{sub} + 0.20 \cdot I_{sis} + 0.15 \cdot V_{log}$$
 
@@ -131,7 +131,10 @@ npm run format
 # Corrigir formatação de todos os arquivos
 npm run format:fix
 
-# Pipeline de validação completo (lint + typecheck + format)
+# Validar integridade do dataset (ICVS, faixas, somas e fontes)
+npm run validate:data
+
+# Pipeline de validação completo (dataset + lint + typecheck + format)
 npm run validate
 
 # Limpar artefatos de build e cache
@@ -157,6 +160,8 @@ Com tipagens TypeScript estritas em:
 src/types/soberania.ts
 ```
 
+Os percentuais de parceiros comerciais de cada etapa referem-se à participação no valor importado/exportado da etapa (FOB), não ao consumo nacional.
+
 ### Principais Fontes Oficiais Citadas:
 
 - **MDIC / ComexStat:** Estatísticas de comércio exterior e balança comercial.
@@ -167,8 +172,13 @@ src/types/soberania.ts
 - **ABIMAQ:** Balanço do setor de máquinas, equipamentos e bens de capital.
 - **CNT:** Pesquisas de rodovias e matriz modal de transportes.
 - **SIPRI:** Banco de dados de transferências militares e orçamentos de defesa.
-- **SNIS:** Sistema Nacional de Informações sobre Saneamento.
+- **SNIS/SINISA:** Sistema Nacional de Informações sobre Saneamento.
 - **MCTI:** Painel de semicondutores e tecnologias estratégicas.
+- **ANDA:** Indicadores do setor de fertilizantes (N, P e K).
+- **ABSOLAR:** Capacidade instalada e cadeia fotovoltaica.
+- **IFR:** World Robotics — densidade de robôs industriais.
+- **ABIEC:** Exportações de carne bovina e acesso a mercados.
+- **TCU:** Auditoria da Nuvem de Governo e soberania de dados.
 
 ---
 

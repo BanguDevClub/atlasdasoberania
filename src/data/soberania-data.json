@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "lastUpdated": "2026-10-30",
   "project": {
     "name": "Atlas da Soberania Industrial Brasileira",
@@ -11,7 +11,7 @@
     "title": "Metodologia do Índice Composto de Criticidade e Vulnerabilidade da Soberania (ICVS)",
     "latexFormula": "ICVS = w_1 \\cdot D_{ext} + w_2 \\cdot C_{geo} + w_3 \\cdot T_{sub} + w_4 \\cdot I_{sis} + w_5 \\cdot V_{log}",
     "normalizedFormula": "ICVS = 0.25 \\times D_{ext} + 0.20 \\times C_{geo} + 0.20 \\times T_{sub} + 0.20 \\times I_{sis} + 0.15 \\times V_{log}",
-    "description": "O ICVS avalia de forma quantitativa e padronizada (0 a 100) o risco de colapso, paralisia ou subordinação estratégica de cada elo produtivo das cadeias industriais nacionais. Quanto mais próximo de 100, maior a vulnerabilidade da soberania brasileira perante choques externos, sanções, embargos ou rupturas logísticas.",
+    "description": "O ICVS avalia de forma quantitativa e padronizada (0 a 100) o risco de colapso, paralisia ou subordinação estratégica de cada elo produtivo das cadeias industriais nacionais. Quanto mais próximo de 100, maior a vulnerabilidade da soberania brasileira perante choques externos, sanções, embargos ou rupturas logísticas. O ICVS de cada pilar é a média aritmética simples dos ICVS de suas etapas; o indicador geral do Atlas é a média dos oito pilares.",
     "dimensions": [
       {
         "code": "extDependence",
@@ -91,27 +91,28 @@
   },
   "logisticsProblemReport": {
     "title": "O Círculo Vicioso do Rodoviarismo e a Dependência de Diesel Refinado",
-    "summary": "O Brasil enfrenta um dos maiores paradoxos de infraestrutura do mundo moderno: transporta mais de 65% de suas cargas agrícolas, minerais, químicas e de bens manufaturados sobre pneus em rodovias, ao mesmo tempo em que depende de refinarias estrangeiras para garantir entre 20% e 30% do Diesel S10 consumido por esses mesmos caminhões.",
+    "summary": "O Brasil enfrenta um dos maiores paradoxos de infraestrutura do mundo moderno: transporta cerca de 65% de suas cargas agrícolas, minerais, químicas e de bens manufaturados sobre pneus em rodovias, ao mesmo tempo em que depende de refinarias estrangeiras para garantir cerca de 25% do Diesel S10 consumido por esses mesmos caminhões.",
     "stats": {
       "roadShareTonKm": 65.4,
       "railShareTonKm": 18.2,
       "waterwayShareTonKm": 12.8,
-      "dieselS10ImportDependencePercent": 26.5,
-      "annualDieselConsumptionBillionLiters": 65.2,
+      "pipelineShareTonKm": 3.6,
+      "dieselS10ImportDependencePercent": 24.6,
+      "annualDieselConsumptionBillionLiters": 69.5,
       "freightCostMultiplierRoadVsRail": 3.4,
       "co2MultiplierRoadVsRail": 4.2
     },
     "diagnosticStages": [
       "1. Déficit Histórico de Ferrovias: Desde as opções do Plano de Metas dos anos 1950, o Brasil concentrou investimentos em estradas de rodagem, abandonando trilhos para integração continental.",
-      "2. O Dilema do Pré-Sal sem Refino: Embora o Brasil seja o 8º maior produtor mundial de petróleo cru (superando 3,4 milhões de barris/dia), suas refinarias não foram expandidas na mesma proporção para óleo Diesel S10 com ultrabaixo teor de enxofre.",
-      "3. Vulnerabilidade Geopolítica no Porto: Para manter a frota rodoviária circulando, o país importa até 16 bilhões de litros de diesel por ano, principalmente de Rússia, Estados Unidos e países do Golfo.",
+      "2. O Dilema do Pré-Sal sem Refino: Embora o Brasil produza 3,77 milhões de barris de petróleo por dia (2025) e esteja entre os dez maiores produtores mundiais, suas refinarias não foram expandidas na mesma proporção para óleo Diesel S10 com ultrabaixo teor de enxofre.",
+      "3. Vulnerabilidade Geopolítica no Porto: Para manter a frota rodoviária circulando, o país importou cerca de 17 bilhões de litros de diesel em 2025, principalmente de Rússia, Estados Unidos, Índia e Arábia Saudita.",
       "4. Efeito Dominó Multi-Pilar: Uma interrupção no fluxo de diesel importado ou um choque cambial trava simultaneamente o envio de fertilizantes aos campos de soja, o transporte de cloro para estações de água tratada nas metrópoles e a alimentação de usinas termelétricas emergenciais."
     ],
     "analysisPillarsImpact": [
       {
         "pillarId": "agricultura",
         "pillarName": "Agricultura",
-        "riskDiagnosis": "Caminhões rodam até 2.200 km de Rondonópolis (MT) aos portos de Santos (SP) e Paranaguá (PR). O frete rodoviário consome até 30% do valor bruto da saca de grãos e queima diesel que o Brasil precisa importar."
+        "riskDiagnosis": "Caminhões rodam até 2.000 km do norte de Mato Grosso (Sorriso e Lucas do Rio Verde) aos portos de Santos (SP) e Paranaguá (PR). O frete rodoviário consome até 30% do valor bruto da saca de grãos e queima diesel que o Brasil precisa importar."
       },
       {
         "pillarId": "pecuaria",
@@ -121,7 +122,7 @@
       {
         "pillarId": "agua",
         "pillarName": "Água e Saneamento",
-        "riskDiagnosis": "O cloro gasoso e coagulantes químicos para tratamento de água potável são transportados sob rígidas normas de segurança exclusivamente em caminhões-tanque. Os reservatórios municipais mantêm estoques médios para apenas 5 a 8 dias de operação contínua."
+        "riskDiagnosis": "O cloro gasoso e coagulantes químicos para tratamento de água potável são transportados sob rígidas normas de segurança exclusivamente em caminhões-tanque. Os reservatórios municipais mantêm estoques médios para apenas 3 a 7 dias de operação contínua."
       },
       {
         "pillarId": "energia",
@@ -157,15 +158,15 @@
       "organization": "Ministério do Desenvolvimento, Indústria, Comércio e Serviços (MDIC)",
       "year": 2025,
       "url": "https://balanca.mdic.gov.br/balanca/bd/comexstat-app/index.html",
-      "description": "Dados mensais e anuais consolidados sobre importações e exportações brasileiras por NCM, valor FOB, peso líquido e países de origem e destino."
+      "description": "Dados mensais e anuais consolidados sobre importações e exportações brasileiras por NCM, valor FOB, peso líquido e países de origem e destino. As participações de fornecedores deste Atlas referem-se ao valor FOB importado em 2025."
     },
     {
       "id": "anp-anuario",
       "name": "Anuário Estatístico do Petróleo, Gás Natural e Biocombustíveis",
       "organization": "Agência Nacional do Petróleo, Gás Natural e Biocombustíveis (ANP)",
-      "year": 2025,
-      "url": "https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/anuario-estatistico-2024",
-      "description": "Séries históricas de produção nacional de petróleo bruto, capacidade de refino, volumes importados de Diesel S10, gasolina, GLP e movimentação de dutos."
+      "year": 2026,
+      "url": "https://www.gov.br/anp/pt-br/centrais-de-conteudo/publicacoes/anuario-estatistico/anuario-estatistico-brasileiro-do-petroleo-gas-natural-e-biocombustiveis-2026",
+      "description": "Séries históricas de produção nacional de petróleo bruto, capacidade de refino, volumes importados de Diesel S10, gasolina, GLP e movimentação de dutos. Inclui a síntese mensal de comercialização de combustíveis de 2025."
     },
     {
       "id": "epe-ben",
@@ -179,15 +180,15 @@
       "id": "conab-safra",
       "name": "Levantamento e Séries Históricas da Safra Brasileira de Grãos e Fertilizantes",
       "organization": "Companhia Nacional de Abastecimento (Conab)",
-      "year": 2025,
-      "url": "https://www.conab.gov.br/info-agro/safras",
-      "description": "Estimativas de produção de grãos, consumo de NPK, balanço de armazenagem em silos e custos de frete agrícola rodoviário."
+      "year": 2026,
+      "url": "https://www.gov.br/conab/pt-br",
+      "description": "Estimativas de produção de grãos, consumo de NPK, balanço de armazenagem em silos e custos de frete agrícola rodoviário. Capacidade estática de 221,8 milhões de toneladas e safra 2025/26 estimada em cerca de 353 a 362 milhões de toneladas."
     },
     {
       "id": "abiquim-anuario",
       "name": "Relatório Anual e Balança Comercial da Indústria Química",
       "organization": "Associação Brasileira da Indústria Química (Abiquim)",
-      "year": 2024,
+      "year": 2025,
       "url": "https://abiquim.org.br/estatisticas/balanca-comercial",
       "description": "Diagnóstico do déficit comercial da química brasileira (> US$ 47 bilhões), desindustrialização de fertilizantes e químicos para saneamento."
     },
@@ -195,9 +196,9 @@
       "id": "abimaq-dados",
       "name": "Balanço Setorial de Máquinas e Equipamentos",
       "organization": "Associação Brasileira da Indústria de Máquinas e Equipamentos (ABIMAQ)",
-      "year": 2025,
-      "url": "https://abimaq.org.br/estatisticas",
-      "description": "Produção e importação de bens de capital, máquinas-ferramenta CNC, robótica industrial e componentes de automação no Brasil."
+      "year": 2026,
+      "url": "https://abimaq.org.br//wp-content/uploads/2026/10/2026100821715001792161994.pdf",
+      "description": "Produção, importação, exportação e déficit comercial de máquinas e equipamentos, máquinas-ferramenta CNC, robótica industrial e componentes de automação no Brasil."
     },
     {
       "id": "cnt-logistica",
@@ -217,11 +218,11 @@
     },
     {
       "id": "snis-saneamento",
-      "name": "Sistema Nacional de Informações sobre Saneamento (SNIS)",
+      "name": "Sistema Nacional de Informações sobre Saneamento (SNIS/SINISA)",
       "organization": "Ministério das Cidades",
-      "year": 2024,
-      "url": "http://www.snis.gov.br/",
-      "description": "Indicadores de abastecimento de água potável, esgotamento sanitário, perdas na distribuição e despesas com produtos químicos de tratamento."
+      "year": 2026,
+      "url": "https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/saneamento/sinisa",
+      "description": "Indicadores de abastecimento de água potável, esgotamento sanitário, perdas na distribuição (39,5% em 2025) e despesas com produtos químicos de tratamento."
     },
     {
       "id": "mcti-semicondutores",
@@ -230,6 +231,70 @@
       "year": 2025,
       "url": "https://www.gov.br/mcti/pt-br",
       "description": "Diagnóstico da balança comercial de microeletrônica, capacidade fabril da Ceitec, dependência de semicondutores e planos de soberania digital."
+    },
+    {
+      "id": "anda-fertilizantes",
+      "name": "Principais Indicadores do Setor de Fertilizantes",
+      "organization": "Associação Nacional para Difusão de Adubos (ANDA)",
+      "year": 2026,
+      "url": "https://anda.org.br/",
+      "description": "Consumo aparente, importações e produção nacional de fertilizantes por nutriente (N, P, K), com séries anuais e participação de fornecedores."
+    },
+    {
+      "id": "absolar",
+      "name": "Infográfico Mensal e Estatísticas da Geração Solar Fotovoltaica",
+      "organization": "Associação Brasileira de Energia Solar Fotovoltaica (ABSOLAR)",
+      "year": 2026,
+      "url": "https://www.absolar.org.br/",
+      "description": "Capacidade instalada solar (cerca de 77 GW em 2026), geração centralizada e distribuída e evolução da cadeia industrial e das importações."
+    },
+    {
+      "id": "ifr-robotics",
+      "name": "World Robotics 2025 — Industrial Robots",
+      "organization": "International Federation of Robotics (IFR)",
+      "year": 2025,
+      "url": "https://ifr.org/worldrobotics/",
+      "description": "Estoque operacional, instalações anuais e densidade de robôs industriais por 10 mil empregados. Densidade brasileira de cerca de 18 robôs, contra 429 na Alemanha e 1.012 na Coreia do Sul."
+    },
+    {
+      "id": "emads-2025",
+      "name": "Exército seleciona o sistema MBDA EMADS com mísseis CAMM-ER",
+      "organization": "EDR Magazine",
+      "year": 2025,
+      "url": "https://www.edrmagazine.eu/the-brazilian-army-has-selected-the-mbda-emads-gbad-with-camm-er-missiles",
+      "description": "Seleção do sistema de defesa antiaérea de média altura/médio alcance EMADS (MBDA), baseado no míssil CAMM-ER, com alcance superior a 45 km e altitude de cerca de 10 km. A entrega e a operacionalização ainda não ocorreram."
+    },
+    {
+      "id": "abiec-carne",
+      "name": "Associação Brasileira das Indústrias Exportadoras de Carnes (ABIEC)",
+      "organization": "ABIEC",
+      "year": 2026,
+      "url": "https://abiec.com.br/",
+      "description": "Volume e destino das exportações de carne bovina. Em 2025 o Brasil exportou 3,50 milhões de toneladas; a China aplicou cota de 1,1 milhão de toneladas e tarifa adicional de 55% a partir de outubro de 2026."
+    },
+    {
+      "id": "tcu-nuvem",
+      "name": "Acompanhamento da Nuvem de Governo — Acórdão 1.380/2026",
+      "organization": "Tribunal de Contas da União (TCU)",
+      "year": 2026,
+      "url": "https://portal.tcu.gov.br/uploads/Ficha_Sintese_Acompanhamento_Nuvem_Governo_cd86ee8536.pdf",
+      "description": "Auditoria do TCU sobre soberania de dados e riscos da Nuvem de Governo, incluindo redundância geográfica, contratos com provedores estrangeiros e cláusulas de acesso a dados por autoridades de outros países."
+    },
+    {
+      "id": "govbr-nuvem",
+      "name": "Nuvem de Governo e Nuvem Brasileira",
+      "organization": "Ministério da Gestão e da Inovação em Serviços Públicos (MGI)",
+      "year": 2026,
+      "url": "https://www.gov.br/governodigital/pt-br/infraestrutura-nacional-de-dados/ambiente-tecnologico/nuvem",
+      "description": "Programa federal de nuvem de governo, contratações conjuntas e iniciativas de soberania digital, incluindo a Nuvem Soberana do SUS iniciada em 2026."
+    },
+    {
+      "id": "petrobras-rnest",
+      "name": "Petrobras conclui assinaturas de contratos para o Trem 2 da RNEST",
+      "organization": "Petrobras",
+      "year": 2025,
+      "url": "https://agencia.petrobras.com.br/w/petrobras-conclui-assinaturas-de-contratos-para-o-trem-2-da-rnest",
+      "description": "Retomada da construção do Trem 2 da Refinaria Abreu e Lima, com investimento de mais de R$ 8,3 bilhões e previsão de partida total até 2029. O trem acrescentará cerca de 13 milhões de litros de Diesel S10 por dia."
     }
   ],
   "pillars": [
@@ -241,11 +306,11 @@
       "color": "from-emerald-600 to-green-700",
       "tagline": "A superpotência agroalimentar refém de insumos e do asfalto",
       "description": "O agronegócio é o carro-chefe da balança comercial brasileira, mas depende dramaticamente do exterior em adubos minerais, princípios ativos defensivos e de carretas a diesel para escoar safras a milhares de quilômetros dos portos.",
-      "overallScore": 79.4,
+      "overallScore": 85.8,
       "highlights": [
-        "95% do Potássio (K) consumido no país é importado, com alta dependência da Rússia, Bielorrússia e Canadá.",
-        "85% dos adubos Nitrogenados (N) são importados em virtude do fechamento de fábricas de fertilizantes da Petrobras (Fafen).",
-        "Déficit de armazenagem estática supera 100 milhões de toneladas, obrigando o escoamento imediato por rodovia com pico sazonal do frete."
+        "Cerca de 95% do potássio (K) consumido no país é importado; Rússia e Canadá concentram aproximadamente 83% das compras externas.",
+        "Cerca de 88% dos adubos nitrogenados (N) são importados em virtude da hibernação de fábricas de fertilizantes da Petrobras (Fafen).",
+        "Déficit de armazenagem estática supera 130 milhões de toneladas, obrigando o escoamento imediato por rodovia com pico sazonal do frete."
       ],
       "logisticsHighlight": "Mais de 67% dos grãos brasileiros trafegam por rodovias em carretas que consomem diesel S10 importado, cruzando até 2.000 km sem ligação ferroviária até os portos do Sul e Sudeste.",
       "chains": [
@@ -262,7 +327,7 @@
               "name": "Fertilizantes Nitrogenados (Ureia, Amônia e Nitrato)",
               "stageOrder": 1,
               "category": "Insumos Primários",
-              "summary": "Dependência de 85% a 90% das importações após hibernação de fábricas de fertilizantes nitrogenados (Fafen) nos anos 2010.",
+              "summary": "Cerca de 88% do consumo de fertilizantes nitrogenados é importado; em 2025, a China liderou as compras externas, seguida de Rússia, Nigéria e Omã.",
               "criticalityLevel": "Crítica",
               "scores": {
                 "extDependence": 88.0,
@@ -270,37 +335,51 @@
                 "substitutabilityTime": 82.0,
                 "systemicImpact": 96.0,
                 "logisticsVulnerability": 85.0,
-                "finalScore": 85.5
+                "finalScore": 85.6
               },
               "domesticProductionShare": 12.0,
               "importShare": 88.0,
               "importPartners": [
                 {
-                  "country": "Rússia",
-                  "flag": "🇷🇺",
-                  "sharePercentage": 31.4,
-                  "description": "Principal fornecedor de nitrato de amônio e ureia",
+                  "country": "China",
+                  "flag": "🇨🇳",
+                  "sharePercentage": 45.9,
+                  "description": "Principal fornecedora de ureia e amônia em 2025",
                   "role": "import"
                 },
                 {
-                  "country": "Catar",
-                  "flag": "🇶🇦",
-                  "sharePercentage": 18.2,
-                  "description": "Grande produtor baseado em gás natural barato",
+                  "country": "Rússia",
+                  "flag": "🇷🇺",
+                  "sharePercentage": 14.2,
+                  "description": "Nitrato de amônio e ureia, com desconto pós-sanções",
                   "role": "import"
                 },
                 {
                   "country": "Nigéria",
                   "flag": "🇳🇬",
-                  "sharePercentage": 14.5,
-                  "description": "Ureia granular de alta pureza",
+                  "sharePercentage": 10.3,
+                  "description": "Ureia granular de grande escala (Dangote)",
                   "role": "import"
                 },
                 {
                   "country": "Omã",
                   "flag": "🇴🇲",
-                  "sharePercentage": 11.0,
+                  "sharePercentage": 6.9,
                   "description": "Fornecimento via Oriente Médio",
+                  "role": "import"
+                },
+                {
+                  "country": "Catar",
+                  "flag": "🇶🇦",
+                  "sharePercentage": 5.7,
+                  "description": "Ureia baseada em gás natural barato",
+                  "role": "import"
+                },
+                {
+                  "country": "Argélia",
+                  "flag": "🇩🇿",
+                  "sharePercentage": 4.0,
+                  "description": "Amônia e ureia do Norte da África",
                   "role": "import"
                 }
               ],
@@ -312,7 +391,7 @@
                 "dieselExposureLevel": "Crítica",
                 "dieselExposureDescription": "Os fertilizantes desembarcam nos portos de Paranaguá, Santos e Itaqui e são transportados em caminhões até o Centro-Oeste, disputando frete e queimando diesel importado."
               },
-              "detailedAnalysis": "O Nitrogênio é a base do crescimento vegetativo das plantas. A síntese de amônia requer grandes volumes de gás natural como matéria-prima. O encarecimento do gás nacional e o fechamento das unidades de fertilizantes nitrogenados da Petrobras (Fafen-PR, Fafen-BA e Fafen-SE) nos anos anteriores ampliaram a vulnerabilidade do agronegócio a choques como a guerra na Ucrânia.",
+              "detailedAnalysis": "O nitrogênio é a base do crescimento vegetativo das plantas. A síntese de amônia exige grandes volumes de gás natural como matéria-prima. O encarecimento do gás nacional e a hibernação das unidades de fertilizantes nitrogenados da Petrobras (Fafen-PR, Fafen-BA e Fafen-SE) ampliaram a vulnerabilidade do agronegócio a choques como a guerra na Ucrânia. Em 2025, a China passou a ser a principal origem das importações brasileiras de nitrogenados, seguida da Rússia e de fornecedores do Golfo.",
               "bottlenecks": [
                 "Preço do gás natural no Brasil até 3x superior ao da costa do Golfo dos EUA",
                 "Retomada lenta das plantas industriais de fertilizantes da Petrobras (Ansa/Fafen-PR)",
@@ -323,7 +402,12 @@
                 "Criar um Plano Nacional de Fertilizantes (PNF) com metas vinculantes de produção local de no mínimo 50% até 2035",
                 "Promover a produção de amônia e hidrogênio verde no Nordeste para sintetizar adubos descarbonizados"
               ],
-              "sources": ["comexstat", "conab-safra", "abiquim-anuario"]
+              "sources": [
+                "comexstat",
+                "conab-safra",
+                "abiquim-anuario",
+                "anda-fertilizantes"
+              ]
             },
             {
               "id": "adubos-potassicos",
@@ -332,7 +416,7 @@
               "name": "Cloreto de Potássio (KCl)",
               "stageOrder": 2,
               "category": "Insumos Primários",
-              "summary": "Vulnerabilidade extrema: mais de 95% do potássio consumido no solo brasileiro é importado de apenas 3 países.",
+              "summary": "Cerca de 95,5% do potássio consumido é importado; Rússia (45%) e Canadá (38%) concentram aproximadamente 83% das compras externas.",
               "criticalityLevel": "Crítica",
               "scores": {
                 "extDependence": 96.0,
@@ -340,37 +424,51 @@
                 "substitutabilityTime": 90.0,
                 "systemicImpact": 97.0,
                 "logisticsVulnerability": 88.0,
-                "finalScore": 92.6
+                "finalScore": 92.8
               },
               "domesticProductionShare": 4.5,
               "importShare": 95.5,
               "importPartners": [
                 {
-                  "country": "Canadá",
-                  "flag": "🇨🇦",
-                  "sharePercentage": 35.0,
-                  "description": "Mineração subterrânea em Saskatchewan (Nutrien/Canpotex)",
-                  "role": "import"
-                },
-                {
                   "country": "Rússia",
                   "flag": "🇷🇺",
-                  "sharePercentage": 29.5,
-                  "description": "Uralkali (região dos Urais)",
+                  "sharePercentage": 45.3,
+                  "description": "Maior fornecedor em 2025 (Uralkali), mesmo sob sanções",
                   "role": "import"
                 },
                 {
-                  "country": "Bielorrússia",
-                  "flag": "🇧🇾",
-                  "sharePercentage": 16.2,
-                  "description": "Belaruskali (sujeita a sanções internacionais)",
+                  "country": "Canadá",
+                  "flag": "🇨🇦",
+                  "sharePercentage": 37.7,
+                  "description": "Mineração em Saskatchewan (Nutrien/Canpotex)",
                   "role": "import"
                 },
                 {
                   "country": "Israel",
                   "flag": "🇮🇱",
-                  "sharePercentage": 8.1,
+                  "sharePercentage": 8.0,
                   "description": "Extração no Mar Morto (ICL)",
+                  "role": "import"
+                },
+                {
+                  "country": "Alemanha",
+                  "flag": "🇩🇪",
+                  "sharePercentage": 3.9,
+                  "description": "Sais potássicos e fertilizantes especiais (K+S)",
+                  "role": "import"
+                },
+                {
+                  "country": "Turcomenistão",
+                  "flag": "🇹🇲",
+                  "sharePercentage": 2.5,
+                  "description": "Potássio via Corredor Cáspio",
+                  "role": "import"
+                },
+                {
+                  "country": "Jordânia",
+                  "flag": "🇯🇴",
+                  "sharePercentage": 1.6,
+                  "description": "Arab Potash",
                   "role": "import"
                 }
               ],
@@ -382,10 +480,10 @@
                 "dieselExposureLevel": "Crítica",
                 "dieselExposureDescription": "Cargas pesadas e volumosas de KCl são descarregadas nos portos do Sul e percorrem milhares de quilômetros em rodovias estaduais e federais até as lavouras de Cerrado."
               },
-              "detailedAnalysis": "O cloreto de potássio confere resistência à seca e pragas nas lavouras de soja, milho e algodão. O Brasil possui jazidas gigantes na bacia do Amazonas (Autazes), mas que enfrentam complexos entraves ambientais, fundiários e indígenas. Sem potássio, a produtividade das safras brasileiras despencaria em mais de 50% em duas safras.",
+              "detailedAnalysis": "O cloreto de potássio confere resistência à seca e a pragas nas lavouras de soja, milho e algodão. O Brasil possui jazidas na bacia do Amazonas (Autazes), mas elas enfrentam complexos entraves ambientais, fundiários e indígenas. A produção nacional é marginal: a única mina em atividade, Taquari-Vassouras (SE), foi vendida pela Mosaic à VL Mineração em 2025 e opera em fase madura. Sem potássio, a produtividade de várias culturas pode ser severamente comprometida em poucas safras.",
               "bottlenecks": [
-                "Monopólio global: 3 países detêm quase 80% das reservas e da exportação global de potássio",
-                "A única mina nacional em Sergipe (Taquari-Vassouras) está em fase madura de esgotamento",
+                "Rússia, Canadá e Bielorrússia detêm a maior parte das reservas e da capacidade de exportação global de potássio",
+                "A única mina nacional em atividade (Taquari-Vassouras, SE) opera em fase madura e foi vendida à VL Mineração em 2025",
                 "Complexidade de mineração subterrânea em leito úmido na Amazônia"
               ],
               "strategicRecommendations": [
@@ -393,7 +491,12 @@
                 "Investir em bioinsumos remineralizadores de solo (pó de rocha / rochagem) para reduzir o consumo de KCl importado",
                 "Manter estoques estratégicos de fertilizantes de pelo menos 6 meses de consumo nos portos brasileiros"
               ],
-              "sources": ["comexstat", "conab-safra", "abiquim-anuario"]
+              "sources": [
+                "comexstat",
+                "conab-safra",
+                "abiquim-anuario",
+                "anda-fertilizantes"
+              ]
             }
           ]
         },
@@ -410,7 +513,7 @@
               "name": "Princípios Ativos e Produtos Técnicos (Herbicidas/Fungicidas)",
               "stageOrder": 1,
               "category": "Insumos Primários",
-              "summary": "O Brasil formula defensivos, mas importa cerca de 80% a 85% das moléculas ativas sintetizadas pela indústria química asiática.",
+              "summary": "O Brasil formula defensivos, mas importa cerca de 84% das moléculas ativas; em 2025, China (47%), Estados Unidos (17%) e Índia (10%) lideraram o fornecimento.",
               "criticalityLevel": "Crítica",
               "scores": {
                 "extDependence": 84.0,
@@ -418,7 +521,7 @@
                 "substitutabilityTime": 88.0,
                 "systemicImpact": 91.0,
                 "logisticsVulnerability": 75.0,
-                "finalScore": 84.9
+                "finalScore": 85.3
               },
               "domesticProductionShare": 16.0,
               "importShare": 84.0,
@@ -426,22 +529,43 @@
                 {
                   "country": "China",
                   "flag": "🇨🇳",
-                  "sharePercentage": 52.0,
-                  "description": "Gigante da síntese de glifosato, atrazina e intermediários químicos finos",
-                  "role": "import"
-                },
-                {
-                  "country": "Índia",
-                  "flag": "🇮🇳",
-                  "sharePercentage": 22.0,
-                  "description": "Fornecedora alternativa de fungicidas e inseticidas genéricos",
+                  "sharePercentage": 46.8,
+                  "description": "Síntese de glifosato, atrazina e intermediários químicos finos",
                   "role": "import"
                 },
                 {
                   "country": "Estados Unidos",
                   "flag": "🇺🇸",
-                  "sharePercentage": 11.5,
+                  "sharePercentage": 17.4,
                   "description": "Moléculas patenteadas de nova geração",
+                  "role": "import"
+                },
+                {
+                  "country": "Índia",
+                  "flag": "🇮🇳",
+                  "sharePercentage": 9.7,
+                  "description": "Fungicidas e inseticidas genéricos",
+                  "role": "import"
+                },
+                {
+                  "country": "Colômbia",
+                  "flag": "🇨🇴",
+                  "sharePercentage": 3.7,
+                  "description": "Formulação e reexportação de defensivos",
+                  "role": "import"
+                },
+                {
+                  "country": "Alemanha",
+                  "flag": "🇩🇪",
+                  "sharePercentage": 3.3,
+                  "description": "Química fina e produtos técnicos (BASF/Bayer)",
+                  "role": "import"
+                },
+                {
+                  "country": "França",
+                  "flag": "🇫🇷",
+                  "sharePercentage": 2.7,
+                  "description": "Moléculas e especialidades (Syngenta/Corteva)",
                   "role": "import"
                 }
               ],
@@ -453,7 +577,7 @@
                 "dieselExposureLevel": "Alta",
                 "dieselExposureDescription": "Transporte de cargas perigosas rodoviárias com regras estritas de segregação e movimentação entre polos petroquímicos e fazendas."
               },
-              "detailedAnalysis": "A agricultura tropical brasileira não sobrevive sem controle fitossanitário intenso devido à ausência de invernos com neve que eliminam fungos e insetos. A descontinuidade ou bloqueio da síntese química na província chinesa de Hubei ou em Gujarat na Índia paralisaria a capacidade de pulverização nas lavouras do Cerrado.",
+              "detailedAnalysis": "A agricultura tropical brasileira não sobrevive sem controle fitossanitário intenso devido à ausência de invernos com neve que eliminam fungos e insetos. A descontinuidade ou bloqueio da síntese química na província chinesa de Hubei ou em Gujarat, na Índia, paralisaria a capacidade de pulverização nas lavouras do Cerrado. Os Estados Unidos também são relevantes no fornecimento de moléculas patenteadas de nova geração.",
               "bottlenecks": [
                 "Fechamento da indústria química fina brasileira nos anos 1990 devido a custos tarifários e ambientais",
                 "Dependência de matérias-primas fósseis para síntese molecular",
@@ -481,8 +605,8 @@
               "name": "Escoamento Rodoviário e Déficit de Silos Graneleiros",
               "stageOrder": 1,
               "category": "Logística e Infraestrutura",
-              "summary": "O gargalo logístico que expõe a safra ao diesel importado: caminhões rodam 2.000 km pela BR-163 e BR-364 por falta de ferrovias e capacidade de armazenagem.",
-              "criticalityLevel": "Crítica",
+              "summary": "O gargalo logístico que expõe a safra ao diesel importado: caminhões rodam até 2.000 km pela BR-163 e BR-364 por falta de ferrovias e capacidade de armazenagem.",
+              "criticalityLevel": "Alta",
               "scores": {
                 "extDependence": 68.0,
                 "geoConcentration": 60.0,
@@ -498,14 +622,14 @@
                 {
                   "country": "China",
                   "flag": "🇨🇳",
-                  "sharePercentage": 72.0,
-                  "description": "Maior compradora da soja em grão e milho brasileiro",
+                  "sharePercentage": 79.0,
+                  "description": "Maior compradora da soja em grão brasileira (85,4 Mt em 2025)",
                   "role": "export"
                 },
                 {
                   "country": "União Europeia",
                   "flag": "🇪🇺",
-                  "sharePercentage": 14.0,
+                  "sharePercentage": 12.0,
                   "description": "Farelo de soja e milho não-transgênico",
                   "role": "export"
                 }
@@ -517,7 +641,7 @@
                 "dieselExposureLevel": "Crítica",
                 "dieselExposureDescription": "Cada safra consome mais de 3 bilhões de litros de diesel apenas no frete rodoviário de grãos. O déficit de capacidade estática de silos força os produtores a despachar a safra imediatamente após a colheita sobre caminhões."
               },
-              "detailedAnalysis": "O Brasil armazena apenas cerca de 55% da sua safra de grãos em silos (padrão FAO recomenda 120%). Como a colheita precisa sair das fazendas sem demora para evitar apodrecimento na chuva, forma-se uma fila quilométrica de carretas queimando diesel e congestionando rodovias rumo a Santos, Paranaguá, Barcarena e Itaqui. O frete chega a consumir 30% do valor da saca.",
+              "detailedAnalysis": "A capacidade estática de armazenagem de grãos do Brasil chegou a 221,8 milhões de toneladas em 2026, mas a safra 2025/26 é estimada em cerca de 353 a 362 milhões de toneladas — cobertura de aproximadamente 61% a 63% e déficit superior a 130 milhões de toneladas. A referência internacional recomenda capacidade de armazenagem equivalente a pelo menos 120% da produção anual. Como a colheita precisa sair das fazendas sem demora para evitar perdas na chuva, forma-se uma fila de carretas que queima diesel e congestiona rodovias rumo a Santos, Paranaguá, Barcarena e Itaqui. O frete chega a consumir 30% do valor da saca.",
               "bottlenecks": [
                 "Ferrogrão (EF-170) travada por disputas judiciais e ambientais há mais de uma década",
                 "Falta de financiamento atrativo para construção de silos próprios dentro das fazendas médias",
@@ -528,7 +652,12 @@
                 "Linhas de crédito subvencionadas do BNDES para armazéns e silos metálicos nas propriedades rurais",
                 "Modernizar a cabotagem e hidrovias do Arco Norte (Tapajós-Amazonas) com barcaças elétricas ou a biocombustíveis"
               ],
-              "sources": ["conab-safra", "cnt-logistica", "anp-anuario"]
+              "sources": [
+                "conab-safra",
+                "cnt-logistica",
+                "anp-anuario",
+                "comexstat"
+              ]
             }
           ]
         }
@@ -541,12 +670,12 @@
       "icon": "Beef",
       "color": "from-amber-600 to-yellow-700",
       "tagline": "Maior exportador de carne do planeta com vulnerabilidade oculta em micronutrientes e vacinas",
-      "description": "Líder global em exportação de carne bovina e de frango, o Brasil domina o confinamento e o pastoreio, mas importa vitaminas sintéticas, aminoácidos essenciais para rações e a quase totalidade dos fármacos veterinários.",
-      "overallScore": 73.8,
+      "description": "Líder global em exportação de carne bovina e de frango, o Brasil domina o confinamento e o pastoreio, mas importa vitaminas sintéticas, aminoácidos essenciais para rações e cerca de 86% dos fármacos veterinários.",
+      "overallScore": 75.0,
       "highlights": [
-        "Mais de 90% dos aminoácidos sintéticos essenciais (Lisina, Metionina, Treonina) para aves e suínos vêm da China e Europa.",
+        "Cerca de 56% dos aminoácidos e vitaminas para rações vêm da China; Índia e Europa complementam o suprimento.",
         "Dependência de Insumos Farmacêuticos Ativos (IFAs) veterinários para antibióticos, antiparasitários e diagnósticos.",
-        "Cadeia de frio 100% rodoviária altamente vulnerável a flutuações e desabastecimento de óleo diesel."
+        "Cadeia de frio quase totalmente rodoviária (92%), altamente vulnerável a flutuações e desabastecimento de óleo diesel."
       ],
       "logisticsHighlight": "Frangos e suínos abatidos exigem fluxo contínuo de carretas frigoríficas com geradores a diesel 24h. Bloqueios de rodovias geram perda de toneladas de carne em poucas horas.",
       "chains": [
@@ -563,7 +692,7 @@
               "name": "Aminoácidos Sintéticos (Lisina, Metionina) e Vitaminas Industriais",
               "stageOrder": 1,
               "category": "Insumos Primários",
-              "summary": "O paradoxo de produzir farelo de soja mas importar aminoácidos industriais da China e Alemanha para a formulação da ração de aves e suínos.",
+              "summary": "O paradoxo de produzir farelo de soja mas importar aminoácidos e vitaminas da China, da Índia e da Europa para a formulação da ração de aves e suínos.",
               "criticalityLevel": "Crítica",
               "scores": {
                 "extDependence": 89.0,
@@ -571,7 +700,7 @@
                 "substitutabilityTime": 78.0,
                 "systemicImpact": 88.0,
                 "logisticsVulnerability": 68.0,
-                "finalScore": 82.3
+                "finalScore": 82.1
               },
               "domesticProductionShare": 11.0,
               "importShare": 89.0,
@@ -579,22 +708,50 @@
                 {
                   "country": "China",
                   "flag": "🇨🇳",
-                  "sharePercentage": 64.0,
-                  "description": "Líder mundial em biotecnologia fermentativa de aminoácidos industriais",
+                  "sharePercentage": 56.3,
+                  "description": "Fermentação industrial de lisina, treonina e vitaminas",
                   "role": "import"
                 },
                 {
-                  "country": "Alemanha",
-                  "flag": "🇩🇪",
-                  "sharePercentage": 14.5,
-                  "description": "Evonik e BASF (metionina sintética de alta precisão)",
+                  "country": "Índia",
+                  "flag": "🇮🇳",
+                  "sharePercentage": 11.5,
+                  "description": "Aminoácidos e vitaminas genéricos",
+                  "role": "import"
+                },
+                {
+                  "country": "Espanha",
+                  "flag": "🇪🇸",
+                  "sharePercentage": 6.8,
+                  "description": "Aditivos e premixes para nutrição animal",
                   "role": "import"
                 },
                 {
                   "country": "Estados Unidos",
                   "flag": "🇺🇸",
-                  "sharePercentage": 9.0,
+                  "sharePercentage": 5.4,
                   "description": "Premixes vitamínicos e aditivos minerais",
+                  "role": "import"
+                },
+                {
+                  "country": "Bélgica",
+                  "flag": "🇧🇪",
+                  "sharePercentage": 3.4,
+                  "description": "Metionina e intermediários (Evonik Antuérpia)",
+                  "role": "import"
+                },
+                {
+                  "country": "Suíça",
+                  "flag": "🇨🇭",
+                  "sharePercentage": 2.6,
+                  "description": "Vitaminas e química fina (DSM)",
+                  "role": "import"
+                },
+                {
+                  "country": "Alemanha",
+                  "flag": "🇩🇪",
+                  "sharePercentage": 2.4,
+                  "description": "Metionina e aditivos (Evonik)",
                   "role": "import"
                 }
               ],
@@ -606,7 +763,7 @@
                 "dieselExposureLevel": "Alta",
                 "dieselExposureDescription": "Distribuição rodoviária para cooperativas agropecuárias no Sul, Sudeste e Centro-Oeste em regime contínuo just-in-time."
               },
-              "detailedAnalysis": "Galinhas poedeiras, frangos de corte e leitões não conseguem sintetizar proteínas eficientemente sem aminoácidos sintéticos como lisina e metionina na ração balanceada. O fechamento ou corte de exportação de usinas fermentativas chinesas provocaria desnutrição, quebra de rendimento de carcaça e elevação súbita do custo de ovos e carne.",
+              "detailedAnalysis": "Galinhas poedeiras, frangos de corte e leitões não conseguem sintetizar proteínas eficientemente sem aminoácidos sintéticos como lisina e metionina na ração balanceada. O fechamento ou corte de exportação de usinas fermentativas chinesas provocaria desnutrição, quebra de rendimento de carcaça e elevação súbita do custo de ovos e carne. Em 2025, a China respondeu por cerca de 56% das importações brasileiras do complexo aminoácidos/vitaminas; Índia, Espanha, Estados Unidos e Bélgica complementaram o suprimento.",
               "bottlenecks": [
                 "Ausência de parques industriais de fermentação biotecnológica de grande porte no país",
                 "Custo energético e matérias-primas químicas para síntese de metionina",
@@ -634,7 +791,7 @@
               "name": "Insumos Farmacêuticos Ativos (IFAs) Veterinários e Biológicos",
               "stageOrder": 1,
               "category": "Insumos Primários",
-              "summary": "Mesmo com vacinas produzidas localmente, os princípios ativos químicos e adjuvantes vêm 90% da Índia e China.",
+              "summary": "Cerca de 86% dos IFAs veterinários são importados; a China responde por cerca de 56% dos antibióticos a granel, enquanto vacinas e biológicos vêm principalmente da Europa e dos EUA.",
               "criticalityLevel": "Alta",
               "scores": {
                 "extDependence": 86.0,
@@ -642,7 +799,7 @@
                 "substitutabilityTime": 76.0,
                 "systemicImpact": 85.0,
                 "logisticsVulnerability": 62.0,
-                "finalScore": 79.1
+                "finalScore": 79.0
               },
               "domesticProductionShare": 14.0,
               "importShare": 86.0,
@@ -650,22 +807,43 @@
                 {
                   "country": "China",
                   "flag": "🇨🇳",
-                  "sharePercentage": 58.0,
-                  "description": "Antibióticos, ivermectinas e antiparasitários em pó",
+                  "sharePercentage": 56.1,
+                  "description": "Antibióticos, ivermectinas e antiparasitários a granel",
+                  "role": "import"
+                },
+                {
+                  "country": "Itália",
+                  "flag": "🇮🇹",
+                  "sharePercentage": 15.4,
+                  "description": "IFAs e especialidades farmacêuticas veterinárias",
+                  "role": "import"
+                },
+                {
+                  "country": "Espanha",
+                  "flag": "🇪🇸",
+                  "sharePercentage": 6.2,
+                  "description": "Antibióticos e antiparasitários genéricos",
+                  "role": "import"
+                },
+                {
+                  "country": "México",
+                  "flag": "🇲🇽",
+                  "sharePercentage": 5.9,
+                  "description": "IFAs e intermediários químicos",
                   "role": "import"
                 },
                 {
                   "country": "Índia",
                   "flag": "🇮🇳",
-                  "sharePercentage": 24.0,
+                  "sharePercentage": 5.5,
                   "description": "IFAs veterinários genéricos de síntese química",
                   "role": "import"
                 },
                 {
-                  "country": "França",
-                  "flag": "🇫🇷",
-                  "sharePercentage": 8.0,
-                  "description": "Biológicos especiais e adjuvantes imunes (Boehringer/Ceva)",
+                  "country": "Estados Unidos",
+                  "flag": "🇺🇸",
+                  "sharePercentage": 3.7,
+                  "description": "Biológicos, adjuvantes e IFAs especiais",
                   "role": "import"
                 }
               ],
@@ -677,7 +855,7 @@
                 "dieselExposureLevel": "Moderada",
                 "dieselExposureDescription": "Transporte de baixo peso físico e alto valor agregado, mas dependente de cadeia refrigerada para vacinas e biológicos."
               },
-              "detailedAnalysis": "O status sanitário de 'zona livre de febre aftosa sem vacinação' e controle de gripe aviária é a garantia de acesso às exportações brasileiras de carne. Contudo, qualquer surto que exija erradicação ou vacinação de emergência depende de reagentes e IFAs sintéticos controlados por fabricantes estrangeiros.",
+              "detailedAnalysis": "O status sanitário de zonas livres de febre aftosa sem vacinação e o controle de gripe aviária são a garantia de acesso às exportações brasileiras de carne. Contudo, qualquer surto que exija erradicação ou vacinação de emergência depende de reagentes e IFAs sintéticos controlados por fabricantes estrangeiros. Os antibióticos a granel vêm sobretudo da China (cerca de 56%), enquanto vacinas e produtos biológicos são importados da Alemanha, Estados Unidos, Suíça, Irlanda e Bélgica.",
               "bottlenecks": [
                 "Desindustrialização do parque farmoquímico nacional",
                 "Dependência de importação de adjuvantes e antígenos específicos",
@@ -705,7 +883,7 @@
               "name": "Cadeia de Frio e Transporte Frigorífico Rodoviário",
               "stageOrder": 1,
               "category": "Distribuição e Mercado",
-              "summary": "92% das carnes congeladas e resfriadas são transportadas por carretas com geradores a diesel S10, sem malha ferroviária refrigerada.",
+              "summary": "Cerca de 92% das carnes congeladas e resfriadas são transportadas por carretas com geradores a diesel S10, sem malha ferroviária refrigerada dedicada.",
               "criticalityLevel": "Alta",
               "scores": {
                 "extDependence": 45.0,
@@ -713,7 +891,7 @@
                 "substitutabilityTime": 65.0,
                 "systemicImpact": 92.0,
                 "logisticsVulnerability": 95.0,
-                "finalScore": 64.9
+                "finalScore": 63.9
               },
               "domesticProductionShare": 100.0,
               "importShare": 0.0,
@@ -723,7 +901,7 @@
                   "country": "China",
                   "flag": "🇨🇳",
                   "sharePercentage": 48.0,
-                  "description": "Principal compradora de carne bovina brasileira in natura",
+                  "description": "Principal compradora em 2025; cota de 1,1 Mt e tarifa de ~67% desde out/2026",
                   "role": "export"
                 },
                 {
@@ -748,7 +926,7 @@
                 "dieselExposureLevel": "Crítica",
                 "dieselExposureDescription": "Os equipamentos de refrigeração móvel (Thermo King, Carrier) operam com motores diesel independentes acoplados à carreta, tornando o setor duplamente dependente do combustível fóssil importado."
               },
-              "detailedAnalysis": "O abate de bovinos e frangos ocorre no interior (Goiás, Mato Grosso, Paraná, Santa Catarina). Para chegar aos portos de Santos, Itajaí ou Paranaguá e às gôndolas dos supermercados, a carne precisa de frio ininterrupto entre -18°C e 2°C. A greve de caminhoneiros de 2018 comprovou que em 72 horas milhões de aves morrem nas granjas por falta de ração e estoques de frigoríficos entram em colapso.",
+              "detailedAnalysis": "O abate de bovinos e frangos ocorre no interior (Goiás, Mato Grosso, Paraná, Santa Catarina). Para chegar aos portos de Santos, Itajaí ou Paranaguá e às gôndolas dos supermercados, a carne precisa de frio ininterrupto entre -18°C e 2°C. A greve de caminhoneiros de 2018 comprovou que, em 72 horas, milhões de aves morrem nas granjas por falta de ração e estoques de frigoríficos entram em colapso. Desde outubro de 2026, a China aplica tarifa adicional de 55% sobre a carne bovina brasileira após o esgotamento da cota anual de 1,1 milhão de toneladas, elevando o total para cerca de 67% e tornando a diversificação de mercados uma prioridade estratégica.",
               "bottlenecks": [
                 "Ausência total de vagões ferroviários refrigerados e de tomadas elétricas em pátios intermodais",
                 "Custo elevadíssimo do diesel e manutenção de compressores importados",
@@ -759,7 +937,7 @@
                 "Ampliar a cabotagem marítima refrigerada entre os portos do Sul/Sudeste e o Norte/Nordeste",
                 "Estimular usinas de biometano dentro dos frigoríficos para abastecer frotas próprias de caminhões pesados"
               ],
-              "sources": ["cnt-logistica", "anp-anuario"]
+              "sources": ["cnt-logistica", "anp-anuario", "abiec-carne"]
             }
           ]
         }
@@ -772,10 +950,10 @@
       "icon": "Zap",
       "color": "from-cyan-600 to-blue-700",
       "tagline": "Matriz limpa e renovável sustentada por equipamentos, inversores e automação estrangeira",
-      "description": "O Brasil ostenta uma das matrizes elétricas mais limpas do planeta (~88% renovável), mas é quase 100% dependente da China para células fotovoltaicas e inversores, e da Europa para geradores de vento e sistemas de automação de ultra-alta tensão.",
-      "overallScore": 76.2,
+      "description": "O Brasil ostenta uma das matrizes elétricas mais limpas do planeta (~88% renovável), mas é fortemente dependente da China para células fotovoltaicas e inversores, e da Europa para geradores de vento e sistemas de automação de ultra-alta tensão.",
+      "overallScore": 83.1,
       "highlights": [
-        "99% dos inversores solares e 98% dos módulos fotovoltaicos instalados no país são fabricados na China.",
+        "Cerca de 98% dos módulos fotovoltaicos importados vêm da China; no conjunto módulos+inversores, a participação chinesa é de aproximadamente 86%.",
         "Linhas de Transmissão de Ultra-Alta Tensão (UHVDC 800kV) de Belo Monte dependem de equipamentos e protocolos da State Grid/NARI.",
         "Sistemas SCADA/EMS de supervisão da rede elétrica operam com softwares e processadores proprietários estrangeiros."
       ],
@@ -794,7 +972,7 @@
               "name": "Módulos Fotovoltaicos e Inversores de Frequência",
               "stageOrder": 1,
               "category": "Processamento Industrial",
-              "summary": "O Brasil exporta quartzo de alta pureza e reimporta células e painéis solares prontos da China.",
+              "summary": "Cerca de 86% dos módulos e inversores importados vêm da China; o Brasil exporta quartzo de alta pureza e reimporta a cadeia fotovoltaica pronta.",
               "criticalityLevel": "Crítica",
               "scores": {
                 "extDependence": 94.0,
@@ -802,7 +980,7 @@
                 "substitutabilityTime": 86.0,
                 "systemicImpact": 85.0,
                 "logisticsVulnerability": 60.0,
-                "finalScore": 85.3
+                "finalScore": 85.7
               },
               "domesticProductionShare": 5.0,
               "importShare": 95.0,
@@ -810,22 +988,36 @@
                 {
                   "country": "China",
                   "flag": "🇨🇳",
-                  "sharePercentage": 93.0,
-                  "description": "Controle hegemônico de lingotes, wafers e painéis (Longi, JinkoSolar, Trina, Huawei, Sungrow)",
-                  "role": "import"
-                },
-                {
-                  "country": "Vietnã",
-                  "flag": "🇻🇳",
-                  "sharePercentage": 4.0,
-                  "description": "Fábricas de montagem de subsidiárias chinesas",
+                  "sharePercentage": 85.7,
+                  "description": "Módulos, células, wafers e inversores (Longi, JinkoSolar, Trina, Huawei, Sungrow)",
                   "role": "import"
                 },
                 {
                   "country": "Alemanha",
                   "flag": "🇩🇪",
-                  "sharePercentage": 1.5,
+                  "sharePercentage": 1.9,
                   "description": "Inversores industriais de nicho (SMA)",
+                  "role": "import"
+                },
+                {
+                  "country": "Estados Unidos",
+                  "flag": "🇺🇸",
+                  "sharePercentage": 1.8,
+                  "description": "Inversores e equipamentos de nicho",
+                  "role": "import"
+                },
+                {
+                  "country": "Japão",
+                  "flag": "🇯🇵",
+                  "sharePercentage": 1.4,
+                  "description": "Inversores e componentes eletrônicos",
+                  "role": "import"
+                },
+                {
+                  "country": "Hong Kong",
+                  "flag": "🇭🇰",
+                  "sharePercentage": 1.1,
+                  "description": "Reexportação de células e módulos",
                   "role": "import"
                 }
               ],
@@ -837,7 +1029,7 @@
                 "dieselExposureLevel": "Moderada",
                 "dieselExposureDescription": "Módulos descarregam em portos (Santos, Salvador, Suape) e seguem por carretas até os grandes complexos solares do semiárido nordestino e Minas Gerais."
               },
-              "detailedAnalysis": "A energia solar tornou-se a segunda maior fonte da matriz elétrica nacional, ultrapassando 40 GW de capacidade. Entretanto, o país não possui nenhuma fundição de lingotamento de silício grau solar nem fábrica de wafers semicondutores. Qualquer tarifa ou bloqueio comercial chinês congela a expansão da capacidade energética nacional.",
+              "detailedAnalysis": "A energia solar tornou-se a segunda maior fonte da matriz elétrica nacional, com cerca de 77 GW de capacidade instalada em 2026. Entretanto, o país não possui fundição de lingotamento de silício grau solar nem fábrica de wafers semicondutores em escala comercial. Cerca de 98% das células e módulos importados em 2025 vieram da China; no conjunto módulos+inversores, a participação chinesa foi de aproximadamente 86%. Qualquer tarifa ou bloqueio comercial chinês congela a expansão da capacidade energética nacional.",
               "bottlenecks": [
                 "Custo energético e de capital para verticalizar a purificação do silício metálico nacional",
                 "Esmagadora escala e subsídios das fábricas chinesas tornando a montagem local deficitária sem incentivos",
@@ -848,7 +1040,7 @@
                 "Criar exigências graduais de conteúdo local e desenvolvimento de firmware nacional em inversores homologados pelo ONS",
                 "Apoiar centros de excelência do Senai Cimatec e universidades para arquiteturas de microinversores nacionais"
               ],
-              "sources": ["epe-ben", "comexstat", "abimaq-dados"]
+              "sources": ["epe-ben", "comexstat", "abimaq-dados", "absolar"]
             }
           ]
         },
@@ -866,14 +1058,14 @@
               "stageOrder": 1,
               "category": "Processamento Industrial",
               "summary": "Para trazer energia do Norte e Nordeste ao Sudeste, o Brasil depende de tecnologia de corrente contínua 800kV sob controle estrangeiro.",
-              "criticalityLevel": "Alta",
+              "criticalityLevel": "Crítica",
               "scores": {
                 "extDependence": 78.0,
                 "geoConcentration": 74.0,
                 "substitutabilityTime": 84.0,
                 "systemicImpact": 98.0,
                 "logisticsVulnerability": 65.0,
-                "finalScore": 80.7
+                "finalScore": 80.5
               },
               "domesticProductionShare": 22.0,
               "importShare": 78.0,
@@ -908,7 +1100,7 @@
                 "dieselExposureLevel": "Alta",
                 "dieselExposureDescription": "Transformadores e reatores de mais de 250 toneladas exigem carretas especiais tipo linha de eixos que trafegam a 20 km/h por semanas em pontes e estradas sob escolta policial."
               },
-              "detailedAnalysis": "O Operador Nacional do Sistema (ONS) gerencia uma das maiores redes elétricas interligadas do mundo (SIN). As duas linhas UHVDC de Belo Monte (2.500 km cada) transmitem 8 GW diretamente para o Rio e São Paulo. A tecnologia das válvulas tiristoras, cabos e conversores é proprietária da State Grid chinesa, tornando a reposição de peças e segurança contra ciberataques um desafio de soberania.",
+              "detailedAnalysis": "O Operador Nacional do Sistema (ONS) gerencia uma das maiores redes elétricas interligadas do mundo (SIN). As duas linhas UHVDC de Belo Monte (2.500 km cada) transmitem 8 GW diretamente para o Rio de Janeiro e São Paulo. A tecnologia das válvulas tiristoras, cabos e conversores é proprietária da State Grid chinesa, tornando a reposição de peças e a segurança contra ciberataques um desafio de soberania.",
               "bottlenecks": [
                 "Incapacidade fabril nacional em semicondutores de alta potência (tiristores e IGBTs de alta voltagem)",
                 "Softwares de supervisão em tempo real dependentes de códigos proprietários fechados",
@@ -932,12 +1124,12 @@
       "icon": "Droplets",
       "color": "from-sky-600 to-cyan-700",
       "tagline": "A segurança da vida urbana dependente de químicos industriais e caminhões-tanque",
-      "description": "O Brasil detém cerca de 12% da água doce superficial do mundo, mas o tratamento e distribuição para mais de 200 milhões de habitantes dependem de insumos químicos críticos (cloro, coagulantes) com estoques médios para menos de 7 dias.",
-      "overallScore": 72.1,
+      "description": "O Brasil detém cerca de 12% da água doce superficial do mundo, mas o tratamento e distribuição para mais de 200 milhões de habitantes dependem de insumos químicos críticos (cloro, coagulantes) com estoques médios para 3 a 7 dias.",
+      "overallScore": 62.9,
       "highlights": [
         "Estações de Tratamento de Água (ETAs) têm estoques de cloro e coagulantes para apenas 3 a 7 dias de operação.",
         "A quase totalidade das membranas de ultrafiltração e osmose reversa para reúso industrial é importada.",
-        "O índice de perda física de água tratada na rede de distribuição atinge quase 40%, evidenciando a fragilidade estrutural da infraestrutura."
+        "O índice de perda física de água tratada na rede de distribuição atingiu 39,5% em 2025, evidenciando a fragilidade estrutural da infraestrutura."
       ],
       "logisticsHighlight": "Produtos químicos para tratamento de água só podem ser transportados por caminhões rodoviários especializados. Uma paralisação no transporte de cargas interrompe a cloração da água potável nas capitais em menos de uma semana.",
       "chains": [
@@ -955,7 +1147,7 @@
               "stageOrder": 1,
               "category": "Insumos Primários",
               "summary": "Insumos vitais e de alta periculosidade que não admitem estocagem urbana prolongada e dependem de transporte rodoviário contínuo.",
-              "criticalityLevel": "Crítica",
+              "criticalityLevel": "Alta",
               "scores": {
                 "extDependence": 42.0,
                 "geoConcentration": 55.0,
@@ -1033,7 +1225,7 @@
                 "substitutabilityTime": 50.0,
                 "systemicImpact": 85.0,
                 "logisticsVulnerability": 72.0,
-                "finalScore": 55.4
+                "finalScore": 55.7
               },
               "domesticProductionShare": 62.0,
               "importShare": 38.0,
@@ -1068,9 +1260,9 @@
                 "dieselExposureLevel": "Alta",
                 "dieselExposureDescription": "Tubulações de grande diâmetro (DN 800 a DN 1500) ocupam volume imenso e exigem carretas prancha para transporte do Sudeste aos estados do Norte e Nordeste."
               },
-              "detailedAnalysis": "Com o Marco Legal do Saneamento, o país precisa investir mais de R$ 700 bilhões até 2033. Contudo, o índice de perda física de água tratada em vazamentos alcança absurdos 38%. A substituição de redes antigas e instalação de telemetria inteligente de pressão exigem importação massiva de sensores e resinas plásticas de PEAD.",
+              "detailedAnalysis": "Com o Marco Legal do Saneamento, o país precisa investir estimados R$ 500 a 700 bilhões até 2033. Contudo, o índice de perda física de água tratada em vazamentos alcançou 39,5% em 2025. A substituição de redes antigas e a instalação de telemetria inteligente de pressão exigem importação relevante de sensores e resinas plásticas de PEAD.",
               "bottlenecks": [
-                "Perda de 38% a 40% da água tratada antes de chegar à torneira do cidadão",
+                "Perda de 39,5% da água tratada antes de chegar à torneira do cidadão",
                 "Dependência de resinas de PEAD especiais para tubos de alta pressão",
                 "Escassez de crédito público para modernização preventiva de adutoras"
               ],
@@ -1092,11 +1284,11 @@
       "icon": "Flame",
       "color": "from-red-600 to-rose-700",
       "tagline": "Gigante exportador de óleo cru, importador dependente de diesel refinado",
-      "description": "O Brasil produz mais de 3,4 milhões de barris/dia de petróleo no Pré-sal e é autossuficiente em volume bruto, mas seu parque de refino não supre a demanda por Diesel S10, gerando uma vulnerabilidade perigosa que ameaça todos os demais pilares da soberania.",
-      "overallScore": 81.3,
+      "description": "O Brasil produziu 3,77 milhões de barris de petróleo por dia em 2025 e é autossuficiente em volume bruto, mas seu parque de refino não supre a demanda por Diesel S10, gerando uma vulnerabilidade perigosa que ameaça todos os demais pilares da soberania.",
+      "overallScore": 66.6,
       "highlights": [
-        "Importação de 20% a 30% de todo o Diesel S10 consumido nos caminhões e colheitadeiras do país.",
-        "A Rússia tornou-se a principal fornecedora externa de diesel para o Brasil após o início das sanções ocidentais em 2022.",
+        "Cerca de 25% do Diesel S10 consumido em 2025 foi importado (17,1 bilhões de litros).",
+        "A Rússia respondeu por 47% das importações de diesel em 2025, seguida pelos Estados Unidos (33%) e Índia (9%).",
         "A malha de dutos é litorânea e incipiente; o interior do país depende inteiramente de carretas-tanque rodoviárias."
       ],
       "logisticsHighlight": "Caminhões-tanque transportam diesel consumindo o próprio diesel que carregam, gerando uma espiral de custos e alta vulnerabilidade a interrupções nos portos importadores.",
@@ -1114,7 +1306,7 @@
               "name": "Refino Nacional e Importação de Óleo Diesel S10",
               "stageOrder": 1,
               "category": "Processamento Industrial",
-              "summary": "O calcanhar de Aquiles da economia nacional: o Brasil não consegue rodar sem importar cerca de 13 a 16 bilhões de litros de diesel por ano.",
+              "summary": "O calcanhar de Aquiles da economia nacional: o Brasil importou cerca de 17 bilhões de litros de diesel em 2025, equivalentes a aproximadamente 25% do consumo interno.",
               "criticalityLevel": "Crítica",
               "scores": {
                 "extDependence": 78.0,
@@ -1122,36 +1314,36 @@
                 "substitutabilityTime": 85.0,
                 "systemicImpact": 99.0,
                 "logisticsVulnerability": 95.0,
-                "finalScore": 84.7
+                "finalScore": 85.8
               },
-              "domesticProductionShare": 74.0,
-              "importShare": 26.0,
+              "domesticProductionShare": 75.4,
+              "importShare": 24.6,
               "importPartners": [
                 {
                   "country": "Rússia",
                   "flag": "🇷🇺",
-                  "sharePercentage": 68.0,
-                  "description": "Maior fornecedora atual devido ao desconto sobre o barril pós-sanções ocidentais",
+                  "sharePercentage": 47.1,
+                  "description": "Maior fornecedora em 2025, com desconto sobre o barril pós-sanções",
                   "role": "import"
                 },
                 {
                   "country": "Estados Unidos",
                   "flag": "🇺🇸",
-                  "sharePercentage": 18.0,
+                  "sharePercentage": 33.0,
                   "description": "Refinarias da Costa do Golfo (Texas/Louisiana)",
                   "role": "import"
                 },
                 {
                   "country": "Índia",
                   "flag": "🇮🇳",
-                  "sharePercentage": 6.5,
+                  "sharePercentage": 9.0,
                   "description": "Refinarias de Jamnagar (Reliance)",
                   "role": "import"
                 },
                 {
-                  "country": "Emirados Árabes Unidos",
-                  "flag": "🇦🇪",
-                  "sharePercentage": 4.5,
+                  "country": "Arábia Saudita",
+                  "flag": "🇸🇦",
+                  "sharePercentage": 4.4,
                   "description": "Derivados refinados do Oriente Médio",
                   "role": "import"
                 }
@@ -1179,18 +1371,23 @@
                 "dieselExposureLevel": "Crítica",
                 "dieselExposureDescription": "Mais de 70% do diesel refinado é distribuído por carretas-tanque rodoviárias. Se os caminhões pararem por falta de diesel, as próprias refinarias e portos não conseguem escoar sua produção."
               },
-              "detailedAnalysis": "O Brasil vive o clássico modelo colonial de exportar matéria-prima bruta (óleo cru pesado para refinarias chinesas e americanas) e reimportar o produto refinado de alto valor agregado (Diesel S10 e GLP). A paralisação da expansão da Rnest (Trem 2), o cancelamento do Comperj e a venda da Rlam (Refinaria de Mataripe na Bahia) agravaram a vulnerabilidade do suprimento.",
+              "detailedAnalysis": "O Brasil vive o clássico modelo de exportar matéria-prima bruta (óleo cru pesado para refinarias chinesas e americanas) e reimportar o produto refinado de alto valor agregado (Diesel S10 e GLP). A retomada do Trem 2 da Rnest em 2025, com conclusão prevista para 2029, o cancelamento do Comperj e a venda da Rlam (Refinaria de Mataripe, na Bahia) resumem a trajetória do parque de refino: capacidade estagnada diante de uma frota e de uma colheita agrícola crescentes.",
               "bottlenecks": [
                 "Capacidade do parque de refino estagnada enquanto a frota e a colheita agrícola crescem",
                 "Dependência de navios-tanque que navegam milhares de milhas sob bandeiras estrangeiras",
                 "Volatilidade do Preço de Paridade de Importação (PPI) e risco cambial direto sobre a inflação de alimentos"
               ],
               "strategicRecommendations": [
-                "Concluir imediatamente o Trem 2 da Rnest em Pernambuco e expandir as unidades de hidrotratamento de diesel (HDT) na Replan e Reduc",
+                "Concluir o Trem 2 da Rnest até 2029 e ampliar as unidades de hidrotratamento de diesel (HDT) na Replan e Reduc",
                 "Reestruturar o parque de refino nacional visando autossuficiência integral em Diesel S10 até 2030",
                 "Construir dutos polidutos interligando o Porto de Santos/São Sebastião e Paranaguá ao Centro-Oeste para eliminar carretas"
               ],
-              "sources": ["anp-anuario", "comexstat", "cnt-logistica"]
+              "sources": [
+                "anp-anuario",
+                "comexstat",
+                "cnt-logistica",
+                "petrobras-rnest"
+              ]
             }
           ]
         },
@@ -1215,7 +1412,7 @@
                 "substitutabilityTime": 45.0,
                 "systemicImpact": 82.0,
                 "logisticsVulnerability": 88.0,
-                "finalScore": 47.9
+                "finalScore": 47.4
               },
               "domesticProductionShare": 96.0,
               "importShare": 4.0,
@@ -1251,10 +1448,10 @@
                 "dieselExposureLevel": "Alta",
                 "dieselExposureDescription": "A colheita mecanizada de cana e o transporte de vinhaça e cana picada consomem milhões de litros de óleo diesel fóssil nas frotas de tratores e caminhões treminhões."
               },
-              "detailedAnalysis": "O Proálcool e a introdução dos motores flex tornaram o Brasil referência mundial em bioenergia. O biodiesel tem teor de mistura obrigatória progressiva (B14 rumo a B20). Porém, se o diesel importado faltar, os tratores que plantam e colhem a soja e a cana não operam, revelando a interligação estrutural e a armadilha fóssil.",
+              "detailedAnalysis": "O Proálcool e a introdução dos motores flex tornaram o Brasil referência mundial em bioenergia. O biodiesel opera com mistura obrigatória de B15 desde agosto de 2025; a elevação para B16 foi adiada e o cronograma legal prevê B20 até 2030, com testes técnicos em andamento. Se o diesel importado faltar, os tratores que plantam e colhem a soja e a cana não operam, revelando a interligação estrutural e a armadilha fóssil.",
               "bottlenecks": [
                 "Frotas agrícolas pesadas ainda movidas a diesel em vez de biometano ou motores a etanol dedicado",
-                "Desgaste e quebra de bombas injetoras em misturas elevadas de biodiesel não refinado por hidrotratamento (HVO)",
+                "Desgaste de bombas injetoras com misturas elevadas de biodiesel convencional; HVO ainda incipiente",
                 "Dutovias dedicadas a etanol (Logum) operam com capacidade aquém do potencial"
               ],
               "strategicRecommendations": [
@@ -1276,10 +1473,10 @@
       "color": "from-slate-600 to-zinc-700",
       "tagline": "A desindustrialização das máquinas que constroem a infraestrutura",
       "description": "O parque industrial brasileiro sofreu severo encolhimento nas últimas quatro décadas. Hoje, centros de usinagem CNC de múltiplos eixos, robôs de solda e montagem, controladores lógicos (CLPs) e maquinário pesado de terraplenagem são maciçamente importados da Europa e da Ásia.",
-      "overallScore": 83.7,
+      "overallScore": 83.5,
       "highlights": [
         "Zero produção nacional de robôs industriais articulados de 6 eixos para linhas automotivas e de montagem.",
-        "Comandos numéricos computadorizados (CNCs) e fusos de esferas de precisão 100% importados de Alemanha e Japão.",
+        "Comandos CNC e fusos de esferas de precisão de alto desempenho são predominantemente importados da Alemanha e do Japão.",
         "Déficit na balança de bens de capital ultrapassa US$ 18 bilhões por ano."
       ],
       "logisticsHighlight": "Equipamentos de grande porte e máquinas operatrizes demandam transporte em carretas especiais prancha por malha rodoviária com pontes deficitárias e alto índice de avarias por vibração.",
@@ -1297,7 +1494,7 @@
               "name": "Centros de Usinagem CNC e Tornos de Alta Precisão",
               "stageOrder": 1,
               "category": "Processamento Industrial",
-              "summary": "O coração da fabricação mecânica moderna: o Brasil monta tornos (Romi), mas importa cérebros CNC (Siemens/Fanuc), fusos e guias lineares.",
+              "summary": "O coração da fabricação mecânica moderna: o Brasil fabrica tornos e centros de usinagem (Romi), mas importa comandos CNC (Siemens/Fanuc), fusos e guias lineares.",
               "criticalityLevel": "Crítica",
               "scores": {
                 "extDependence": 82.0,
@@ -1305,7 +1502,7 @@
                 "substitutabilityTime": 88.0,
                 "systemicImpact": 89.0,
                 "logisticsVulnerability": 64.0,
-                "finalScore": 81.3
+                "finalScore": 81.1
               },
               "domesticProductionShare": 25.0,
               "importShare": 75.0,
@@ -1375,7 +1572,7 @@
               "name": "Robôs Articulados Industriais e Controladores Lógicos (CLPs)",
               "stageOrder": 1,
               "category": "Processamento Industrial",
-              "summary": "100% dos braços robóticos industriais em operação no Brasil são importados de Alemanha, Japão e Coreia.",
+              "summary": "Não há fabricantes locais de robôs articulados de 6 eixos; o mercado brasileiro é abastecido por importações da Alemanha, Japão e Suíça/Suécia.",
               "criticalityLevel": "Crítica",
               "scores": {
                 "extDependence": 97.0,
@@ -1383,7 +1580,7 @@
                 "substitutabilityTime": 92.0,
                 "systemicImpact": 86.0,
                 "logisticsVulnerability": 58.0,
-                "finalScore": 86.1
+                "finalScore": 85.8
               },
               "domesticProductionShare": 3.0,
               "importShare": 97.0,
@@ -1418,7 +1615,7 @@
                 "dieselExposureLevel": "Moderada",
                 "dieselExposureDescription": "Importação via contêineres aéreos ou marítimos e entrega por frete rodoviário até as montadoras do ABC, Vale do Paraíba, Betim e Camaçari."
               },
-              "detailedAnalysis": "A densidade de robôs no Brasil é de apenas 17 robôs por 10.000 operários na manufatura (contra mais de 300 na Alemanha e 700 na Coreia do Sul). Sem robótica e automação acessíveis, a produtividade da indústria brasileira é defasada internacionalmente. Ao mesmo tempo, todas as peças de reposição, atuadores harmônicos e servodrives dependem de fornecedores da OTAN e Ásia.",
+              "detailedAnalysis": "A densidade de robôs no Brasil é de cerca de 18 robôs por 10 mil operários na manufatura, contra 429 na Alemanha e 1.012 na Coreia do Sul (IFR, 2024). Sem robótica e automação acessíveis, a produtividade da indústria brasileira é defasada internacionalmente. Ao mesmo tempo, parte relevante das peças de reposição, atuadores harmônicos e servodrives depende de fornecedores da Europa e da Ásia.",
               "bottlenecks": [
                 "Ausência de indústria nacional de engrenagens de precisão cicloidais e harmônicas (harmonic drives)",
                 "Dependência de chips DSP e processadores industriais automotivos de tempo real",
@@ -1429,7 +1626,7 @@
                 "Instituir laboratórios nacionais de pesquisa de atuadores eletromecânicos de precisão na Embrapii",
                 "Linhas subsidiadas do Finep para digitalização e automação da cadeia de autopeças local"
               ],
-              "sources": ["abimaq-dados", "comexstat"]
+              "sources": ["abimaq-dados", "comexstat", "ifr-robotics"]
             }
           ]
         }
@@ -1443,10 +1640,10 @@
       "color": "from-red-700 to-amber-900",
       "tagline": "Aeronaves e blindados avançados com motores, turbinas e sensores sob veto externo",
       "description": "O Brasil possui projetos expressivos como o KC-390 e o caça Gripen F-39, e produz armas leves em escala global (CBC, Taurus), mas possui um calcanhar de Aquiles crítico: turbinas a jato, radares AESA, defesas antiaéreas e propelentes químicos de alto desempenho dependem de fornecedores sujeitos a vetos geopolíticos da OTAN e de potências nucleares.",
-      "overallScore": 84.8,
+      "overallScore": 86.2,
       "highlights": [
         "Turbinas e motores aeronáuticos dos caças Gripen (GE F414) e do cargueiro KC-390 (IAE V2500) são 100% fabricados no exterior e sujeitos a vetos de exportação dos EUA.",
-        "Ausência quase total de mísseis antiaéreos de média e alta altitude para proteger a capital Brasília, Itaipu e refinarias estratégicas.",
+        "Ausência de sistema operacional de defesa antiaérea de média/grande altitude; o Exército selecionou o EMADS/CAMM-ER em 2025, com entrega prevista para o fim da década.",
         "Sensores de sonar, torpedos pesados e sistemas integrados de combate do PROSUB e Tamandaré dependem de transferências tecnológicas da França e Alemanha."
       ],
       "logisticsHighlight": "Em caso de conflito, a movimentação de blindados Guarani e regimentos de infantaria por rodovias consumiria comboios gigantes de diesel facilmente interceptáveis e vulneráveis a estrangulamento nos gargalos de pontes estaduais.",
@@ -1464,7 +1661,7 @@
               "name": "Turbinas a Jato, Radares AESA e Aviônica Embarcada",
               "stageOrder": 1,
               "category": "Processamento Industrial",
-              "summary": "Mesmo montando aeronaves soberbas, o Brasil não domina a fabricação de turborreatores e radares avançados.",
+              "summary": "Mesmo montando aeronaves avançadas, o Brasil não domina a fabricação de turborreatores e radares avançados.",
               "criticalityLevel": "Crítica",
               "scores": {
                 "extDependence": 91.0,
@@ -1472,7 +1669,7 @@
                 "substitutabilityTime": 96.0,
                 "systemicImpact": 97.0,
                 "logisticsVulnerability": 55.0,
-                "finalScore": 86.8
+                "finalScore": 86.4
               },
               "domesticProductionShare": 15.0,
               "importShare": 85.0,
@@ -1508,10 +1705,10 @@
               ],
               "exportPartners": [
                 {
-                  "country": "Portugal / Hungria / Áustria",
+                  "country": "Europa (OTAN)",
                   "flag": "🇪🇺",
                   "sharePercentage": 60.0,
-                  "description": "KC-390 Millennium para países da OTAN",
+                  "description": "KC-390 Millennium para Portugal, Hungria, Áustria, Países Baixos, Chéquia e Suécia",
                   "role": "export"
                 }
               ],
@@ -1550,7 +1747,7 @@
               "name": "Mísseis Antiaéreos de Média/Grande Altitude e Teleguiamento",
               "stageOrder": 1,
               "category": "Processamento Industrial",
-              "summary": "O vácuo mais alarmante da segurança nacional: o território brasileiro não possui baterias capazes de abater aeronaves hostis acima de 5.000 metros.",
+              "summary": "O Brasil não possui sistema operacional de defesa antiaérea de média/grande altitude; em dezembro de 2025, o Exército selecionou o EMADS/CAMM-ER, com entrega prevista para o fim da década.",
               "criticalityLevel": "Crítica",
               "scores": {
                 "extDependence": 94.0,
@@ -1558,7 +1755,7 @@
                 "substitutabilityTime": 94.0,
                 "systemicImpact": 96.0,
                 "logisticsVulnerability": 50.0,
-                "finalScore": 87.2
+                "finalScore": 86.0
               },
               "domesticProductionShare": 6.0,
               "importShare": 94.0,
@@ -1567,21 +1764,21 @@
                   "country": "Suécia",
                   "flag": "🇸🇪",
                   "sharePercentage": 45.0,
-                  "description": "Saab Bofors Dynamics (mísseis portáteis de curto alcance RBS-70 NG)",
+                  "description": "RBS-70 NG (curto alcance, guiamento a laser)",
                   "role": "import"
                 },
                 {
                   "country": "Rússia",
                   "flag": "🇷🇺",
                   "sharePercentage": 35.0,
-                  "description": "MANPADS Igla-S (curto alcance operados pelo Exército e FAB)",
+                  "description": "MANPADS Igla-S (curto alcance, operados pelo Exército e FAB)",
                   "role": "import"
                 },
                 {
                   "country": "África do Sul",
                   "flag": "🇿🇦",
                   "sharePercentage": 12.0,
-                  "description": "Denel (projeto conjunto do míssil ar-ar A-Darter, paralisado)",
+                  "description": "A-Darter (míssil ar-ar; projeto conjunto paralisado)",
                   "role": "import"
                 }
               ],
@@ -1593,18 +1790,18 @@
                 "dieselExposureLevel": "Moderada",
                 "dieselExposureDescription": "Baterias de artilharia antiaérea são autopropulsadas ou tracionadas por caminhões militares pesados Tatra/Mercedes altamente dependentes de diesel S10."
               },
-              "detailedAnalysis": "Enquanto países como Egito, Turquia, Coreia do Sul e Índia contam com camadas integradas de mísseis antiaéreos cobrindo até 150 km de raio e 30 km de altitude, o Brasil depende de mísseis portáteis disparados do ombro (curto alcance, até 5 km). Instalações de valor incalculável como usinas nucleares de Angra, hidrelétrica de Itaipu, Brasília e refinarias de petróleo seriam alvos fáceis em um cenário de ataque com mísseis de cruzeiro.",
+              "detailedAnalysis": "O inventário terrestre brasileiro é limitado a sistemas de curto alcance, como o RBS-70 NG (Suécia) e o Igla-S (Rússia), além de mísseis ar-ar como o A-Darter (África do Sul), cujo projeto conjunto está paralisado. Em dezembro de 2025, o Exército formalizou a escolha do sistema EMADS, da MBDA, equipado com mísseis CAMM-ER com alcance superior a 45 km e altitude de cerca de 10 km, para preencher a lacuna de média altura. A capacidade, porém, só será efetiva após a assinatura do contrato e a entrega das baterias. Instalações de valor incalculável como as usinas nucleares de Angra, a hidrelétrica de Itaipu, Brasília e refinarias estratégicas seguem sem cobertura de área de média/grande altitude.",
               "bottlenecks": [
                 "Crise financeira e recuperação judicial da Avibras Aeroespacial, principal fabricante de mísseis do país",
-                "Ausência de cabeças de teleguiamento térmico (seeker infravermelho) e radaricas de produção nacional",
+                "Ausência de cabeças de teleguiamento térmico (seeker infravermelho) e radares de produção nacional",
                 "Falta de priorização e compra governamental perene nas últimas três décadas"
               ],
               "strategicRecommendations": [
-                "Resgatar e capitalizar a Avibras como Empresa Estratégica de Defesa pública ou com golden share estatal",
-                "Lançar consórcio nacional para desenvolvimento de uma família de mísseis antiaéreos de média altitude (camada de 30 km a 50 km)",
+                "Concluir a aquisição do EMADS/CAMM-ER com transferência de tecnologia e nacionalização de componentes",
+                "Desenvolver, no médio prazo, uma camada de longo alcance (acima de 50 km) em consórcio com a indústria nacional",
                 "Integrar os radares SABER M60 e M200 da Embraer a plataformas lançadoras nacionais de resposta rápida"
               ],
-              "sources": ["sipri-arms", "comexstat"]
+              "sources": ["sipri-arms", "comexstat", "emads-2025"]
             }
           ]
         }
@@ -1617,12 +1814,12 @@
       "icon": "Cpu",
       "color": "from-indigo-600 to-violet-700",
       "tagline": "A soberania digital em xeque: zero fundições de ponta e dados em nuvens estrangeiras",
-      "description": "No coração da era da inteligência artificial e da economia do conhecimento, o Brasil enfrenta um isolamento tecnológico alarmante: 100% dos microprocessadores modernos, memórias, placas aceleradoras de IA e sistemas operacionais de ponta são de controle estrangeiro.",
-      "overallScore": 92.5,
+      "description": "No coração da era da inteligência artificial e da economia do conhecimento, o Brasil enfrenta um isolamento tecnológico alarmante: praticamente 100% dos microprocessadores avançados, memórias, placas aceleradoras de IA e sistemas operacionais de ponta são de controle estrangeiro.",
+      "overallScore": 87.7,
       "highlights": [
-        "Zero fábricas comerciais de chips de silício sub-micron no país; dependência total de Taiwan (TSMC), Coreia do Sul e EUA.",
-        "Mais de 92% dos dados de instituições públicas e grandes corporações brasileiras estão hospedados em servidores de nuvem estrangeira (AWS, Azure, Google Cloud).",
-        "A infraestrutura de telecomunicações e antenas 5G é dividida entre fornecedores chineses e nórdicos (Huawei ~50%, Ericsson e Nokia)."
+        "Zero fábricas comerciais de chips de lógica avançada (abaixo de 28 nm) no país; dependência de Taiwan (TSMC), Coreia do Sul, China e EUA.",
+        "A maior parte dos dados e sistemas críticos do governo e de grandes corporações está hospedada em nuvens estrangeiras (AWS, Azure, Google Cloud).",
+        "A infraestrutura de telecomunicações e antenas 5G é dividida entre fornecedores chineses e nórdicos, com predominância de Huawei, Ericsson e Nokia."
       ],
       "logisticsHighlight": "A montagem de eletrônicos ocorre na Zona Franca de Manaus (PIM), exigindo milhares de quilômetros de transporte fluvial lento até Belém e transbordo em carretas a diesel até os mercados do Sul e Sudeste.",
       "chains": [
@@ -1639,7 +1836,7 @@
               "name": "Processadores (CPUs/GPUs), Silício Avançado e Memórias DRAM/NAND",
               "stageOrder": 1,
               "category": "Processamento Industrial",
-              "summary": "O maior abismo de soberania do Brasil: dependência de 100% de importações de silício avançado para computadores, carros, celulares e servidores.",
+              "summary": "O maior abismo de soberania do Brasil: dependência de quase 100% das importações de silício avançado para computadores, carros, celulares e servidores.",
               "criticalityLevel": "Crítica",
               "scores": {
                 "extDependence": 99.0,
@@ -1647,37 +1844,58 @@
                 "substitutabilityTime": 98.0,
                 "systemicImpact": 98.0,
                 "logisticsVulnerability": 55.0,
-                "finalScore": 91.3
+                "finalScore": 91.0
               },
               "domesticProductionShare": 1.0,
               "importShare": 99.0,
               "importPartners": [
                 {
-                  "country": "Taiwan",
-                  "flag": "🇹🇼",
-                  "sharePercentage": 48.0,
-                  "description": "TSMC (monopólio mundial dos chips de litografia abaixo de 7nm)",
-                  "role": "import"
-                },
-                {
                   "country": "China",
                   "flag": "🇨🇳",
-                  "sharePercentage": 24.0,
-                  "description": "Chips legados, controladores de potência e semicondutores discretos",
+                  "sharePercentage": 30.8,
+                  "description": "Montagem final, chips legados, controladores e reexportação",
                   "role": "import"
                 },
                 {
                   "country": "Coreia do Sul",
                   "flag": "🇰🇷",
-                  "sharePercentage": 16.0,
-                  "description": "Samsung e SK Hynix (memórias DRAM de alta densidade e armazenamento flash)",
+                  "sharePercentage": 22.1,
+                  "description": "Samsung e SK Hynix (memórias DRAM e NAND)",
+                  "role": "import"
+                },
+                {
+                  "country": "Taiwan",
+                  "flag": "🇹🇼",
+                  "sharePercentage": 17.7,
+                  "description": "TSMC (lógica avançada; parte reexportada via China/Hong Kong)",
+                  "role": "import"
+                },
+                {
+                  "country": "Vietnã",
+                  "flag": "🇻🇳",
+                  "sharePercentage": 10.1,
+                  "description": "Montagem e teste (OSAT) de chips importados",
+                  "role": "import"
+                },
+                {
+                  "country": "Malásia",
+                  "flag": "🇲🇾",
+                  "sharePercentage": 5.9,
+                  "description": "Encapsulamento e teste avançado",
+                  "role": "import"
+                },
+                {
+                  "country": "Japão",
+                  "flag": "🇯🇵",
+                  "sharePercentage": 3.5,
+                  "description": "Semicondutores discretos, sensores e equipamentos",
                   "role": "import"
                 },
                 {
                   "country": "Estados Unidos",
                   "flag": "🇺🇸",
-                  "sharePercentage": 9.0,
-                  "description": "Intel, Qualcomm, Nvidia e AMD (propriedade intelectual de arquiteturas x86 e ARM)",
+                  "sharePercentage": 1.3,
+                  "description": "Projeto e propriedade intelectual (Intel, Nvidia, Qualcomm, AMD)",
                   "role": "import"
                 }
               ],
@@ -1689,7 +1907,7 @@
                 "dieselExposureLevel": "Moderada",
                 "dieselExposureDescription": "Wafers e chips chegam por via aérea no aeroporto de Viracopos (Campinas) ou Manaus e são redistribuídos em caminhões baú com rastreamento armado."
               },
-              "detailedAnalysis": "Um automóvel moderno fabricado no Brasil utiliza mais de 1.500 semicondutores. Em 2021-2022, a escassez mundial de chips paralisou montadoras em São Paulo, Paraná e Rio Grande do Sul durante meses. A Ceitec em Porto Alegre foi liquidada no governo anterior e revertida recentemente, mas foca em tecnologias legadas de 180nm/350nm (chips de identificação animal e tags RFID), incapazes de processar dados avançados.",
+              "detailedAnalysis": "Um automóvel moderno fabricado no Brasil utiliza mais de 1.500 semicondutores. Em 2021-2022, a escassez mundial de chips paralisou montadoras em São Paulo, Paraná e Rio Grande do Sul durante meses. A Ceitec, em Porto Alegre, teve a liquidação revertida em 2023 e segue operando com tecnologias legadas de 180nm/350nm (chips de identificação animal e tags RFID), insuficientes para processar dados avançados e sob novo risco de reestruturação em 2026. Em 2025, os principais fornecedores de circuitos integrados foram China (31%), Coreia do Sul (22%), Taiwan (18%) e Vietnã (10%), considerando o valor FOB importado.",
               "bottlenecks": [
                 "Custo colossal de uma fundição moderna (uma fábrica de litografia EUV custa de US$ 15 a 20 bilhões)",
                 "Monopólio absoluto de equipamentos de litografia pela holandesa ASML",
@@ -1725,7 +1943,7 @@
                 "substitutabilityTime": 88.0,
                 "systemicImpact": 96.0,
                 "logisticsVulnerability": 40.0,
-                "finalScore": 84.8
+                "finalScore": 84.3
               },
               "domesticProductionShare": 7.0,
               "importShare": 93.0,
@@ -1734,7 +1952,7 @@
                   "country": "Estados Unidos",
                   "flag": "🇺🇸",
                   "sharePercentage": 89.0,
-                  "description": "Amazon AWS, Microsoft Azure, Google Cloud, Apple, Meta, OpenAI e Oracle",
+                  "description": "Estimativa de participação: AWS, Azure, Google Cloud, Oracle, Apple, Meta e OpenAI",
                   "role": "import"
                 },
                 {
@@ -1753,7 +1971,7 @@
                 "dieselExposureLevel": "Baixa",
                 "dieselExposureDescription": "O tráfego de dados é subaquático via cabos submarinos de fibra óptica transatlânticos de propriedade de corporações norte-americanas."
               },
-              "detailedAnalysis": "Sistemas vitais como Receita Federal, Dataprev, Serpro, tribunais de justiça e prontuários do SUS migraram massivamente suas cargas de trabalho para nuvens de Big Techs norte-americanas sujeitas ao US CLOUD Act, que permite acesso do governo dos EUA a dados sob jurisdição americana em qualquer parte do planeta. Sem nuvem e modelos de IA soberanos, o país perde a autonomia sobre suas decisões governamentais.",
+              "detailedAnalysis": "Sistemas vitais como Receita Federal, Dataprev, Serpro, tribunais de justiça e prontuários do SUS mantêm parte relevante de suas cargas em nuvens de Big Techs norte-americanas sujeitas ao US CLOUD Act, que permite acesso do governo dos EUA a dados sob jurisdição americana em qualquer parte do planeta. Não há estatística oficial consolidada sobre o percentual exato hospedado no exterior; contratos públicos e market share indicam forte concentração em provedores dos EUA. O TCU auditou a Nuvem de Governo em 2026 (Acórdão 1.380/2026) e o Ministério da Saúde iniciou a Nuvem Soberana do SUS em agosto de 2026, mas a migração de cargas críticas ainda é incipiente. Sem nuvem e modelos de IA soberanos, o país perde autonomia sobre suas decisões governamentais.",
               "bottlenecks": [
                 "Ausência de datacenter público nacional de hiperconvergência com processadores soberanos",
                 "Dependência de cabos submarinos controlados por consórcios estrangeiros",
@@ -1764,7 +1982,7 @@
                 "Desenvolver modelos abertos de inteligência artificial soberana em língua portuguesa com curadoria nacional (como o projeto do supercomputador Santos Dumont)",
                 "Exigir armazenamento local e inviolável de dados biométricos, fiscais e sanitários dos cidadãos brasileiros"
               ],
-              "sources": ["mcti-semicondutores"]
+              "sources": ["mcti-semicondutores", "tcu-nuvem", "govbr-nuvem"]
             }
           ]
         }

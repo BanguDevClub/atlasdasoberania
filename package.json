@@ -1,7 +1,7 @@
 {
   "name": "atlasdasoberania",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Painel interativo e didático sobre a criticidade e vulnerabilidade da cadeia industrial brasileira",
   "scripts": {
     "dev": "astro dev",
@@ -13,7 +13,8 @@
     "lint:fix": "eslint \"src/**/*.{ts,tsx,astro}\" --fix",
     "format": "prettier --check \"src/**/*.{ts,tsx,astro,json,css,md}\"",
     "format:fix": "prettier --write \"src/**/*.{ts,tsx,astro,json,css,md}\"",
-    "validate": "npm run lint && npm run typecheck && npm run format",
+    "validate:data": "node scripts/validate-data.mjs",
+    "validate": "npm run validate:data && npm run lint && npm run typecheck && npm run format",
     "clean": "rm -rf dist .astro node_modules/.cache",
     "reinstall": "rm -rf node_modules package-lock.json && npm install"
   },

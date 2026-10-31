@@ -21,6 +21,9 @@ import {
 const { stats, diagnosticStages, analysisPillarsImpact } =
   atlasData.logisticsProblemReport;
 const baseUrl = '/atlasdasoberania';
+const dieselConsumption = stats.annualDieselConsumptionBillionLiters
+  .toFixed(1)
+  .replace('.', ',');
 ---
 
 <Layout
@@ -38,8 +41,8 @@ const baseUrl = '/atlasdasoberania';
         O Círculo Vicioso do Rodoviarismo e a Dependência de Diesel
       </h1>
       <p class="text-base leading-relaxed text-muted-foreground sm:text-lg">
-        O maior paradoxo logístico do Brasil: transportamos mais de dois terços
-        de toda a riqueza nacional sobre carretas rodoviárias, enquanto nosso
+        O maior paradoxo logístico do Brasil: transportamos quase dois terços de
+        toda a riqueza nacional sobre carretas rodoviárias, enquanto nosso
         parque de refino é incapaz de fornecer o óleo Diesel S10 necessário para
         abastecer esses mesmos caminhões.
       </p>
@@ -111,26 +114,26 @@ const baseUrl = '/atlasdasoberania';
             Participação percentual por tonelada útil transportada (TKU)
           </p>
         </div>
-        <ModalSplitPieChart client:visible />
+        <ModalSplitPieChart stats={stats} client:visible />
       </div>
 
       <!-- Diesel S10 Domestic vs Import -->
       <div class="shadow-xs flex flex-col justify-between rounded-2xl border border-border bg-card p-6">
         <div>
           <span class="text-xs font-bold uppercase tracking-wider text-red-500 sm:text-sm">
-            Balanço de Combustíveis (65 bi L/ano)
+            Balanço de Combustíveis ({dieselConsumption} bi L/ano)
           </span>
           <h3 class="text-lg font-bold text-foreground">
             Produção Nacional vs Importação de Diesel S10
           </h3>
           <p class="mt-0.5 text-xs text-muted-foreground sm:text-sm">
-            Déficit que obriga o Brasil a comprar diesel refinado da Rússia e
-            EUA
+            Déficit que obriga o Brasil a comprar diesel refinado da Rússia, EUA
+            e Índia
           </p>
         </div>
-        <DieselImportBalanceChart client:visible />
+        <DieselImportBalanceChart stats={stats} client:visible />
         <div class="rounded-lg border border-border/50 bg-muted/30 p-3 text-xs text-muted-foreground sm:text-sm">
-          <strong>Risco Geopolítico:</strong> 68% do diesel importado vem da
+          <strong>Risco Geopolítico:</strong> 47% do diesel importado vem da
           Rússia sob risco de sanções secundárias e embargos navais.
         </div>
       </div>
@@ -149,7 +152,7 @@ const baseUrl = '/atlasdasoberania';
             distâncias
           </p>
         </div>
-        <FreightEfficiencyComparisonChart client:visible />
+        <FreightEfficiencyComparisonChart stats={stats} client:visible />
       </div>
     </div>
 

@@ -11,13 +11,32 @@ import {
   Cell,
   Legend,
 } from 'recharts';
+import type { AtlasDataset } from '@/types/soberania';
 
-export function ModalSplitPieChart() {
+type LogisticsStats = AtlasDataset['logisticsProblemReport']['stats'];
+
+export function ModalSplitPieChart({ stats }: { stats: LogisticsStats }) {
   const data = [
-    { name: 'Rodoviário (Caminhões)', value: 65.4, color: '#f59e0b' },
-    { name: 'Ferroviário (Trens)', value: 18.2, color: '#3b82f6' },
-    { name: 'Hidroviário & Cabotagem', value: 12.8, color: '#06b6d4' },
-    { name: 'Dutoviário', value: 3.6, color: '#8b5cf6' },
+    {
+      name: 'Rodoviário (Caminhões)',
+      value: stats.roadShareTonKm,
+      color: '#f59e0b',
+    },
+    {
+      name: 'Ferroviário (Trens)',
+      value: stats.railShareTonKm,
+      color: '#3b82f6',
+    },
+    {
+      name: 'Hidroviário & Cabotagem',
+      value: stats.waterwayShareTonKm,
+      color: '#06b6d4',
+    },
+    {
+      name: 'Dutoviário',
+      value: stats.pipelineShareTonKm,
+      color: '#8b5cf6',
+    },
   ];
 
   return (
@@ -65,12 +84,18 @@ export function ModalSplitPieChart() {
   );
 }
 
-export function DieselImportBalanceChart() {
+export function DieselImportBalanceChart({ stats }: { stats: LogisticsStats }) {
+  const importacaoRefinada =
+    (stats.annualDieselConsumptionBillionLiters *
+      stats.dieselS10ImportDependencePercent) /
+    100;
+  const producaoNacional =
+    stats.annualDieselConsumptionBillionLiters - importacaoRefinada;
   const data = [
     {
       category: 'Diesel S10',
-      producaoNacional: 47.9,
-      importacaoRefinada: 17.3,
+      producaoNacional: Number(producaoNacional.toFixed(1)),
+      importacaoRefinada: Number(importacaoRefinada.toFixed(1)),
     },
   ];
 
@@ -112,7 +137,7 @@ export function DieselImportBalanceChart() {
           />
           <Bar
             dataKey="importacaoRefinada"
-            name="Déficit Importado (Rússia/EUA/Golfo)"
+            name="Importação (Rússia/EUA/Índia)"
             stackId="a"
             fill="#ef4444"
             radius={[0, 6, 6, 0]}
@@ -123,11 +148,19 @@ export function DieselImportBalanceChart() {
   );
 }
 
-export function FreightEfficiencyComparisonChart() {
+export function FreightEfficiencyComparisonChart({
+  stats,
+}: {
+  stats: LogisticsStats;
+}) {
   const data = [
     { modal: 'Ferrovia (1.000 ton/km)', custoRelativo: 1.0, emissaoCO2: 1.0 },
     { modal: 'Hidrovia (1.000 ton/km)', custoRelativo: 0.6, emissaoCO2: 0.7 },
-    { modal: 'Rodovia (1.000 ton/km)', custoRelativo: 3.4, emissaoCO2: 4.2 },
+    {
+      modal: 'Rodovia (1.000 ton/km)',
+      custoRelativo: stats.freightCostMultiplierRoadVsRail,
+      emissaoCO2: stats.co2MultiplierRoadVsRail,
+    },
   ];
 
   return (

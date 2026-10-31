@@ -13,9 +13,6 @@ export function PillarsRadarChart() {
   const chartData = atlasData.pillars.map((pillar) => {
     // calculate average dimension scores across stages in this pillar
     const stages = pillar.chains.flatMap((c) => c.stages);
-    const avgScore =
-      stages.reduce((acc, s) => acc + s.scores.finalScore, 0) /
-      (stages.length || 1);
     const avgExtDep =
       stages.reduce((acc, s) => acc + s.scores.extDependence, 0) /
       (stages.length || 1);
@@ -29,7 +26,7 @@ export function PillarsRadarChart() {
     return {
       pillar: pillar.name.split(' ')[0],
       fullName: pillar.name,
-      icvs: Math.round(avgScore),
+      icvs: pillar.overallScore,
       extDep: Math.round(avgExtDep),
       impact: Math.round(avgImpact),
       logistics: Math.round(avgLogistics),

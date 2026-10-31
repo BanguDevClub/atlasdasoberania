@@ -13,6 +13,7 @@ const avgOverallScore = (
   atlasData.pillars.reduce((acc, p) => acc + p.overallScore, 0) /
   atlasData.pillars.length
 ).toFixed(1);
+const { stats } = atlasData.logisticsProblemReport;
 ---
 
 <Layout
@@ -39,9 +40,9 @@ const avgOverallScore = (
         <p class="max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
           O Brasil é uma potência alimentar e energética com pés de barro:
           exporta commodities brutas sem refino e importa insumos vitais — de
-          95% do potássio agrícola a 100% dos microprocessadores modernos.
-          Conheça a criticidade de cada elo produtivo e o nó do rodoviarismo a
-          diesel.
+          95% do potássio agrícola a praticamente 100% dos microprocessadores
+          avançados. Conheça a criticidade de cada elo produtivo e o nó do
+          rodoviarismo a diesel.
         </p>
 
         <!-- KPI Summary row -->
@@ -76,10 +77,10 @@ const avgOverallScore = (
               Déficit de Diesel S10
             </span>
             <div class="mt-0.5 font-mono text-2xl font-black text-amber-500 sm:text-3xl">
-              ~26.5%
+              ~{stats.dieselS10ImportDependencePercent}%
             </div>
             <span class="text-xs text-muted-foreground sm:text-sm">
-              Importado da Rússia e EUA
+              Importado da Rússia, EUA e Índia
             </span>
           </div>
 
@@ -88,7 +89,7 @@ const avgOverallScore = (
               Carga em Rodovias
             </span>
             <div class="mt-0.5 font-mono text-2xl font-black text-orange-500 sm:text-3xl">
-              65.4%
+              {stats.roadShareTonKm}%
             </div>
             <span class="text-xs text-muted-foreground sm:text-sm">
               Subordinação ao frete rodoviário

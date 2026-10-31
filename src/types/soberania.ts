@@ -1,6 +1,7 @@
 export interface CommercialPartner {
   country: string;
   flag: string;
+  /** Participação no total importado/exportado da etapa (não no consumo nacional). */
   sharePercentage: number;
   description?: string;
   role: 'import' | 'export';
@@ -121,6 +122,7 @@ export interface AtlasDataset {
       roadShareTonKm: number;
       railShareTonKm: number;
       waterwayShareTonKm: number;
+      pipelineShareTonKm: number;
       dieselS10ImportDependencePercent: number;
       annualDieselConsumptionBillionLiters: number;
       freightCostMultiplierRoadVsRail: number;
